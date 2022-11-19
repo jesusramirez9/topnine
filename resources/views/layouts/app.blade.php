@@ -18,9 +18,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- glider --}}
-    <link rel="stylesheet" href="{{asset('css/glider.min.css')}}"
-        integrity="sha512-YM6sLXVMZqkCspZoZeIPGXrhD9wxlxEF7MzniuvegURqrTGV2xTfqq1v9FJnczH+5OGFl5V78RgHZGaK34ylVg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{asset('css/glider.min.css')}}"/>
     {{-- FLEXslider --}}
     <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css') }}">
     {{-- Animate css --}}
@@ -34,9 +32,7 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     {{-- glider --}}
-    <script src="{{asset('js/glider.min.js')}}"
-        integrity="sha512-tHimK/KZS+o34ZpPNOvb/bTHZb6ocWFXCtdGqAlWYUcz+BGHbNbHMKvEHUyFxgJhQcEO87yg5YqaJvyQgAEEtA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{asset('js/glider.min.js')}}"></script>
     {{-- jquery --}} 
     <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
     {{-- flexslider --}}
