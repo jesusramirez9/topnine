@@ -45,9 +45,9 @@ class DatabaseSeeder extends Seeder
         
         $this->call(DepartmentSeeder::class);
         
-        \App\Models\Posts::factory(10)->create();
-        \App\Models\Flayer::factory(10)->create();
-        \App\Models\Service::factory(15)->create();
+        \App\Models\Posts::factory(2)->create();
+        \App\Models\Flayer::factory(2)->create();
+        \App\Models\Service::factory(3)->create();
 
 
 

@@ -25,9 +25,9 @@
                         :active="request()->routeIs('admin.categories.*')">
                         Categorías
                     </x-jet-nav-link>
-                    {{-- <x-jet-nav-link href="{{ route('admin.brands.index') }}" :active="request()->routeIs('admin.brands.*')">
+                    <x-jet-nav-link href="{{ route('admin.brands.index') }}" :active="request()->routeIs('admin.brands.*')">
                         Marcas
-                    </x-jet-nav-link> --}}
+                    </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('admin.departments.index') }}"
                         :active="request()->routeIs('admin.departments.*')">
                         Departamentos
