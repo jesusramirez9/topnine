@@ -13,7 +13,7 @@
         $store = [
             'amount' => $order->total * 100,
             'currency' => 'PEN',
-            'orderId' => uniqid( $order->id.'-' ),
+            'orderId' => uniqid($order->id . '-'),
             'customer' => [
                 'email' => auth()->user()->email,
             ],
@@ -32,8 +32,7 @@
 
     @push('link')
         <link rel="stylesheet" href="<?php echo $client->getClientEndpoint(); ?>/static/js/krypton-client/V4.0/ext/classic-reset.css">
-        <script src="<?php echo $client->getClientEndpoint(); ?>/static/js/krypton-client/V4.0/ext/classic.js">
-        </script>
+        <script src="<?php echo $client->getClientEndpoint(); ?>/static/js/krypton-client/V4.0/ext/classic.js"></script>
     @endpush
     <div class="bg-red-600 py-6">
         <p class="text-center text-white text-lg xl:text-2xl font-semibold">
@@ -44,179 +43,206 @@
         </div>
     </div>
     <div class="bg-gray-100">
-    <div class="md:grid  md:grid-cols-5 gap-6 container py-8">
+        <div class="md:grid  md:grid-cols-5 gap-6 container py-8">
 
-        <div class="md:col-span-3 ">
-            <div class="bg-white rounded-lg shadow-lg  md:mt-0 px-4 md:px-6 py-4 mb-6">
-                <p class="colorbroywm font-bold uppercase"> <span class=" font-bold">Número de
-                        compra:</span>
-                    Compra-000{{ $order->id }}</p>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                <div class="my-5">
-                    <p class="text-orange-500 text-2xl font-semibold"> Comprueba tus datos antes de finalizar tu compra</p>
-
+            <div class="md:col-span-3 ">
+                <div class="bg-white rounded-lg shadow-lg  md:mt-0 px-4 md:px-6 py-4 mb-6">
+                    <p class="colorbroywm font-bold uppercase"> <span class=" font-bold">Número de
+                            compra:</span>
+                        Compra-000{{ $order->id }}</p>
                 </div>
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                    <div class="my-5">
+                        <p class="text-orange-500 text-2xl font-semibold"> Comprueba tus datos antes de finalizar tu
+                            compra</p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
-                    <div>
-                        <p class="text-lg  font-bold uppercase">Datos de la compra</p>
-                        @if ($order->envio_type == 1)
-                            <p class="text-sm colorbroywm font-bold">Serán recogidos en:</p>
-                            <p class="text-sm colorbroywm font-bold">Calle falsa 123</p>
-                        @else
-                            <p class="text-sm colorbroywm font-bold">Será enviado a:</p>
-                           
-                            <p class="colorbroywm font-normal">{{ $envio->department }} - {{ $envio->city }} -
-                                {{ $envio->district }}</p>
-                            <p class="text-sm colorbroywm font-bold">Referencia:</p>
-                            <p class="colorbroywm font-normal">{{ $envio->references }}</p>
-                        @endif
                     </div>
 
-                    <div>
-                        <p class="text-lg  font-bold uppercase">Datos de contacto principal</p>
-                        <p class="text-sm  font-bold">Responsable del producto: </p>
-                        <p class="colorbroywm font-normal"> {{ $order->contact }}</p>
-                        <p class="text-sm  font-bold">Celular de contacto: </p>
-                        <p class="colorbroywm font-normal">{{ $order->phone }}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+                        <div>
+                            <p class="text-lg  font-bold uppercase">Datos de la compra</p>
+                            @if ($order->envio_type == 1)
+                                <p class="text-sm colorbroywm font-bold">Serán recogidos en:</p>
+                                <p class="text-sm colorbroywm font-bold">Calle falsa 123</p>
+                            @else
+                                <p class="text-sm colorbroywm font-bold">Será enviado a:</p>
+
+                                <p class="colorbroywm font-normal">{{ $envio->department }} - {{ $envio->city }} -
+                                    {{ $envio->district }}</p>
+                                <p class="text-sm colorbroywm font-bold">Referencia:</p>
+                                <p class="colorbroywm font-normal">{{ $envio->references }}</p>
+                            @endif
+                        </div>
+
+                        <div>
+                            <p class="text-lg  font-bold uppercase">Datos de contacto principal</p>
+                            <p class="text-sm  font-bold">Responsable del producto: </p>
+                            <p class="colorbroywm font-normal"> {{ $order->contact }}</p>
+                            <p class="text-sm  font-bold">Celular de contacto: </p>
+                            <p class="colorbroywm font-normal">{{ $order->phone }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-6 text-gray-700">
-                <p class="text-xl  font-bold mb-4">Resumen de tus productos</p>
+                <div class="bg-white rounded-lg shadow-lg p-6 mb-6 text-gray-700">
+                    <p class="text-xl  font-bold mb-4">Resumen de tus productos</p>
 
-                <table class="table-auto w-full">
-                    <thead>
-                        <tr class=" font-bold">
-                            <th></th>
-                            <th class="text-xs sm:text-base">Precio</th>
-                            <th class="text-xs sm:text-base">Cant.</th>
-                            <th class="text-xs sm:text-base">Total</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-
-                        @foreach ($items as $item)
-                            <tr>
-                                <td>
-                                    <div class="flex ">
-                                        <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}"
-                                            alt="">
-                                        <article>
-                                            <h1 class="font-bold txttitel_resumen">{{ $item->name }}</h1>
-                                            <div class="flex text-xs txttitel_resumen">
-                                                @isset($item->options->color)
-                                                    Color: {{ __($item->options->color) }}
-                                                @endisset
-
-                                                @isset($item->options->size)
-                                                    - Talla: {{ $item->options->size }}
-                                                @endisset
-                                            </div>
-                                        </article>
-                                    </div>
-                                </td>
-                                <td class="text-center colorbroywm font-bold">
-                                    S/ {{ $item->price }}
-                                </td>
-                                <td class="text-center colorbroywm font-bold">
-                                    {{ $item->qty }}
-                                </td>
-                                <td class="text-center colorbroywm font-bold">
-                                    S/ {{ $item->price * $item->qty }}
-                                </td>
+                    <table class="table-auto w-full">
+                        <thead>
+                            <tr class=" font-bold">
+                                <th></th>
+                                <th class="text-xs sm:text-base">Precio</th>
+                                <th class="text-xs sm:text-base">Cant.</th>
+                                <th class="text-xs sm:text-base">Total</th>
                             </tr>
-                        @endforeach
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
 
-                    </tbody>
-                </table>
+                            @foreach ($items as $item)
+                                <tr>
+                                    <td>
+                                        <div class="flex ">
+                                            <img class="h-15 w-20 object-cover mr-4" src="{{ $item->options->image }}"
+                                                alt="">
+                                            <article>
+                                                <h1 class="font-bold txttitel_resumen">{{ $item->name }}</h1>
+                                                <div class="flex text-xs txttitel_resumen">
+                                                    @isset($item->options->color)
+                                                        Color: {{ __($item->options->color) }}
+                                                    @endisset
+
+                                                    @isset($item->options->size)
+                                                        - Talla: {{ $item->options->size }}
+                                                    @endisset
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </td>
+                                    <td class="text-center colorbroywm font-bold">
+                                        S/ {{ $item->price }}
+                                    </td>
+                                    <td class="text-center colorbroywm font-bold">
+                                        {{ $item->qty }}
+                                    </td>
+                                    <td class="text-center colorbroywm font-bold">
+                                        S/ {{ $item->price * $item->qty }}
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+
+                </div>
+
+
 
             </div>
-
-
-
-        </div>
-        <div class="md:col-span-2">
-            <div class="bg-white rounded-lg shadow-lg px-4 md:px-6 pt-6 pb-6">
-                <div class="flex justify-between items-center mb-4">
-                    <div class="">
-                        <img src=" {{ asset('images/bolsacompra1/visa.jpg') }}" class="h-15 w-20 object-cover"
-                            alt="">
-                        <img src="{{ asset('images/bolsacompra1/mastercard.jpg') }}" class="h-15 w-20 object-cover"
-                            alt="">
-                    </div>
-                    <div class="">
-                        <img src="
-                        {{ asset('images/bolsacompra1/american.jpg') }}" class="h-15 w-20 object-cover" alt="">
-                        <img src="{{ asset('images/bolsacompra1/diners.jpg') }}" class="h-15 w-20 object-cover"
-                            alt="">
-
-                    </div>
-                    <div class=" ml-4">
-                       
-                        <div class="flex justify-between text-sm font-semibold">
-                            <p>Subotal: </p>
-                            <p>S/{{ $order->total - $order->shipping_cost }}</p>
+            <div class="md:col-span-2">
+                <div class="bg-white rounded-lg shadow-lg px-4 md:px-6 pt-6 pb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="">
+                            <img src=" {{ asset('images/bolsacompra1/visa.jpg') }}" class="h-15 w-20 object-cover"
+                                alt="">
+                            <img src="{{ asset('images/bolsacompra1/mastercard.jpg') }}" class="h-15 w-20 object-cover"
+                                alt="">
                         </div>
-                        <div class="flex justify-between text-sm font-semibold ">
-                            <p>Envio:  </p>
-                            <p>S/{{ $order->shipping_cost }}</p>
-                        </div>
-                     
-                        <hr class="bg-gray-800 my-3">
-                        <p class="mb-3 text-lg font-semibold ">
-                            Total: S/ {{ $order->total }}
-                        </p>
+                        <div class="">
+                            <img src="
+                        {{ asset('images/bolsacompra1/american.jpg') }}"
+                                class="h-15 w-20 object-cover" alt="">
+                            <img src="{{ asset('images/bolsacompra1/diners.jpg') }}" class="h-15 w-20 object-cover"
+                                alt="">
 
-                        {{-- <div class="cho-container">
+                        </div>
+                        <div class=" ml-4">
+
+                            <div class="flex justify-between text-sm font-semibold">
+                                <p>Subotal: </p>
+                                <p>S/{{ $order->total - $order->shipping_cost }}</p>
+                            </div>
+                            <div class="flex justify-between text-sm font-semibold ">
+                                <p>Envio: </p>
+                                <p>S/{{ $order->shipping_cost }}</p>
+                            </div>
+
+                            <hr class="bg-gray-800 my-3">
+                            <p class="mb-3 text-lg font-semibold ">
+                                Total: S/ {{ $order->total }}
+                            </p>
+
+                            {{-- <div class="cho-container">
                         </div> --}}
 
+                        </div>
                     </div>
-                </div>
-                <hr class="bg-gray-400 my-8">
-                {{-- <div id="paypal-button-container"></div> --}}
-                {{-- // cambie estso --}}
+                    <hr class="bg-gray-400 my-8">
+                    {{-- <div id="paypal-button-container"></div> --}}
+                    {{-- // cambie estso --}}
 
-                {{-- <x-jet-button wire:loading.attr="disabled" wire:target="create_order" class="mt-6 mb-4 bgvrdff"
+                    {{-- <x-jet-button wire:loading.attr="disabled" wire:target="create_order" class="mt-6 mb-4 bgvrdff"
                     wire:click="create_order">
                     Realizar pedido
                 </x-jet-button> --}}
-                <div class="flex justify-center">
-                    <div class="kr-embedded " kr-form-token="<?php echo $formToken; ?>">
-                        <!-- payment form fields -->
-                        <div class="kr-pan"></div>
-                        <div class="kr-expiry"></div>
-                        <div class="kr-security-code"></div>
-    
-                        <!-- payment form submit button -->
-                        <button class="kr-payment-button"></button>
-    
-                        <!-- error zone -->
-                        <div class="kr-form-error"></div>
-                    </div> 
+                <div class="text-center mb-8">
+                    <p>Formas de obtener el producto</p>
                 </div>
-               
-                <div class="flex justify-center">
-                    <x-jet-button wire:loading.attr="disabled" wire:target="create_order" class="mt-6 mb-4 "
-                        wire:click="create_order">
-                        Realizar compra
-                    </x-jet-button>
+                    <div x-data="{ open: false }">
+                        <button
+                            class="py-2.5 px-4 border bg-gray-100 hover:bg-gray-200 border-gray-300 rounded-full w-full inline-flex justify-between items-center"
+                            x-on:click="open = !open">
+                            Tarjeta de Débito/Crédito
+                            <img class="h-3" src="https://codersfree.com/img/payments/credit-cards.png"
+                                alt="">
+                        </button>
+
+                        <div x-show="open" x-transition="" class="my-6" style="display: none;">
+                            <div class="flex justify-center">
+                                <div class="kr-embedded " kr-form-token="<?php echo $formToken; ?>">
+                                    <!-- payment form fields -->
+                                    <div class="kr-pan"></div>
+                                    <div class="kr-expiry"></div>
+                                    <div class="kr-security-code"></div>
+        
+                                    <!-- payment form submit button -->
+                                    <button class="kr-payment-button"></button>
+        
+                                    <!-- error zone -->
+                                    <div class="kr-form-error"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-6" x-data="{ open: false }">
+                        <button
+                            class="py-2.5 px-4 border bg-gray-100 hover:bg-gray-200 border-gray-300 rounded-full w-full inline-flex justify-between items-center"
+                            x-on:click="open = !open">
+                            Solo quiero reservar
+                            
+                        </button>
+                        <div x-show="open" x-transition="" class="my-3" style="display: none;">
+                            <div class="flex justify-center">
+                                <x-jet-button wire:loading.attr="disabled" wire:target="create_order" class="mt-6 mb-4 "
+                                    wire:click="create_order">
+                                    Realizar reserva
+                                </x-jet-button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="text-center">
+                        <p class="text-sm font-light">* Recuerda activar las compras por internet
+                            con tu banco</p>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <p class="text-sm font-light">* Recuerda activar las compras por internet
-                        con tu banco</p>
-                </div>
+
             </div>
 
         </div>
-
     </div>
-</div>
-   <script src="<?php echo $client->getClientEndpoint(); ?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
-        kr-public-key="<?php echo $client->getPublicKey(); ?>" kr-post-url-success="{{ route('orders.pay', $order) }}">
-    </script>
+    <script src="<?php echo $client->getClientEndpoint(); ?>/static/js/krypton-client/V4.0/stable/kr-payment-form.min.js"
+        kr-public-key="<?php echo $client->getPublicKey(); ?>" kr-post-url-success="{{ route('orders.pay', $order) }}"></script>
 
 
 </div>

@@ -15,18 +15,15 @@ class ShowDepartment extends Component
 
     public $createForm = [
         'name' => '',
-        'cost'=>null
     ];
 
     public $editForm = [
         'open' => false,
-        'name' => '',
-        'cost'=> null
+        'name' => ''
     ];
 
     protected $validationAttributes = [
-        'createForm.name' => 'nombre',
-        'createForm.cost' => 'costo'
+        'createForm.name' => 'nombre'
     ];
 
  
@@ -43,8 +40,7 @@ class ShowDepartment extends Component
     public function save(){
 
         $this->validate([
-            "createForm.name" => 'required',
-            "createForm.cost" => 'required|numeric|min:1|max:100'
+            "createForm.name" => 'required'
         ]);
 
         $this->department->cities()->create($this->createForm);
@@ -60,13 +56,11 @@ class ShowDepartment extends Component
         $this->city = $city;
         $this->editForm['open'] = true;
         $this->editForm['name'] = $city->name;
-        $this->editForm['cost'] = $city->cost;
 
     }
 
     public function update(){
         $this->city->name = $this->editForm['name'];
-        $this->city->cost = $this->editForm['cost'];
 
         $this->city->save();
 

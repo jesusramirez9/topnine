@@ -9,7 +9,7 @@ class District extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name','city_id'];
+    protected $fillable = ['name','cost','city_id'];
 
     public function orders(){
         return $this->hasMany(Order::class);

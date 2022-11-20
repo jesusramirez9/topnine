@@ -55,29 +55,7 @@
         <main class="h-auto">
             {{ $slot }}
         </main>
-        {{-- <div class=" bg-footer fixd_adm ">
-            <div class="container">
-                <div class="web_foot">
-                    <div class="flex justify-between py-5 text-white ">
-                        <div class="text-sm">
-                            © Green, Todos los derechos Reservados.
-                        </div>
-                        <div class="text-sm">
-                            Diseñado por Katana Studio
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pdt_foot text-white text-center rp_foot">
-                    <div class="text-sm">
-                        © Green, Todos los derechos Reservados.
-                    </div>
-                    <div class="text-sm">
-                        Diseñado por Katana Studio
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+        
     </div>
 
     @stack('modals')

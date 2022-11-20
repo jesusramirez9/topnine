@@ -17,7 +17,7 @@ Te detallamos las posibles causas:
 @endcomponent
 
 En caso tengas algún inconveniente con tu compra puedes <br> escribirnos a: 
-info@aleckatravel.pe o enviarnos un mensaje a nuestro <br> wsp: +51 987 654 321 <br>
+info@topnain.com o enviarnos un mensaje a nuestro <br> wsp: +51 987 654 321 <br>
 Gracias, <br>
 
 {{ config('app.name') }}

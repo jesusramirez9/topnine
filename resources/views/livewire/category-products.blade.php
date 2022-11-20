@@ -27,20 +27,20 @@
                                 {{ Str::limit($product->name, 40, '...') }}
 
                             </h1>
-                            <div class="flex justify-between">
+                            <div class="">
                                 @if ($product->offer != 0)
-                                    <p class=" text-gray-400 line-through">s/ {{ $product->offer }}
-                                    </p>
+                                 <p class="text-xs text-gray-400">Precio normal:  <span class=" text-gray-400 line-through">s/ {{ $product->offer }}
+                                    </span></p> 
                                 @else
                                 @endif
-                                <p class="font-bold  scrollflow -slide-bottom -opacity">
-                                    S/ {{ $product->price }}</p>
+                              <p class="font-medium">Precio oferta:  <span class="text-sm  scrollflow -slide-bottom -opacity">
+                                    S/ {{ $product->price }}</span></p>
 
                             </div>
 
                             <div class="flex justify-center py-4">
                                 <button
-                                    class="text-white w-full font-medium text-sm bg-orange-600 hover:bg-orange-500 px-5 py-4 rounded-lg"><i
+                                    class="text-white w-full font-medium text-sm bg-orange-600 hover:bg-orange-500 px-5 py-2 rounded-lg"><i
                                         class="fa-solid fa-magnifying-glass mr-2"></i>Ver producto</button>
                             </div>
 

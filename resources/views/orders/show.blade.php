@@ -6,7 +6,7 @@
     
                 <div class="relative">
                     <div
-                        class="{{ $order->status >= 2 && $order->statud != 5 ? 'bg-green-700 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
+                        class="{{ $order->status >= 2 && $order->statud != 5 ? 'green_top ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
                         <i class="fas fa-check text-white"></i>
                     </div>
                     <div class="absolute -left-1.5 mt-0.5">
@@ -15,12 +15,12 @@
                 </div>
     
                 <div
-                    class="{{ $order->status >= 3 && $order->statud != 5 ? 'bg-green-700 ' : 'bg-gray-400 ' }}h-1 flex-1 mx-2">
+                    class="{{ $order->status >= 3 && $order->statud != 5 ? 'green_top ' : 'bg-gray-400 ' }}h-1 flex-1 mx-2">
                 </div>
     
                 <div class="relative">
                     <div
-                        class="{{ $order->status >= 3 && $order->statud != 5 ? 'bg-green-700 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
+                        class="{{ $order->status >= 3 && $order->statud != 5 ? 'green_top ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
                         <i class="fas fa-truck text-white"></i>
                     </div>
                     <div class="absolute -left-1 mt-0.5">
@@ -29,16 +29,16 @@
                 </div>
     
                 <div
-                    class="{{ $order->status >= 4 && $order->statud != 5 ? 'bg-blue-400 ' : 'bg-gray-400 ' }} h-1 flex-1  mx-2">
+                    class="{{ $order->status >= 4 && $order->statud != 5 ? 'green_top ' : 'bg-gray-400 ' }} h-1 flex-1  mx-2">
                 </div>
     
                 <div class="relative">
                     <div
-                        class="{{ $order->status >= 4 && $order->statud != 5 ? 'bg-blue-400 ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
+                        class="{{ $order->status >= 4 && $order->statud != 5 ? 'green_top ' : 'bg-gray-400 ' }} rounded-full h-12 w-12 flex items-center justify-center ">
                         <i class="fas fa-check text-white"></i>
                     </div>
                     <div class="absolute -left-1 mt-0.5">
-                        <p class="text-sm md:text-base">Reservado</p>
+                        <p class="text-sm md:text-base">Entregado</p>
                     </div>
                 </div>
     

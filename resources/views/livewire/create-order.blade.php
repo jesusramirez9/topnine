@@ -1,5 +1,5 @@
 <div class="bg-gray-100 ">
-    <div class="container mt-8 pb-8 md:pt-8 md:pb-8">
+    <div class="container  pb-8 md:pt-12 md:pb-8">
         <p class="text-lg lg:text-2xl font-bold">¡Ya falta poco para finalizar tu compra!</p>
     </div>
     <div class=" container  grid lg:grid-cols-2 xl:grid-cols-5 gap-6">
@@ -150,10 +150,7 @@
 
                 <hr>
 
-                <p class="text-sm text-gray-700 mt-2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam
-                    atque
-                    quo, labore facere placeat illo consequatur hic ut sapiente exercitationem, architecto iure,
-                    consequuntur impedit ex iusto ipsa voluptas laudantium iste <a href=""
+                <p class="text-sm text-gray-700 mt-2">Según corresponda, el formulario de recopilación de datos contiene algunos campos de carácter obligatorio. En caso decida no proporcionarlos, no será posible gestionar la solicitud y/o contrato antes referidos. Si decides ingresar los datos, declaras y certificas que ellos corresponden a ti y que son verdaderos, exactos, auténticos, completos, y correctos; y que eres mayor de edad. <a href="{{route('politicas')}}"
                         class="font-semibold text-orange-500">Políticas y privacidad</a></p>
             </div>
 

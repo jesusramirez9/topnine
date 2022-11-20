@@ -2,27 +2,28 @@
 # Estado de la compra : Confirmado
 
 <div align="center" style="margin: 1rem 0rem;">
-    PROCESANDO ---- <b>RESERVADO</b>
+    Listo para entregar
 </div>
 
 Hola {{ $order->user()->first()->name }} te informamos que tu producto ya se encuentra listo. <br>
 Te detallamos el resumen de tu compra.
 @component('mail::panel')
-Tu numero de pedido es: <b> compra-000{{ $order->id }}</b> <br>
+Tu numero de pedido es: <b> compra-000{{ $order->id }}</b> <br> <br>
 @foreach ($items as $item)
 Producto: <b>{{ $item->name }}</b> <br>
-@endforeach
+@endforeach 
+<br>
 Se enviara al siguiente punto:
 <p>{{ $envio->department }} - {{ $envio->city }} - {{ $envio->district }}</p>
 @endcomponent
-
 @component('mail::table')
        
 | Precio | Cantidad | Total |
 | ------------- |:-------------:| --------:|
 @foreach ($items as $item)
-| S/{{ $item->price }} | {{ $item->qty }}  | S/ {{ $order->total }} |
+| S/{{ $item->price }} | {{ $item->qty }}  | S/ {{ $item->price * $item->qty}} |
 @endforeach
+| Total + Envio: S/ {{ $order->total }} nuevos soles (Inc IGV)   
        
 @endcomponent
 

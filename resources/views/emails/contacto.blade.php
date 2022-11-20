@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="mt-4 text-white font-bold text-center">
-            <small class="text-green-900">© {{ date('Y') }} Alecka Travel Tours. Todos los derechos reservados.</small>
+            <small class="text-green-900">© {{ date('Y') }} Topnain. Todos los derechos reservados.</small>
         </div>
     </section>
 </body>

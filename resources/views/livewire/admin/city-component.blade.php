@@ -22,7 +22,13 @@
                     <x-jet-input wire:model.defer="createForm.name" type="text" class="w-full mt-1"></x-jet-input>
                     <x-jet-input-error for="createForm.name" />
                 </div>
-                
+                <div class="col-span-6 sm:col-span-4">
+                    <x-jet-label>
+                        Costo
+                    </x-jet-label>
+                    <x-jet-input wire:model.defer="createForm.cost" type="number" class="w-full mt-1"></x-jet-input>
+                    <x-jet-input-error for="createForm.cost" />
+                </div>
             </x-slot>
             <x-slot name="actions">
                 <x-jet-action-message class="mr-3" on="saved">
@@ -93,7 +99,15 @@
                         </x-jet-input>
                         <x-jet-input-error for="editForm.name" />
                     </div>
-                   
+                    <div>
+                        <x-jet-label>
+                            Costo
+                        </x-jet-label>
+                        <x-jet-input wire:model="editForm.cost" type="number" class="w-full mt-1">
+    
+                        </x-jet-input>
+                        <x-jet-input-error for="editForm.cost" />
+                    </div>
                    
                 </div>
             </x-slot>

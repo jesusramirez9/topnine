@@ -15,16 +15,19 @@ class CityComponent extends Component
 
     public $createForm = [
         'name' => '',
+        'cost'=>null
     ];
 
     public $editForm = [
         'open' => false,
         'name' => '',
+        'cost'=> null
  
     ];
 
     protected $validationAttributes = [
         'createForm.name' => 'nombre',
+        'createForm.cost' => 'costo'
     ];
   
     public function mount(City $city){
@@ -39,6 +42,7 @@ class CityComponent extends Component
 
         $this->validate([
             "createForm.name" => 'required',
+            "createForm.cost" => 'required|numeric|min:1|max:100'
         ]);
 
         $this->city->districts()->create($this->createForm);
@@ -54,6 +58,7 @@ class CityComponent extends Component
         $this->district = $district;
         $this->editForm['open'] = true;
         $this->editForm['name'] = $district->name;
+        $this->editForm['cost'] = $district->cost;
 
     }
     
@@ -61,7 +66,8 @@ class CityComponent extends Component
    
 
         $this->district->name = $this->editForm['name'];
-
+        $this->city->cost = $this->editForm['cost'];
+        
         $this->district->save();
 
         $this->reset('editForm');

@@ -19,10 +19,10 @@
         </div>
         <div class="flex-1">
             <div class="itemcolbtnweb">
-                <button
-                    class="text-white add_prod font-medium text-sm bg_pricipal px-5 py-2 rounded-xl hover:bg-blue-700"
+                <x-button
+                    color="orange"
                     x-bind:disabled="$wire.qty > $wire.quantity" wire:click="addItem" wire:loading.attr="disabled"
-                    wire:target="addItem">Realizar compra</button>
+                    wire:target="addItem">Realizar compra</x-button>
 
                 {{-- <x-button color="orange" x-bind:disabled="$wire.qty > $wire.quantity" class="w-full"
                     wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem">
@@ -32,7 +32,7 @@
             <div class="itemcolorbtn">
                 <x-button color="orange" x-bind:disabled="$wire.qty > $wire.quantity" class="w-full"
                     wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem">
-                    Reservar Tour
+                    Comprar 
                 </x-button>
             </div>
 

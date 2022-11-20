@@ -70,14 +70,21 @@ class CreateOrder extends Component
 
     public function updatedCityId($value){
 
-        $city = City::find($value);
-        $this->shipping_cost = $city->cost;
-        
+       
+    //     $city = City::find($value);
+    //     $districts = District::find($value);
+    //    $this->shipping_cost = $districts->cost;
 
         $this->districts = District::where('city_id', $value)->get();
         $this->reset('district_id');
     }
+    public function updatedDistrictId($value){
 
+        $districts = District::find($value);
+        $this->shipping_cost = $districts->cost;
+        
+
+    }
 
     public function create_order(){
         $rules = $this->rules;

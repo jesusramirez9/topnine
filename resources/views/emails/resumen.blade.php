@@ -97,7 +97,7 @@
             </div>
 
             <div style='color:#fff;text-align:center;background:#044767;padding-top:15px;padding-bottom:15px;'>
-                <h4 style='font-family:sans-serif'>© {{ date('Y') }} Alecka Travel Tours. Todos los derechos
+                <h4 style='font-family:sans-serif'>© {{ date('Y') }} Topnain. Todos los derechos
                     reservados.</h4>
                 <img src="{{ asset('img/logo/lecka.png') }}" style="width: 2.5rem; height:2.5rem;">
 

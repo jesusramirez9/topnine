@@ -2,7 +2,7 @@
 
     <div class="bg-gray-100">
         <div class="container  py-8">
-            <div class="pt-4 pl-4 grid grid-cols-1 bg-white md:grid-cols-2 gap-4 md:gap-24 ">
+            <div class="py-4 px-4 grid grid-cols-1 bg-white md:grid-cols-2 gap-4 md:gap-24 ">
                 <div>
                     <!-- Place somewhere in the <body> of your page -->
                     {{-- <div class="md:mt-0 mb-3">
@@ -70,7 +70,7 @@
                             </template>
                         </ul>
                 
-                        <div class="w-full bg-white p-4 text-center  border">
+                        <div class="w-full bg-white p-4 text-left  border">
                             <div x-show="activeTab===0"><p class="text-justify">{!! $product->description !!}</p></div>
                             <div x-show="activeTab===1"> <p class="text-justify"> {!! $product->specification !!}</p></div>
                         

@@ -30,15 +30,15 @@
         </div>
         <div class="flex-1">
             <div class="itemcolbtnweb">
-                <x-button wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem"
+                <x-button wire:click="addItem"  wire:loading.attr="disabled" wire:target="addItem"
                     x-bind:disabled="!$wire.quantity" color="orange" class="w-full">
-                    Reservar Tour
+                    Realizar compra
                 </x-button>
             </div>
             <div class="itemcolorbtn">
                 <x-button wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem"
                     x-bind:disabled="!$wire.quantity" color="orange" class="w-full">
-                    Reservar
+                    Comprar
                 </x-button>
             </div>
 
@@ -50,4 +50,21 @@
         <p class=" text-gray-300 font-semibold">Categoría: <span class="uppercase"> {{$product->subcategory->name}}</span> </p> 
   
       </div>
+      <x-jet-dialog-modal wire:model="open_edit">
+        <div class="modalPublicidad">
+            <x-slot name="title">
+            </x-slot>
+            <x-slot name="content">
+                <div class="slide_rlg">
+                    @livewire('modal-cart')
+                </div>
+
+            </x-slot>
+            <x-slot name="footer">
+                <x-jet-button wire:click="$set('open_edit', false)" class="mr-4">
+                    Continuar viendo
+                </x-jet-button>
+            </x-slot>
+        </div>
+    </x-jet-dialog-modal>
 </div>

@@ -55,7 +55,7 @@
                     </x-jet-label>
                     <x-jet-label>
                         <input wire:model="status" type="radio" name="status" value="4" class="mr-2" />
-                        RESERVADO
+                        ENTREGADO
                     </x-jet-label>
                     <x-jet-label>
                         <input wire:model="status" type="radio" name="status" value="5" class="mr-2" />

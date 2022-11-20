@@ -8,7 +8,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 xl:gap-8 ">
         <div class="text-center btn_filter_rp">
-            <button class="bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-white show-modal">
+            <button class="green_top hover:green_top px-3 py-1 rounded text-white show-modal">
                 Filtrar
             </button>
         </div>

@@ -12,6 +12,7 @@ class AddCartItemColor extends Component
     public $product, $colors;
     public $color_id = "";
     public $qty = 1;
+    public $open_edit = false;
     public $quantity = 0;
     public $options = [
         'size_id' => null
@@ -47,11 +48,16 @@ class AddCartItemColor extends Component
         ]);
 
         $this->quantity = qty_available($this->product->id, $this->color_id);
+        $this->open_edit = true;
         $this->alert('success', 'Producto agregado');
         $this->reset('qty');
+        $this->emitTo('modal-cart','render');
         $this->emitTo('dropdown-cart','render');
     }
+    public function cerrar(){
+        $this->open_edit = false;
 
+    }
     public function render()
     {
         return view('livewire.add-cart-item-color');

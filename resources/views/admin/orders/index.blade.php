@@ -27,7 +27,7 @@
                 <p class="text-center text-2xl">
                     {{ $entregado }}
                 </p>
-                <p class="uppercase text-center">Reservado</p>
+                <p class="uppercase text-center">Entregado</p>
                 <p class="text-center text-2xl mt-2">
                     <i class="fas fa-check-circle"></i>
                 </p>
@@ -118,7 +118,7 @@
         @else
             <div class="bg-white  rounded-lg px-12 shadow-lg py-8 mt-12 text-gray-700">
                 <span class="font-bold text-lg">
-                    No existe Registro de reservas
+                    No existe Registro de compras
                 </span>
             </div>
         @endif

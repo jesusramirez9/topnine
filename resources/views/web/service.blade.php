@@ -1,6 +1,6 @@
 <x-app-layout>
     
-    <div class="my-16">
+    <div class="pt-16">
         @livewire('show-service')
 
     </div>
