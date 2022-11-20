@@ -90,7 +90,7 @@ class CreateProduct extends Component
         if ($this->subcategory_id) {
             if (!$this->SubCategory->color && !$this->SubCategory->size) {
                 $product->quantity = $this->quantity;
-
+                
             }
         }
         $product->save();

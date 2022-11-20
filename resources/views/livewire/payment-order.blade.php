@@ -2,18 +2,18 @@
     @php
         require_once base_path('/vendor/autoload.php');
         
-        Lyra\Client::setDefaultUsername('53245831');
-        Lyra\Client::setDefaultPassword('testpassword_rMMFIrLkKZi0SGaxj6yHM2Qwk1yXS33epAfDAWiVEY8tE');
+        Lyra\Client::setDefaultUsername('97475328');
+        Lyra\Client::setDefaultPassword('testpassword_57D3zNe8v1yHJ4JyxsWdQpk3bOLCXDjlGbnNy985AhSD2');
         Lyra\Client::setDefaultEndpoint('https://api.micuentaweb.pe');
-        Lyra\Client::setDefaultPublicKey('53245831:testpublickey_wxw0RQ0z0huOBb8VoecTvVIMiJbdVLQhtAXmEv3MdNtfC');
+        Lyra\Client::setDefaultPublicKey('97475328:testpublickey_t98Lu0jqg3XAaME4769MHaMhX5vUap38ijZ4zQ85d78Sw');
         
-        Lyra\Client::setDefaultSHA256Key('fBmPcKxYAStyHYWT6qLsKjv0ekto5maeyUEDGkJZtQ8L3');
+        Lyra\Client::setDefaultSHA256Key('DnjJTV6w4AalS1EqqhHRqy5NIxZ9R5ubeIVxlfmKgjgkq');
         $client = new Lyra\Client();
         
         $store = [
             'amount' => $order->total * 100,
             'currency' => 'PEN',
-            'orderId' => uniqid('MyOrderId'),
+            'orderId' => uniqid( $order->id.'-' ),
             'customer' => [
                 'email' => auth()->user()->email,
             ],

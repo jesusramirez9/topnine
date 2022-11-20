@@ -81,7 +81,7 @@
                 <ul class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4  gap-6 mx-6 md:mx-0">
                     @forelse ($products as $product)
                         <li class="  ">
-                            <article class="border-2 overflow-hidden bg-white rounded-xl zoomcatalg ">
+                            <article class=" overflow-hidden bg-white rounded-xl zoomcatalg ">
 
                                 <a href="{{ route('products.show', $product) }}">
                                     <figure class="relative">
@@ -108,26 +108,26 @@
 
                                     </figure>
                                     <div class="py-2 px-2">
-                                        <p class="text-gray-400 font-medium text-xs text-center uppercase">
+                                        <p class="text-gray-400 font-medium text-xs  uppercase">
                                             {{ $product->subcategory->name }}</p>
 
                                         <h1
-                                            class="text-lg  text-center font-semibold scrollflow -slide-bottom -opacity">
+                                            class="text-base  text-left font-semibold scrollflow -slide-bottom -opacity">
 
-                                            {{ Str::limit($product->name, 40, '...') }}
+                                            {{ Str::limit($product->name, 30, '...') }}
 
                                         </h1>
-                                        <p class="font-bold text-center  scrollflow -slide-bottom -opacity">
-                                            S/ {{ $product->price }}</p>
+                                        <p class="font-bold text-left  scrollflow -slide-bottom -opacity">
+                                          PEN  s/ {{ $product->price }}</p>
                                            
                                         @if ($product->offer != 0)
-                                        <p class=" text-gray-400 line-through text-center">s/ {{ $product->offer }}
-                                        </p>
+                                        <p class="text-xs text-gray-400">Precio normal: <span class=" text-gray-400 line-through text-center">s/ {{ $product->offer }}
+                                        </span></p>
                                         @else
                                         @endif
                                         <div class="flex justify-center items-center py-4">
                                             <button
-                                            class="text-white w-full font-medium text-sm bg-orange-600 hover:bg-orange-500 px-5 py-4 rounded-lg"><i
+                                            class="text-white w-full font-medium text-sm bg-orange-600 hover:bg-orange-500 px-5 py-2 rounded-sm"><i
                                             class="fa-solid text-white     fa-magnifying-glass mr-2"></i>Ver producto</button>
                                         </div>
 

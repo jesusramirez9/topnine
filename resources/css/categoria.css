@@ -204,7 +204,7 @@
     .zoomcatalg:hover{
         box-shadow: 4px 5px 6px 0px #e3dddd;
     transition: .3s;
-    transform: scale(1.05);
+    transform: scale(1.01);
     }
     .category_filter_rp{
         display: none;
