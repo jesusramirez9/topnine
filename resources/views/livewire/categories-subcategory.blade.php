@@ -1,4 +1,8 @@
 <div>
+    @push('link')
+    <link rel="stylesheet" type="text/css" href="{{asset('css/slick.css')}}"/>
+
+    @endpush
     <div class="">
         <div class="grid grid-cols-12  relative rounded-lg">
             <div class="col-span-3 ">
@@ -40,27 +44,294 @@
             <div class="col-span-9  rounded-lg px-4">
                 <div class="flex space-x-4 lg:space-x-12  justify-center bg-white py-3 rounded-lg">
                     <div>
-                        <p>Pagos seguros y fiables</p>
+                        <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Pagos seguros y fiables</p>
                     </div>
                     <div>
-                        <p>Garantía de reembolso</p>
+                        <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Garantía de reembolso</p>
                     </div>
                     <div>
-                        <p>Servicio de atención al cliente 24/7</p>
+                        <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Servicio de atención al cliente 24/7</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-12 gap-4 mt-4">
                     <div class="col-span-4">
-                        <div class="bg-red-400 rounded-lg px-2 py-3">
+                        <div class="bg-red-400 rounded-lg px-4 py-6">
+                            <div class="py-6"> 
+                                
                             <p>¡Bienvenidos a Topnine!</p>
                             <p>Promociones y ofertas</p>
+                            </div>
+                            <div class="rounded-xl">
+                                <div class="promocion rounded-xl">
+                                    <div class="bg-white rounded-lg ">
+                                        <div class="grid grid-cols-2 gap-3">
+                                            <div>
+                                                <img src="{{asset('imgz/catalogo/cat3.jpg')}}" alt="">
+                                            </div>
+                                            <div>
+                                                <img src="{{asset('imgz/catalogo/cat3.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-3 mt-3">
+                                            <div>
+                                                <img src="{{asset('imgz/catalogo/cat3.jpg')}}" alt="">
+                                            </div>
+                                            <div>
+                                                <img src="{{asset('imgz/catalogo/cat3.jpg')}}" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <img src="{{asset('imgz/catalogo/cat3.jpg')}}" alt="">
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                     <div class="col-span-8">
-
+                        <div class= "rounded-lg w-full">
+                            <div class="glider-contain ">
+                                <div class="bg_promo">
+                                            <div class="overflow-hidden rounded-lg">
+                                                <figure class="py-2  ">
+                                                        <img class="h-36 w-full object-cover object-center"
+                                                            src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
+                                                            alt="">
+                                                    
+                                                </figure>
+                                                
+                                            </div>
+                                            <div class="overflow-hidden rounded-lg">
+                                                <figure class="py-2  ">
+                                                        <img class="h-36 w-full object-cover object-center"
+                                                            src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
+                                                            alt="">
+                                                    
+                                                </figure>
+                                                
+                                            </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white mt-2 rounded-lg py-4  w-full">
+                            <p class="px-4  text-black font-extrabold">Super <span class="text-red-400 ">Ofertas</span></p>
+                            <p class="px-4 pb-1 text-sm text-gra">Productos top a precios increibles</p>
+                            <div class="glider-contain ">
+                                <div class="prelacionado">
+                                    @foreach ($subcategories as $subcategory)
+                                        @foreach ($subcategory->products as $product)
+                                            <div class="mx-4 border-2 overflow-hidden border-white  bg-white">
+                                                <figure class="py-2 px-2 ">
+                
+                                                    @if ($product->images->count())
+                                                        <img class="h-36 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+                                                            src="{{ Storage::url($product->images->first()->url) }}" alt="">
+                                                    @else
+                                                        <img class="h-36 w-full object-cover object-center"
+                                                            src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
+                                                            alt="">
+                                                    @endif
+                
+                                                </figure>
+                                                <a href="{{ route('products.show', $product) }}">
+                                                    <div class="py-2 px-2 ">
+                                                        {{-- <h1 class="text-normal font-medium  py-1 scrollflow -slide-bottom -opacity">
+                                                            {{ Str::limit($product->name, 40, '...') }}
+                                                        </h1> --}}
+                                                        <div class="items-center">
+                                                            @if ($product->offer != 0)
+                                                               <p class="text-xs text-gray-400">Precio normal: <span class=" text-gray-400 line-through">s/{{ $product->offer }}
+                                                                </span></p>
+                                                            @else
+                                                            @endif
+                                                            <p class="font-bold text-sm scrollflow -slide-bottom -opacity">
+                                                                S/ {{ $product->price }}</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        @endforeach
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+   @push('script')
+   <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
+
+   <script>
+        $('.promocion').slick({
+             fade: true,
+        });
+   </script>
+   <script>
+    // Can also be used with $(document).ready()
+    $(document).ready(function() {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            controlNav: "thumbnails"
+        });
+    });
+
+    new Glider(document.querySelector('.prelacionado'), {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        },
+        responsive: [{
+                // screens greater than >= 775px
+                breakpoint: 768,
+                settings: {
+                    // Set to `auto` and provide item width to adjust to viewport
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    itemWidth: 150,
+                    duration: 1.5
+                }
+            },
+
+            {
+                // screens greater than >= 1024px
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 1.5,
+                    arrows: {
+                        prev: '.glider-prev',
+                        next: '.glider-next'
+                    },
+
+                }
+            },
+            {
+                // screens greater than >= 1024px
+                breakpoint: 1250,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 1.5,
+                    arrows: {
+                        prev: '.glider-prev',
+                        next: '.glider-next'
+                    },
+
+                }
+            },
+            {
+                // screens greater than >= 1024px
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 0.25,
+                    arrows: false
+                }
+            },
+            {
+                // screens greater than >= 1024px
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 0.25,
+                    arrows: false
+                }
+            }
+
+        ]
+    });
+    new Glider(document.querySelector('.bg_promo'), {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        draggable: true,
+        dots: '.dots',
+        arrows: {
+            prev: '.glider-prev',
+            next: '.glider-next'
+        },
+        responsive: [{
+                // screens greater than >= 775px
+                breakpoint: 768,
+                settings: {
+                    // Set to `auto` and provide item width to adjust to viewport
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 1.5
+                }
+            },
+
+            {
+                // screens greater than >= 1024px
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 1.5,
+                    arrows: {
+                        prev: '.glider-prev',
+                        next: '.glider-next'
+                    },
+
+                }
+            },
+            {
+                // screens greater than >= 1024px
+                breakpoint: 1250,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 1.5,
+                    arrows: {
+                        prev: '.glider-prev',
+                        next: '.glider-next'
+                    },
+
+                }
+            },
+            {
+                // screens greater than >= 1024px
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 0.25,
+                    arrows: false
+                }
+            },
+            {
+                // screens greater than >= 1024px
+                breakpoint: 320,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    itemWidth: 150,
+                    duration: 0.25,
+                    arrows: false
+                }
+            }
+
+        ]
+    });
+</script>
+   @endpush
+    
 </div>

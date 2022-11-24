@@ -67,6 +67,38 @@
                         </ul>
                     </div>
                 </div>
+                <div class="accordion-container">
+                    <a class="accordion-titulo open">Colores<span class="toggle-icon"></span></a>
+                    <div class="accordion-content block">
+                        <ul class="grid grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-2 ">
+                            @foreach ($colors_product as $coloritem)
+                                <li class=" py-2 text-sm rronmaa font-semibold">
+                                    
+                                    <a class="cursor-pointer  hover:text-orange-500 capitalize {{ $color == $coloritem->id ? 'text-orange-500 font-semibold' : '' }} "
+                                        wire:click="$set('color','{{ $coloritem->id }}')">
+                                        
+                                        <span class="ml-2 text-gray-700 capitalize bg_clds" style="background-color:{{$coloritem->name}} ">
+                            
+                                        </span>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div> 
+                <div class="accordion-container">
+                    <a class="accordion-titulo open">Tallas<span class="toggle-icon"></span></a>
+                    <div class="accordion-content block">
+                        <ul class="divide-y divide-gray-200">
+                            @foreach ($talla_product as $itemtalla)
+                                <li class="py-2 text-sm rronmaa font-semibold">
+                                    <a class="cursor-pointer hover:text-orange-500 capitalize {{ $talla == $itemtalla->name ? 'text-orange-500 font-semibold' : '' }} "
+                                        wire:click="$set('talla','{{ $itemtalla->name }}')">{{ $itemtalla->name }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div> 
             </div>
 
 
@@ -214,7 +246,7 @@
                                 </ul>
                             </div>
                         </div>
-                        {{-- <div class="accordion-container">
+                       <div class="accordion-container">
                             <a class="accordion-titulo open">Colores<span class="toggle-icon"></span></a>
                             <div class="accordion-content block">
                                 <ul class="grid grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-2 ">
@@ -232,8 +264,8 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        </div> --}}
-                        {{-- <div class="accordion-container">
+                        </div> 
+                        <div class="accordion-container">
                             <a class="accordion-titulo open">Tallas<span class="toggle-icon"></span></a>
                             <div class="accordion-content block">
                                 <ul class="divide-y divide-gray-200">
@@ -245,7 +277,7 @@
                                     @endforeach
                                 </ul>
                             </div>
-                        </div> --}}
+                        </div> 
                     </div>
                 </aside>
             </div>

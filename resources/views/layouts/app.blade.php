@@ -23,7 +23,8 @@
     <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css') }}">
     {{-- Animate css --}}
     <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}" />
-   
+    {{-- Slick --}}
+
     @stack('link')
     @livewireStyles
     <script src="{{asset('js/sweetalert2_11.js')}}"></script>
@@ -137,7 +138,9 @@
     @stack('modals')
 
     @livewireScripts
-    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
     <script>
         function dropdown() {
             return {
