@@ -1,0 +1,31 @@
+.bgfondo{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bg_orange{
+    background-color: #FF6000;
+}
+
+.imgbg{
+    width: 28rem;
+}
+
+.bg_pricipal{
+
+    background-color: #04214D;
+}
+
+header.abajo{
+    background: #fff;
+    position: fixed;
+    top: 0;
+    transition: 0.7s;
+    border-bottom: 2px solid rgb(219, 212, 212);
+}
+
+.text-center-special{
+    text-align: -webkit-center;
+}
+ 
