@@ -29,53 +29,11 @@
                 @else
                 @endif
             @endforeach
-
         </div>
-
-        {{-- <div class="my-6 md:my-14">
-            <p class="text-center text-xl md:text-3xl tracking-wide">Es hora de ponerte en marcha</p>
-        </div>
-
-        <div class="my-10 md:my-14">
-            <div class="grid grid-cols-2 justify-center items-center bg-orange-800">
-                <div class="bg-orange-800 text-white">
-                    <h1 class="mx-28 text-3xl">We produce and sell the best sports shoes in the US. But we do not
-                        restrict
-                        our models to be just pragmatic.</h1>
-                    <p class="mx-28 text-2xl mt-4">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eveniet molestias incidunt
-                        blanditiis!
-                        Error dolores, tenetur harum, vitae ullam officia obcaecati sit eveniet repellendus accusamus,
-                        autem
-                        corrupti at nostrum blanditiis!
-                    </p>
-                    <div class="mx-28 mt-8">
-                        <button
-                            class=" border-2 border-white px-6 py-2 text-xl hover:bg-white hover:border-orange-800 cursor-pointer hover:text-purple-800 hover:ease-out hover:transform hover:font-bold">
-                            Conocenos
-                        </button>
-                    </div>
-                </div>
-                <div class="w-full h-contacto bg-cover bg-bottom object-cover object-center"
-                    style="background-image: url('{{ asset('imgz/home/image44.jpg') }}'); background-repeat: no-repeat;">
-                </div>
-            </div>
-        </div> --}}
-
-        
     </div>
-
-
-
-
      <div>
     @livewire('show-flayer')
 </div>
-
-
-
-
-
 
     @push('script')
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -136,6 +94,9 @@
                 });
 
             });
+        </script>
+        <script>
+            
         </script>
         
     @endpush

@@ -19,15 +19,15 @@
                 <div class="text-black hidden md:block">
                     @livewire('search')
                     <div class="flex justify-center items-center  text-gray-600 font-semibold">
-                        <div class=" grid grid-cols-1 md:py-3 text-sm gap-4 text-center md:flex items-center">
+                        <div class=" grid grid-cols-1 md:py-3 text-xs xl:text-sm gap-4 text-center md:flex items-center">
                                     <div class="mr-4">
-                                        <p><i class="far fa-envelope mr-4"></i>ventas@trepstom.com</p>
+                                        <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@trepstom.com</p>
                                     </div>
                                     <div class="mr-4 hidden md:block border-r-2 border-l-2 border-x-white">
-                                        <p class="px-4"><i class="fab fa-whatsapp mr-4"></i>998 905 385</p>
+                                        <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>998 905 385</p>
                                     </div>
                                     <div class="mr-4 hidden md:block">
-                                        <p><i class="fas fa-map-marker-alt  mr-4"></i>Direccion Trepstom</p>
+                                        <p><i class="fas fa-map-marker-alt  mr-1 xl:mr-4"></i>Direccion Trepstom</p>
                                     </div>
                         </div>
                     </div>

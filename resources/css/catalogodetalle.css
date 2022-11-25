@@ -45,26 +45,27 @@
     padding: 1.5rem 2rem;
 }
 .slick-prev{  
-    color: transparent;
     position: absolute;
     z-index: 1;
-    left: -7.2%;
-    top: 50%;
-    background-image: url('../../public/images/catalogoproductos/Arrow2.png');
-    background-repeat: no-repeat;
-    font-size: 1.3rem;
-    transform: rotate(180deg);
+    left: 1.2%;
+    top: 40%;
+    font-size: 2rem;
 }
 .slick-next{
     position: absolute;
     z-index: 1;
-    right: -25px;
-    top: 50%;
-    color: transparent;
-    background-image: url('../../public/images/catalogoproductos/Arrow2.png');
-    background-repeat: no-repeat;
-    font-size: 1.3rem;
+    right: 1.5px;
+    top: 40%;
+    font-size: 2rem;
 }
+.slidehomenext{
+    right: 2px !important;
+    left: auto !important;
+}
+.slidehomeprev{
+    left: auto !important;
+}
+
 .glid-img2{
     background-repeat: no-repeat !important;
     /* background-image: url(/images/Arrow2.png?e3c9132…) !important; */
