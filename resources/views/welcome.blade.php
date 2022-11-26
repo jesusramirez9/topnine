@@ -49,6 +49,11 @@
             });
         </script>
         <script>
+            $(document).ready(function() {
+                $('.slide_rlg').slick();
+            });
+        </script>
+        <script>
             livewire.on('glider', function(id) {
 
                 new Glider(document.querySelector('.glider-' + id), {

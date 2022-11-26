@@ -177,6 +177,9 @@
         <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
 
         <script>
+            $(document).ready(function() {
+                $('.slide_rlg').slick();
+            });
             $('.promocion').slick({
                 fade: true,
             });

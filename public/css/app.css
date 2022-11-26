@@ -4087,10 +4087,6 @@ background-color: #FFF7F4;
 	color: rgba(96, 165, 250, var(--tw-text-opacity));
 }.hover\:underline:hover{
 	text-decoration: underline;
-}.hover\:opacity-20:hover{
-	opacity: 0.2;
-}.hover\:opacity-60:hover{
-	opacity: 0.6;
 }.hover\:opacity-70:hover{
 	opacity: 0.7;
 }.focus\:z-10:focus{
@@ -4491,10 +4487,10 @@ background-color: #FFF7F4;
 	}.xl\:my-20{
 		margin-top: 5rem;
 		margin-bottom: 5rem;
-	}.xl\:mt-14{
-		margin-top: 3.5rem;
 	}.xl\:mr-4{
 		margin-right: 1rem;
+	}.xl\:mt-14{
+		margin-top: 3.5rem;
 	}.xl\:inline{
 		display: inline;
 	}.xl\:h-36{
@@ -4506,20 +4502,20 @@ background-color: #FFF7F4;
 	}.xl\:py-20{
 		padding-top: 5rem;
 		padding-bottom: 5rem;
+	}.xl\:text-sm{
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}.xl\:text-base{
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}.xl\:text-lg{
+		font-size: 1.125rem;
+		line-height: 1.75rem;
 	}.xl\:text-2xl{
 		font-size: 1.5rem;
 		line-height: 2rem;
 	}.xl\:text-3xl{
 		font-size: 1.875rem;
 		line-height: 2.25rem;
-	}.xl\:text-base{
-		font-size: 1rem;
-		line-height: 1.5rem;
-	}.xl\:text-sm{
-		font-size: 0.875rem;
-		line-height: 1.25rem;
-	}.xl\:text-lg{
-		font-size: 1.125rem;
-		line-height: 1.75rem;
 	}
 }

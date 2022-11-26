@@ -31,7 +31,7 @@
     </x-jet-dialog-modal>
 
     @push('script')
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
         <script>
           
             $(document).ready(function() {
