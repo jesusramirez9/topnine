@@ -7,7 +7,7 @@
             <x-slot name="title">
             </x-slot>
             <x-slot name="content">
-                <div class="slide_rlg">
+                <div class="flayer">
                     @foreach ($posts as $item)
                         <div>
                             <div class="pb-2 text-gray-700 text-lg uppercase font-semibold tracking-wider">
@@ -35,7 +35,7 @@
         <script>
           
             $(document).ready(function() {
-                $('.slide_rlg').slick();
+                $('.flayer').slick();
             });
         </script>
     @endpush

@@ -7,7 +7,7 @@
             <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option>
         @endforeach
     </select>
-    <p class="text-gray-700 my-4">
+    <p class="text-gray-700 my-4 text-sm lg:text-base">
         <span class="text-lg font-semibold">Stock disponible: </span>
         @if ($quantity)
             {{ $quantity }}
@@ -30,7 +30,7 @@
         </div>
         <div class="flex-1">
             <div class="itemcolbtnweb">
-                <x-button wire:click="addItem"  wire:loading.attr="disabled" wire:target="addItem"
+                <x-button wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem"
                     x-bind:disabled="!$wire.quantity" color="orange" class="w-full">
                     Realizar compra
                 </x-button>
@@ -46,11 +46,13 @@
         </div>
     </div>
     <div>
-        <p class="uppercase text-gray-300 font-semibold">SKU:  {{$product->code}}</p> 
-        <p class=" text-gray-300 font-semibold">Categoría: <span class="uppercase"> {{$product->subcategory->name}}</span> </p> 
-  
-      </div>
-      <x-jet-dialog-modal wire:model="open_edit">
+        <div class="mt-4 text-xs lg:text-sm">
+            <p class="uppercase text-gray-300 font-semibold">Código: {{ $product->code }}</p>
+            <p class=" text-gray-300 font-semibold">Categoría: <span class="uppercase">
+                    {{ $product->subcategory->name }}</span> </p>
+        </div>
+    </div>
+    <x-jet-dialog-modal wire:model="open_edit">
         <div class="modalPublicidad">
             <x-slot name="title">
             </x-slot>

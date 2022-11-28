@@ -116,9 +116,13 @@
        
     </div>
     <div class="mt-8">
-      <p class="uppercase text-gray-300 font-semibold">SKU:  {{$product->code}}</p> 
-      <p class=" text-gray-300 font-semibold">Categoría: <span class="uppercase"> {{$product->subcategory->name}}</span> </p> 
-
+        <div>
+            <div class="mt-4 text-xs lg:text-sm">
+                <p class="uppercase text-gray-300 font-semibold">Código: {{ $product->code }}</p>
+                <p class=" text-gray-300 font-semibold">Categoría: <span class="uppercase">
+                        {{ $product->subcategory->name }}</span> </p>
+            </div>
+        </div>
     </div>
     <x-jet-dialog-modal wire:model="open_edit">
         <div class="modalPublicidad">

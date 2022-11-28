@@ -189,12 +189,7 @@
         </script>
         <script>
             
-            $(document).ready(function() {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            controlNav: "thumbnails"
-        });
-    });
+           
             new Glider(document.querySelector('.bgpromo'), {
                 slidesToShow: 3,
                 slidesToScroll: 1,
@@ -237,7 +232,21 @@
 
                         }
                     },
-                
+                    {
+                        // screens greater than >= 1024px
+                        breakpoint: 400,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            itemWidth: 150,
+                            duration: 1.5,
+                            arrows: {
+                                prev: '.glider-prev',
+                                next: '.glider-next'
+                            },
+
+                        }
+                    },
 
                 ]
             });

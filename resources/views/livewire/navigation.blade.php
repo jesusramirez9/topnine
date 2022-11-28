@@ -18,7 +18,7 @@
                 {{--  --}}
                 <div class="text-black hidden md:block">
                     @livewire('search')
-                    <div class="flex justify-center items-center  text-gray-600 font-semibold">
+                    <div class="flex justify-center items-center  text-gray-600 font-semibold d-none lg:block">
                         <div class=" grid grid-cols-1 md:py-3 text-xs xl:text-sm gap-4 text-center md:flex items-center">
                                     <div class="mr-4">
                                         <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@trepstom.com</p>

@@ -11,7 +11,9 @@
 .clli li {
     color: #fba65b;
 }
-
+.d-none{
+    display: none;
+}
 .textli {
     color: #515151;
     font-weight: 600;

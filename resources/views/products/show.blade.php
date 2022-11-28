@@ -24,17 +24,17 @@
                     {{-- <p class="text-base mb-4 mx-6 md:mx-0">Calificación: {{ round($product->reviews->avg('rating'), 1) }}
                     <i class="fas fa-star text-yellow-400 "></i>
                           </p> --}}
-                    <p class="mb-4 uppercase mx-6 md:mx-0"><span class="text-gray-500 font-semibold">
+                    <p class="mb-4 uppercase md:mx-0"><span class="text-gray-500 font-semibold">
                             {{ $product->subcategory->name }}</span> </p>
 
-                    <h1 class=" font-bold text-3xl mx-6 md:mx-0"> {{ $product->name }}</h1>
-                    <div class="flex mt-4 mx-6 md:mx-0">
+                    <h1 class=" font-bold text-xl lg:text-3xl md:mx-0"> {{ $product->name }}</h1>
+                    <div class="flex mt-4 md:mx-0">
 
                         <a class="underline hover:text-orange-600" href="#resña">{{ count($product->reviews) }}
                             comentarios
                             de nuestros clientes</a>
                     </div>
-                    <div class="flex items-center mx-6 md:mx-0">
+                    <div class="flex items-center md:mx-0">
                         <p class="text-2xl my-4 font-semibold "><span class="text-xs">S/</span>
                             {{ $product->price }}</p>
                         <div class="mx-4">
@@ -53,8 +53,8 @@
                         @livewire('add-cart-item', ['product' => $product])
                     @endif
 
-                    <div x-show="activeTab===0"><p class="text-justify">{!! $product->description !!}</p></div>
-                            <div x-show="activeTab===1"> <p class="text-justify"> {!! $product->specification !!}</p></div>
+                    {{-- <div x-show="activeTab===0"><p class="text-justify">{!! $product->description !!}</p></div>
+                            <div x-show="activeTab===1"> <p class="text-justify"> {!! $product->specification !!}</p></div> --}}
                 </div>
             </div>
 
@@ -122,6 +122,14 @@
     </div>
     @push('script')
     <script>
+        $(document).ready(function() {
+               $('.flexslider').flexslider({
+                   animation: "slide",
+                   controlNav: "thumbnails"
+               });
+           });
+   </script>
+    <script>
         function setup() {
         return {
           activeTab: 0,
@@ -133,6 +141,7 @@
         };
       };
     </script>
+  
     @endpush
 
 

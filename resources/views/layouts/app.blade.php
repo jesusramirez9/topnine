@@ -55,7 +55,7 @@
         @livewire('footer')
 
 
-        <div class="bg-gradient  mt-8 py-2 posfixd foot_sharp_usr ">
+        <div class="bg-gradient  mt-8 py-2 posfixd foot_sharp_usr z-30">
             <div class="container flex justify-between">
 
                 <div class="mx-4 ">
@@ -164,8 +164,9 @@
             }
         }
     </script>
-    @stack('script')
+    
     <script src="{{ asset('plugin/scrollflow/eskju.jquery.scrollflow.min.js') }}"></script>
+    @stack('script')
 
 </body>
 

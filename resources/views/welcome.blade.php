@@ -7,7 +7,7 @@
     <div class="bg-gray-100">
        
      
-        <div class="container py-8">
+        <div class="container py-8 d-none md:block">
             @livewire('categories-subcategory')
         </div>
 
@@ -49,9 +49,7 @@
             });
         </script>
         <script>
-            $(document).ready(function() {
-                $('.slide_rlg').slick();
-            });
+            
         </script>
         <script>
             livewire.on('glider', function(id) {
@@ -66,7 +64,15 @@
                         prev: '.glider-' + id + '~ .glider-prev',
                         next: '.glider-' + id + '~ .glider-next'
                     },
-                    responsive: [{
+                    responsive: [
+                        {
+                            breakpoint: 375,
+                            settings: {
+                                slidesToScroll: 3,
+                                slidesToShow: 3,
+                            }
+                        },
+                        {
                             breakpoint: 640,
                             settings: {
                                 slidesToScroll: 2.5,
@@ -99,9 +105,6 @@
                 });
 
             });
-        </script>
-        <script>
-            
         </script>
         
     @endpush

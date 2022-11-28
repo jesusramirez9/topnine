@@ -1,7 +1,7 @@
 <div>
     <div class="card">
         <div class="card-body shadow-xl px-4 py-4">
-            <h4 class="my-6 font-medium text-purple-700 text-lg">Valoraciones</h4>
+            <h4 class="my-3 font-medium text-purple-700 text-lg">Valoraciones</h4>
             @auth
                 <div>
                     <article>
@@ -63,12 +63,12 @@
                 </div>
                 @else
 
-            <p class="text-gray-800 mt-8 mb-4"> Para comentar y dar valoración a algunos de nuestros servicios, deberás registrarte a nuestra plataforma</p>
+            <p class="text-gray-800 mt-3 mb-4"> Para comentar y dar valoración a algunos de nuestros servicios, deberás registrarte a nuestra plataforma</p>
             <a href="{{route('register')}}" class="bg-red-400 text-white font-bold py-2 px-2 rounded-lg">Regístrate aqui</a>
 
 
             @endauth
-            <p class="text-gray-800 mt-8 mb-4">{{ $product->reviews->count() }} Valoraciones</p>
+            <p class="text-gray-800 mt-3 mb-4">{{ $product->reviews->count() }} Valoraciones</p>
             <div class="contenspace overflow-auto">
                
                 @foreach ($product->reviews as $review)
