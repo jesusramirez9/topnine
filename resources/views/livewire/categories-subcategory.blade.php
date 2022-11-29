@@ -5,7 +5,7 @@
     <div class="">
         <div class="grid grid-cols-12  relative rounded-lg">
             <div class="col-span-3 ">
-                <div x-on:click.away="close()" class="grid grid-cols-1 h-96  ">
+                <div x-on:click.away="close()" class="grid grid-cols-1  h-full ">
                     <ul class="bg-white rounded-lg">
                         <div
                             class="flex pl-6 items-center py-2 bg-gray-100 rounded-t-lg border-t-2 border-l-2 border-r-2">
@@ -48,7 +48,7 @@
                         <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Pagos seguros y fiables</p>
                     </div>
                     <div>
-                        <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Garantía de reembolso</p>
+                        <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Garantía de productos</p>
                     </div>
                     <div>
                         <p><i class="fa-sharp fa-solid fa-lock mx-2"></i>Servicio de atención al cliente 24/7</p>
@@ -56,8 +56,8 @@
                 </div>
                 <div class="grid grid-cols-12 gap-4 mt-4">
                     <div class="col-span-4">
-                        <div class="bg-red-400 rounded-lg px-4 py-6">
-                            <div class="py-6 text-xs xl:text-lg">
+                        <div class=" rounded-lg px-4 py-6 bg-cover bg-center h-full" style="background-image: url({{asset('home/fondo.webp')}})">
+                            <div class="py-6 text-xs xl:text-lg text-white font-medium">
 
                                 <p>¡Bienvenidos a Topnine!</p>
                                 <p>Promociones y ofertas</p>
@@ -72,8 +72,6 @@
                                             <div>
                                                 <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
                                             </div>
-                                        </div>
-                                        <div class="grid grid-cols-2 gap-3 mt-3">
                                             <div>
                                                 <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
                                             </div>
@@ -82,12 +80,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div>
-                                        <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
-                                    </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -96,9 +89,9 @@
                             <div class="glider-contain ">
                                 <div class="sliderm">
                                     <div class="overflow-hidden rounded-lg">
-                                        <figure class="py-2  ">
-                                            <img class="lg:h-20 xl:h-36 w-full object-cover object-center"
-                                                src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
+                                        <figure class=" ">
+                                            <img class="lg:h-20 xl:h-36 w-full object-cover object-center rounded-lg"
+                                                src="{{asset('home/slide1.webp')}}"
                                                 alt="">
 
                                         </figure>
@@ -106,8 +99,8 @@
                                     </div>
                                     <div class="overflow-hidden rounded-lg">
                                         <figure class="py-2  ">
-                                            <img class="lg:h-20 xl:h-36 w-full object-cover object-center"
-                                                src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
+                                            <img class="lg:h-20 xl:h-36 w-full object-cover object-center rounded-lg"
+                                                src="{{asset('home/slide2.webp')}}"
                                                 alt="">
 
                                         </figure>

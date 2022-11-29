@@ -1,38 +1,39 @@
 <div>
     <div class="">
         <div class="sliderjss">
-                <div>
-                    <img src="{{ asset('imgz/sliders/slid1.jpg') }}" class="w-full h-20 object-cover object-bottom" alt="">
-                </div>
-          
+            <div>
+                <img src="{{ asset('home/slide3.webp') }}" class="w-full h-20 object-cover object-bottom" alt="">
+            </div>
+
         </div>
     </div>
-    
+
     <div class="bg-white text-gray-700 py-2 md:py-5 hidden md:block">
         <div class=" flex items-center container  justify-between">
             <a href="/" class="">
                 <x-jet-application-mark class="block h-10 md:h-16 w-auto" />
             </a>
-             
+
             <div class="flex-1 mx-8 justify-center">
                 {{--  --}}
                 <div class="text-black hidden md:block">
                     @livewire('search')
                     <div class="flex justify-center items-center  text-gray-600 font-semibold d-none lg:block">
-                        <div class=" grid grid-cols-1 md:py-3 text-xs xl:text-sm gap-4 text-center md:flex items-center">
-                                    <div class="mr-4">
-                                        <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@trepstom.com</p>
-                                    </div>
-                                    <div class="mr-4 hidden md:block border-r-2 border-l-2 border-x-white">
-                                        <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>998 905 385</p>
-                                    </div>
-                                    <div class="mr-4 hidden md:block">
-                                        <p><i class="fas fa-map-marker-alt  mr-1 xl:mr-4"></i>Direccion Trepstom</p>
-                                    </div>
+                        <div
+                            class=" grid grid-cols-1 md:py-3 text-xs xl:text-sm gap-4 text-center md:flex items-center">
+                            <div class="mr-4">
+                                <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@trepstom.com</p>
+                            </div>
+                            <div class="mr-4 hidden md:block border-r-2 border-l-2 border-x-white">
+                                <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>998 905 385</p>
+                            </div>
+                            <div class="mr-4 hidden md:block">
+                                <p><i class="fas fa-map-marker-alt  mr-1 xl:mr-4"></i>Direccion Trepstom</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <div>
@@ -45,8 +46,7 @@
                                     <button
                                         class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                         <img class="h-8 w-8 rounded-full object-cover"
-                                            src="{{ Auth::user()->profile_photo_url }}"
-                                            alt="{{ Auth::user()->name }}" />
+                                            src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                     </button>
 
                                 </x-slot>
@@ -91,20 +91,20 @@
                         @else
                             <x-jet-dropdown align="right" width="48">
 
-                                <x-slot name="trigger" >
+                                <x-slot name="trigger">
                                     <div class="hover:bg-gray-100 hover:rounded-lg">
 
-                                    
-                                    <div class="flex items-center px-2 py-2 rounded-lg">
-                                        <div>
-                                            <i class="fas fa-user-circle  text-3xl cursor-pointer"></i>
-                                        </div>
-                                        <p class="ml-2 cursor-pointer">
-                                            Iniciar sesión 
-                                        </p>
 
+                                        <div class="flex items-center px-2 py-2 rounded-lg">
+                                            <div>
+                                                <i class="fas fa-user-circle  text-3xl cursor-pointer"></i>
+                                            </div>
+                                            <p class="ml-2 cursor-pointer">
+                                                Iniciar sesión
+                                            </p>
+
+                                        </div>
                                     </div>
-                                </div>
                                 </x-slot>
 
                                 <x-slot name="content">
@@ -131,12 +131,14 @@
     </div>
     <header class=" w-full top-0 shadow-xl border-gray-500 border-opacity-20 border-b-2 py-2" style="z-index: 900"
         x-data="dropdown()">
-        
+
         <div class="container flex items-center h-12 justify-between  enlace ">
             <div class="block md:hidden p-4 md:p-0">
-                <x-jet-application-mark class="block h-10 md:h-16 w-auto" />
+                <a href="/">
+                    <x-jet-application-mark class="block h-10 md:h-16 w-auto" />
+                </a>
             </div>
-         
+
             <a :class="{ 'bg-opacity-100 text-orange-500': open }" x-on:click="show()"
                 class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-white bg-opacity-25  cursor-pointer font-semibold h-full">
                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -148,47 +150,35 @@
             </a>
             <div class="flex">
                 <a href="/"
-                class="mx-6  font-normal hover:underline  hidden lg:block  {{ request()->is('/') ? 'active  ' : '' }}">
-                Inicio
-            </a>
+                    class="mx-6  font-normal hover:underline  hidden lg:block  {{ request()->is('/') ? 'active  ' : '' }}">
+                    Inicio
+                </a>
 
-            <a href="{{ route('conocenos') }}"
-                class="mx-6  font-normal  hover:underline  hidden lg:block  {{ request()->is('conocenos') ? 'active     ' : '' }}">
-                Conócenos
-            </a>
-            {{-- <a href="http://127.0.0.1:8000/categories/tours"
+                <a href="{{ route('conocenos') }}"
+                    class="mx-6  font-normal  hover:underline  hidden lg:block  {{ request()->is('conocenos') ? 'active     ' : '' }}">
+                    Conócenos
+                </a>
+                {{-- <a href="http://127.0.0.1:8000/categories/tours"
                 class="mx-6  font-normal hover:underline   hidden md:block  {{ request()->is('categories/*') ? 'active  ' : '' }}">
                 Tours
             </a> --}}
-            <a href="{{ route('servicios') }}"
-                class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('servicios') ? 'active  ' : '' }}">
-                Servicios
-            </a>
-            {{-- <a href="{{ route('noticia.show') }}"
-                class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('noticia') ? 'active ' : '' }}">
-                Galeria
-            </a> --}}
-            {{-- <a href="{{ route('ventamayor') }}"
-                class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('ventas-al-por-mayor') ? 'active ' : '' }}">
-                Tour Privado
-            </a> --}}
-             <a href="{{ route('contacto') }}"
-                class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('contactanos') ? 'active ' : '' }}">
-                Escríbenos
-            </a> 
-            {{-- <a href="{{ route('publicidad') }}"
-                class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('publicidad') ? 'active ' : '' }}">
-                publicidad
-            </a> --}}
+                <a href="{{ route('servicios') }}"
+                    class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('servicios') ? 'active  ' : '' }}">
+                    Servicios
+                </a>
+                <a href="{{ route('contacto') }}"
+                    class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('contactanos') ? 'active ' : '' }}">
+                    Escríbenos
+                </a>
             </div>
             <div class="flex">
                 <a href="#" class="md:mx-6 hidden md:block">
                     <i class="fa-brands fa-facebook-square fa-2x"></i></a>
                 <a href="#" class=" hidden md:block"><img class="w-9 h-9"
                         src="{{ asset('img/iconos/insta.png') }}" alt=""></a>
-    
+
             </div>
-         
+
             {{-- <a href="#" class="md:mx-6">
                 <i class="fa-brands fa-facebook-square fa-2x"></i></a>
             <a href="#" class=""><img class="w-9 h-9" src="{{ asset('img/iconos/insta.png') }}"
@@ -200,41 +190,111 @@
             class="bg-trueGray-700  z-10 bg-opacity-70 w-full absolute hidden">
 
             {{-- menu mobil --}}
-                    
-                <div class="container h-96 mt-2">
-                    <div x-on:click.away="close()"
-                         class="grid grid-cols-4 h-96 relative ">
-                         
-                         <ul class="bg-white pt-6">
-                            @foreach ($categories as $category)
-                                <li class="navigation-link text-trueGray-700 hover:font-bold hover:bg-gray-200 hover:text-black">
-                                    <a href="{{route('categories.show', $category)}}" class="py-2 px-4 text-sm flex items-center">
-        
-                                        {{-- <span class="flex justify-center w-9">
+
+            <div class="md:container h-96 md:mt-2 ">
+                <div x-on:click.away="close()">
+                    <div class="hidden md:block">
+                        <div class="grid grid-cols-4 h-96 relative ">
+
+                            <ul class="bg-white pt-6">
+                                @foreach ($categories as $category)
+                                    <li
+                                        class=" navigation-link text-trueGray-700 hover:font-bold hover:bg-gray-200 hover:text-black">
+                                        <a href="{{ route('categories.show', $category) }}"
+                                            class="py-2 px-4 text-sm flex items-center">
+
+                                            {{-- <span class="flex justify-center w-9">
                                             {!!$category->icon!!}
                                         </span> --}}
-                                        <span class="flex justify-center w-1 bg-orange-500 h-4 mr-2">
-                                            
-                                        </span>
-                                        {{$category->name}}
-                                    </a>
-        
-        
-                                    <div class="navigation-submenu bg-gray-100 absolute w-3/4 h-96 top-0 right-0 hidden">
-                                        <x-navigation-subcategories :category="$category" />
-                                    </div>
-        
-                                </li>
-                            @endforeach
-                        </ul>
-        
-                        <div class="col-span-3 bg-gray-100">
-                            <x-navigation-subcategories :category="$categories->first()" />
+                                            <span class="flex justify-center w-1 bg-orange-500 h-4 mr-2">
+
+                                            </span>
+                                            {{ $category->name }}
+                                        </a>
+
+
+                                        <div
+                                            class="navigation-submenu bg-gray-100 absolute w-3/4 h-96 top-0 right-0 hidden ">
+                                            <x-navigation-subcategories :category="$category" />
+                                        </div>
+
+                                    </li>
+                                @endforeach
+                            </ul>
+
+                            <div class="col-span-3 bg-gray-100 ">
+                                <x-navigation-subcategories :category="$categories->first()" />
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="bg-white md:hidden p-6">
+                        <ul>
+                            <li><a href="/">Inicio</a></li>
+                            <li><a href="{{route('conocenos')}}">Conócenos</a></li>
+                            <li><a href="{{route('servicios')}}">Servicios</a></li>
+                            <li><a href="{{route('contacto')}}">Escríbenos</a></li>
+                        </ul>
+                        <hr class="mt-2">
+                        @auth
 
-           
+                            <div name="trigger">
+
+                                <button
+                                    class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                                    <img class="h-8 w-8 rounded-full object-cover"
+                                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                </button>
+
+                            </div>
+
+                            <div name="content">
+                                <div class="border-t border-gray-100"></div>
+
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                    <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                                this.closest('form').submit();">
+                                        {{ __('Log Out') }}
+                                    </a>
+                                </form>
+                            </div>
+                        @else
+                            <div align="right" width="48">
+
+                                <div name="trigger">
+                                    <div class="hover:bg-gray-100 hover:rounded-lg">
+
+
+                                        <div class="">
+                                            <div class="flex items-center px-2 py-2 rounded-lg">
+                                                <div>
+                                                    <i class="fas fa-user-circle  text-3xl cursor-pointer"></i>
+                                                </div>
+                                                <a href="{{ route('login') }}" class="ml-2 cursor-pointer">
+                                                    Iniciar sesión
+                                                </a>
+                                            </div>
+                                            <div class="text-left  px-2">
+                                                <a href="{{ route('register') }}">
+                                                    Regístrate
+                                                </a>
+                                            </div>
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        @endauth
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 

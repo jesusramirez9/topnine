@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->string('title');
             $table->text('description');
+            $table->text('nrowsp');
             $table->string('image');
             $table->enum('status',[Service::BORRADOR, Service::PUBLICADO])->default(Service::BORRADOR);
             $table->timestamps();

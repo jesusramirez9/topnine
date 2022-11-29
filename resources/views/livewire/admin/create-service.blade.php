@@ -35,12 +35,16 @@
 
                 <x-jet-input-error for="description" />
             </div>
-            <div class="mb-4">
+            <div class="mt-4">
+                <x-jet-label value="Número telefónico(ejm:987654321)" />
+                <x-jet-input wire:model="nrowsp" type="number" class="w-full" />
+            </div>
+            <div class="mt-4 mb-4">
                 <input  type="file" wire:model="image" id="{{$identificador}}" accept="image/*">
             </div>
-            <div class="bg-white shadow-xl rounded-lg p-6 mb-4">
-                <p class="font-semibold mb-2">Estado del servicio</p>
-            
+            <div class="mt-4 mb-4">
+               
+                <x-jet-label value="Estado del servicio" />
                 <div class="flex">
                     <label class="mr-6">
                         <input wire:model="status" type="radio" name="status" value="1">

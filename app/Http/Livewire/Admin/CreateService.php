@@ -13,7 +13,7 @@ class CreateService extends Component
     public $image, $identificador;
     public $status = 1;
     public $open = false;
-
+    public $nrowsp;
 
     public $title;
 
@@ -22,8 +22,9 @@ class CreateService extends Component
     protected $rules = [
         'title' => 'required',
         'description' => 'required',
+        'nrowsp' => 'required|number',
         'image' => 'required|image|max:2048',
-        'status' => 'required'
+        'status' => 'required',
     ];
     public function mount(){
         $this->identificador = rand();
@@ -42,11 +43,12 @@ class CreateService extends Component
         Service::create([
             'title' => $this->title,
             'description' => $this->description,
+            'nrowsp' => $this->nrowsp,
             'image' => $image,
             'status' => $this->status
         ]);
 
-        $this->reset(['open','title','description', 'image','status']);
+        $this->reset(['open','title','description','nrowsp', 'image','status']);
         $this->identificador = rand();
 
          $this->emitTo('admin.show-service','render');

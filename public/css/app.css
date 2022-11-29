@@ -815,12 +815,12 @@ video {
 	z-index: 50;
 }.z-30{
 	z-index: 30;
-}.z-10{
-	z-index: 10;
 }.z-20{
 	z-index: 20;
 }.z-40{
 	z-index: 40;
+}.z-10{
+	z-index: 10;
 }.order-last{
 	order: 9999;
 }.order-2{
@@ -1010,8 +1010,8 @@ video {
 	height: 2.5rem;
 }.h-20{
 	height: 5rem;
-}.h-80{
-	height: 20rem;
+}.h-32{
+	height: 8rem;
 }.h-screen{
 	height: 100vh;
 }.h-96{
@@ -1020,14 +1020,14 @@ video {
 	height: 9rem;
 }.h-auto{
 	height: auto;
+}.h-80{
+	height: 20rem;
 }.h-64{
 	height: 16rem;
 }.h-full{
 	height: 100%;
 }.h-1{
 	height: 0.25rem;
-}.h-32{
-	height: 8rem;
 }.h-3{
 	height: 0.75rem;
 }.h-48{
@@ -1082,8 +1082,6 @@ video {
 	width: 0.5rem;
 }.w-3\/5{
 	width: 60%;
-}.w-14{
-	width: 3.5rem;
 }.min-w-0{
 	min-width: 0px;
 }.min-w-full{
@@ -1162,10 +1160,10 @@ video {
 	grid-template-columns: repeat(6, minmax(0, 1fr));
 }.grid-cols-1{
 	grid-template-columns: repeat(1, minmax(0, 1fr));
-}.grid-cols-12{
-	grid-template-columns: repeat(12, minmax(0, 1fr));
 }.grid-cols-2{
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+}.grid-cols-12{
+	grid-template-columns: repeat(12, minmax(0, 1fr));
 }.grid-cols-4{
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 }.grid-cols-3{
@@ -1405,9 +1403,6 @@ video {
 }.bg-orange-500{
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 115, 22, var(--tw-bg-opacity));
-}.bg-red-400{
-	--tw-bg-opacity: 1;
-	background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
 }.bg-trueGray-700{
 	--tw-bg-opacity: 1;
 	background-color: rgba(64, 64, 64, var(--tw-bg-opacity));
@@ -1438,6 +1433,9 @@ video {
 }.bg-gray-700{
 	--tw-bg-opacity: 1;
 	background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
+}.bg-red-400{
+	--tw-bg-opacity: 1;
+	background-color: rgba(248, 113, 113, var(--tw-bg-opacity));
 }.bg-blue-50{
 	--tw-bg-opacity: 1;
 	background-color: rgba(239, 246, 255, var(--tw-bg-opacity));
@@ -1459,6 +1457,8 @@ video {
 	--tw-bg-opacity: 0.75;
 }.bg-cover{
 	background-size: cover;
+}.bg-auto{
+	background-size: auto;
 }.bg-center{
 	background-position: center;
 }.bg-no-repeat{
@@ -1526,9 +1526,6 @@ video {
 }.py-10{
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
-}.px-5{
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
 }.px-12{
 	padding-left: 3rem;
 	padding-right: 3rem;
@@ -1544,6 +1541,9 @@ video {
 }.py-0{
 	padding-top: 0px;
 	padding-bottom: 0px;
+}.px-5{
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
 }.pt-6{
 	padding-top: 1.5rem;
 }.pt-5{
@@ -4340,8 +4340,6 @@ background-color: #FFF7F4;
 		display: none;
 	}.md\:h-16{
 		height: 4rem;
-	}.md\:h-80{
-		height: 20rem;
 	}.md\:w-56{
 		width: 14rem;
 	}.md\:grid-cols-3{
@@ -4457,6 +4455,9 @@ background-color: #FFF7F4;
 	}.lg\:px-8{
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}.lg\:px-5{
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 	}.lg\:py-4{
 		padding-top: 1rem;
 		padding-bottom: 1rem;
@@ -4469,9 +4470,6 @@ background-color: #FFF7F4;
 	}.lg\:py-36{
 		padding-top: 9rem;
 		padding-bottom: 9rem;
-	}.lg\:px-5{
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
 	}.lg\:pt-12{
 		padding-top: 3rem;
 	}.lg\:pb-12{
@@ -4479,24 +4477,24 @@ background-color: #FFF7F4;
 	}.lg\:text-2xl{
 		font-size: 1.5rem;
 		line-height: 2rem;
-	}.lg\:text-lg{
-		font-size: 1.125rem;
-		line-height: 1.75rem;
 	}.lg\:text-base{
 		font-size: 1rem;
 		line-height: 1.5rem;
-	}.lg\:text-4xl{
-		font-size: 2.25rem;
-		line-height: 2.5rem;
-	}.lg\:text-xl{
-		font-size: 1.25rem;
-		line-height: 1.75rem;
 	}.lg\:text-3xl{
 		font-size: 1.875rem;
 		line-height: 2.25rem;
 	}.lg\:text-sm{
 		font-size: 0.875rem;
 		line-height: 1.25rem;
+	}.lg\:text-lg{
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+	}.lg\:text-4xl{
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+	}.lg\:text-xl{
+		font-size: 1.25rem;
+		line-height: 1.75rem;
 	}.lg\:text-white{
 		--tw-text-opacity: 1;
 		color: rgba(255, 255, 255, var(--tw-text-opacity));
@@ -4514,10 +4512,10 @@ background-color: #FFF7F4;
 		margin-top: 3.5rem;
 	}.xl\:inline{
 		display: inline;
-	}.xl\:h-36{
-		height: 9rem;
 	}.xl\:h-80{
 		height: 20rem;
+	}.xl\:h-36{
+		height: 9rem;
 	}.xl\:grid-cols-5{
 		grid-template-columns: repeat(5, minmax(0, 1fr));
 	}.xl\:gap-8{

@@ -33,6 +33,7 @@ class ShowService extends Component
     protected $rules = [
         'post.title' => 'required',
         'post.description' => 'required',
+        'post.nrowsp' => 'required',
         'post.status' => 'required'
     ];
 
@@ -83,7 +84,7 @@ class ShowService extends Component
         $this->reset(['open_edit', 'image']);
 
         $this->identificador = rand();
-        $this->emit('alert', 'El post se actualizo satisfactoriamente');
+        $this->emit('alert', 'El servicio se actualizo satisfactoriamente');
     }
     
     public function render()

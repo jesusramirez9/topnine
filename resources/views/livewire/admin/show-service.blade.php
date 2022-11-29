@@ -75,6 +75,21 @@
                                     <i class="fas fa-sort float-right mt-1"></i>
                                 @endif
                             </th>
+                            <th scope="col"
+                                class="px-6 cursor-pointer py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                                wire:click="order('nrowsp')">
+                                Teléfono
+                                @if ($sort == 'nrowsp')
+                                    @if ($direction == 'asc')
+                                        <i class="fas fa-sort-alpha-up-alt float-right mt-1"></i>
+                                    @else
+                                        <i class="fas fa-sort-alpha-down-alt float-right mt-1"></i>
+                                    @endif
+
+                                @else
+                                    <i class="fas fa-sort float-right mt-1"></i>
+                                @endif
+                            </th>
                             {{-- Sort --}}
                             <th scope="col" class="text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Acción
@@ -93,6 +108,9 @@
                                 </td>
                                 <td class="px-6 py-4 ">
                                     <div class="text-sm text-gray-900 capitalize">{{ $item->description }}</div>
+                                </td>
+                                <td class="px-6 py-4 ">
+                                    <div class="text-sm text-gray-900 capitalize">{{ $item->nrowsp }}</div>
                                 </td>
                                 <td class="px-6 py-4 flex text-sm font-medium">
                                     {{-- @livewire('edit-post', ['post' => $post], key($post->id)) --}}
@@ -149,13 +167,16 @@
                 <x-jet-input wire:model="post.title" type="text" class="w-full" />
             </div>
 
-            <div>
+            <div class="mt-4">
                 <x-jet-label value="Contenido del servicio" />
                 <textarea wire:model="post.description" class="w-full form-control" rows="6"></textarea>
             </div>
-            <div class="bg-white shadow-xl rounded-lg p-6 mb-4">
-                <p class="font-semibold mb-2">Estado del servicio</p>
-            
+            <div class="mt-4">
+                <x-jet-label value="Número telefónico(ejm:987654321)" />
+                <x-jet-input wire:model="post.nrowsp" type="number" class="w-full" />
+            </div>
+            <div class=" mb-4 mt-4">
+                <x-jet-label value="Estado del servicio" />
                 <div class="flex">
                     <label class="mr-6">
                         <input wire:model="post.status" type="radio" name="status" value="1">
