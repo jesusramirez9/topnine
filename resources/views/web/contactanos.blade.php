@@ -3,7 +3,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 ">
             <div class="mx-6 md:mx-0">
                 <p class="my-4 text-2xl font-bold">Contáctanos:</p>
-                <form action="{{ route('contacto.store') }}" method="POST">
+                <form id="formularios" action="{{ route('contacto.store') }}" method="POST">
                     @csrf
                     <div class="grid grid-cols-1 gap-5 md:grid-cols-2 mt-5">
                         <input name="name"
@@ -38,10 +38,14 @@
                             <p><strong>{{ $message }}</strong></p>
                         @enderror
                     </div>
+                    <div class="my-4">
+                        <x-jet-validation-errors class="mb-4" />
+                    </div>
                     <div class="my-2  text-right">
                         <button type="submit"
-                            class="font-bold tracking-wide bg-gray-700 hover:bg-gray-600 text-gray-50 rounded-lg px-4 py-2   
-                          focus:outline-none focus:shadow-outline">
+                            class="g-recaptcha font-bold tracking-wide bg-gray-700 hover:bg-gray-600 text-gray-50 rounded-lg px-4 py-2   
+                          focus:outline-none focus:shadow-outline"
+                          >
                             Enviar
                         </button>
                     </div>
@@ -97,5 +101,8 @@
         </script>
     @endif
 
+        @push('script')
+        
+        @endpush
 
 </x-app-layout>

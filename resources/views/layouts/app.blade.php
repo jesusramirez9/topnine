@@ -18,7 +18,7 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- glider --}}
-    <link rel="stylesheet" href="{{asset('css/glider.min.css')}}"/>
+    <link rel="stylesheet" href="{{ asset('css/glider.min.css') }}" />
     {{-- FLEXslider --}}
     <link rel="stylesheet" href="{{ asset('vendor/flexSlider/flexslider.css') }}">
     {{-- Animate css --}}
@@ -27,17 +27,18 @@
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}" />
     @stack('link')
     @livewireStyles
-    <script src="{{asset('js/sweetalert2_11.js')}}"></script>
+    <script src="{{ asset('js/sweetalert2_11.js') }}"></script>
 
     <x-livewire-alert::scripts />
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     {{-- glider --}}
-    <script src="{{asset('js/glider.min.js')}}"></script>
-    {{-- jquery --}} 
-    <script src="{{asset('js/jquery-3.6.0.min.js')}}"></script>
+    <script src="{{ asset('js/glider.min.js') }}"></script>
+    {{-- jquery --}}
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
     {{-- flexslider --}}
     <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}"></script>
+    
 </head>
 
 <body class="font-sans antialiased ">
@@ -72,8 +73,7 @@
                                     <button
                                         class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                         <img class="h-8 w-8 rounded-full object-cover"
-                                            src="{{ Auth::user()->profile_photo_url }}"
-                                            alt="{{ Auth::user()->name }}" />
+                                            src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                                     </button>
                                 </x-slot>
                                 <x-slot name="content">
@@ -140,7 +140,7 @@
     @livewireScripts
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
     <script>
         function dropdown() {
             return {
@@ -164,8 +164,28 @@
             }
         }
     </script>
-    
+
     <script src="{{ asset('plugin/scrollflow/eskju.jquery.scrollflow.min.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lefu0QjAAAAAGy0sehipG3OZc4YvzazPKP0pfzU"></script>
+    <script>
+        document.addEventListener('submit', function(e) {
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Lefu0QjAAAAAGy0sehipG3OZc4YvzazPKP0pfzU', {
+                    action: 'submit'
+                }).then(function(token) {
+
+                    let form = e.target;
+                    let input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'g-recaptcha-response';
+                    input.value = token;
+                    form.appendChild(input);
+                    form.submit();
+                });
+            });
+        });
+    </script>
     @stack('script')
 
 </body>
