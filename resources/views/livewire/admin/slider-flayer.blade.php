@@ -1,6 +1,66 @@
 <div class="container py-12">
     <h2 class="text-center mb-8 text-lg font-medium text-gray-900">Administrar recursos de la vista principal</h2>
     
+    <x-jet-form-section submit="saveHeader" class="">
+        <x-slot name="title">
+            Banner encabezado
+        </x-slot>
+        <x-slot name="description">
+            Seleccione la imagen que irá en el encabezado de la web.
+        </x-slot>
+
+        <x-slot name="form">
+            <div class="col-span-6">
+                <x-jet-label>Estado</x-jet-label>
+                <div class="flex">
+                    <label class="mr-6">
+                        <input wire:model.defer="headerForm.status" type="radio" name="status" value="1">
+                        Marcar banner como activo
+                    </label>
+                    <label>
+                        <input wire:model.defer="headerForm.status" type="radio" name="status" value="0">
+                        Marcar banner como inactivo
+                    </label>
+                </div>
+                <x-jet-input-error for="headerForm.status" />
+            </div>
+
+            <div class="col-span-6">
+                <x-jet-label>Imagen</x-jet-label>
+                @if ($headerImage)
+                    <div class="my-2 block">
+                        <img class="w-full h-20 object-contain object-center" src="{{ $headerImage->temporaryUrl() }}">
+                    </div>
+                @elseif ($headerForm['image'])
+                    <div class="my-2 block">
+                        <img class="w-full h-20 object-contain object-center" src="{{Storage::url($headerForm['image'])}}">
+                    </div>
+                @endif
+                <div class="">
+                    <div wire:loading wire:target="headerImage" class="mb-4 bg-red-100 border border-red-400 text-xs text-red-700 px-4 py-3 rounded relative">
+                        <strong class="font-bold">
+                            Imagen Cargando,
+                        </strong>
+                        <span class="block sm:inline">espere un momento hasta que la imagen se haya procesado..</span>
+                    </div>
+                </div>
+                <div class="">
+                    <input wire:model="headerImage" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="headerImage">
+                    <x-jet-input-error for="headerImage" />
+                </div>
+            </div>
+        </x-slot>
+
+        <x-slot name="actions">
+            <x-jet-action-message class="mr-3" on="savedHead">
+                Información actualizada
+            </x-jet-action-message>
+            <x-jet-button>
+                Guardar
+            </x-jet-button>
+        </x-slot>
+    </x-jet-form-section>
+
     <x-jet-form-section submit="save" class="mb-6">
         <x-slot name="title">
             Crear nuevo banner

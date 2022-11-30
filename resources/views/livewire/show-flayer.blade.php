@@ -7,7 +7,7 @@
             <x-slot name="title">
             </x-slot>
             <x-slot name="content">
-                <div class="slide_rlg">
+                <div class="flayer">
                     @foreach ($posts as $item)
                         <div>
                             <div class="pb-2 text-gray-700 text-lg uppercase font-semibold tracking-wider">
@@ -31,11 +31,11 @@
     </x-jet-dialog-modal>
 
     @push('script')
-        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
         <script>
           
             $(document).ready(function() {
-                $('.slide_rlg').slick();
+                $('.flayer').slick();
             });
         </script>
     @endpush

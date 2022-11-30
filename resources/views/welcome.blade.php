@@ -7,7 +7,7 @@
     <div class="bg-gray-100">
        
      
-        <div class="container py-8">
+        <div class="container py-8 d-none md:block">
             @livewire('categories-subcategory')
         </div>
 
@@ -37,7 +37,7 @@
 
     @push('script')
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
+        
         <script>
             $(document).ready(function() {
                 $('.sliderjss').slick({
@@ -47,6 +47,9 @@
                     slidesToShow: 1,
                 });
             });
+        </script>
+        <script>
+            
         </script>
         <script>
             livewire.on('glider', function(id) {
@@ -61,7 +64,15 @@
                         prev: '.glider-' + id + '~ .glider-prev',
                         next: '.glider-' + id + '~ .glider-next'
                     },
-                    responsive: [{
+                    responsive: [
+                        {
+                            breakpoint: 375,
+                            settings: {
+                                slidesToScroll: 3,
+                                slidesToShow: 3,
+                            }
+                        },
+                        {
                             breakpoint: 640,
                             settings: {
                                 slidesToScroll: 2.5,
@@ -94,9 +105,6 @@
                 });
 
             });
-        </script>
-        <script>
-            
         </script>
         
     @endpush

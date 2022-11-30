@@ -16,9 +16,10 @@ class CreateSlidersTable extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->unsignedInteger('order');
             $table->string('image');
+            $table->enum('type',[Slider::BANNER, Slider::HEADER])->default(Slider::BANNER);
             //1 ACTIVO, 0 INACTIVO
             $table->enum('status',[Slider::ACTIVO, Slider::INACTIVO])->default(Slider::INACTIVO);
             $table->timestamps();

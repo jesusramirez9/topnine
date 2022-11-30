@@ -9,7 +9,7 @@
                     trayectoria, por lo que somos referente en la venta de licores y una de las mejores opciones de
                     compra en el mercado.
                 </p>
-                <p class="mb-8 mt-2">Nuestro respaldo durante todos nuestros años han sido nuestros más de 6000
+                <p class="mb-8 mt-2 space-">Nuestro respaldo durante todos nuestros años han sido nuestros más de 6000
                     productos a disposición de nuestros clientes y la propuesta de valor que les ofrecemos: <span
                         class="font-bold"> productos originales, de valor, calidad y confiabilidad que los acompañan
                         en cada momento.</span></p>

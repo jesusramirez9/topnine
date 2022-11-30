@@ -9,11 +9,11 @@
                 <div>
                     <p class="font-bold">SÍGUENOS EN</p>
                 </div>
-                <div class="mx-4">
-                    <i class="fa-brands fa-facebook-f"></i>
-                </div>
-                <div class="">
-                    <i class="fa-brands fa-instagram"></i>
+                <div class="flex mx-2">
+                    <a href="">
+                    <i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="">
+                    <i class="fa-brands fa-instagram ml-3"></i></a>
                 </div>
             </div>
             <div class="grid grid-cols-3 lg:grid-cols-4  gap-3 mx-6 md:mx-0">
@@ -30,9 +30,9 @@
             </div>
         </div>
         <div>
-            <p class="text-base font-bold mb-3 text-center md:text-left">CONTACTO</p>
+            <p class="text-sm font-bold mb-3 text-center md:text-left">CONTACTO</p>
             <div class="flex justify-center md:block">
-                <ul class="text-sm ulli ulcontact">
+                <ul class="text-xs ulli ulcontact">
                     <li><i class="fas fa-map-marker-alt mr-2"></i>Av. Canada 3770 - San Luis</li>
                     <li><i class="fas fa-phone color-icon-footer mr-2"></i> (01) 436 6643</li>
                     <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 989 056 593 </li>
@@ -42,28 +42,28 @@
             </div>
         </div>
         <div>
-            <p class="text-base font-bold mb-3 text-center md:text-left">POLITICAS</p>
+            <p class="text-sm font-bold mb-3 text-center md:text-left">POLITICAS</p>
             <div class="flex justify-center md:block">
-                <ul class="text-sm ulli ulcontact">
+                <ul class="text-xs ulli ulcontact">
                     <li><a href="{{ route('politicas') }}">Políticas de privacidad</a> </li>
                     <li><a href="{{ route('terminos') }}"> Términos y condiciones</a></li>
-                    <li>Preguntas Frecuentes</li>
+                   
+                    
+                </ul>
+            </div>
+        </div>
+        <div>
+            <p class="text-sm font-bold mb-3 text-center md:text-left">Reclamos</p>
+            <div class="flex justify-center md:block">
+                <ul class="text-xs ulli ulcontact">
                     <li>Libro de reclamaciones</li>
                 </ul>
             </div>
         </div>
         <div>
-            <p class="text-base font-bold mb-3 text-center md:text-left">INFORME</p>
+            <p class="text-sm font-bold mb-3 text-center md:text-left">VENTA CORPORATIVA</p>
             <div class="flex justify-center md:block">
-                <ul class="text-sm ulli ulcontact">
-                    <li>Preguntas frecuentes</li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <p class="text-base font-bold mb-3 text-center md:text-left">VENTA CORPORATIVA</p>
-            <div class="flex justify-center md:block">
-                <ul class="text-sm ulli ulcontact">
+                <ul class="text-xs ulli ulcontact">
                     <li><i class="fas fa-phone color-icon-footer mr-2"></i> (01) 436 6643</li>
                     <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 989 056 593 </li>
                     <li><i class="far fa-envelope color-icon-footer mr-2"></i>ventas@topnain.pe</li>
@@ -76,7 +76,7 @@
 
     <div class="bg-gray-200  text-white py-2 mt-8">
         <div class="flex justify-center text-gray-600">
-            <p>Copyright © 2022 | <span class=" "> Consultora Trepstom </span></p>
+            <p>Copyright © 2022 | <span class=" "> Toptain  </span></p>
         </div>
     </div>
 

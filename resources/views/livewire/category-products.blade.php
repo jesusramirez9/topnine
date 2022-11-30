@@ -45,8 +45,8 @@
                                             </span></p>
                                     @else
                                     @endif
-                                    <p class="font-medium">Precio oferta: <span
-                                            class="text-sm  scrollflow -slide-bottom -opacity">
+                                    <p class="font-medium text-xs">Precio oferta: <span
+                                            class=" scrollflow -slide-bottom -opacity">
                                             S/ {{ $product->price }}</span></p>
 
                                 </div>

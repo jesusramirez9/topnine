@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slider;
 use App\Models\Subcategory;
 use Livewire\Component;
 
@@ -14,6 +15,7 @@ class CategoriesSubcategory extends Component
         $categories = Category::all();
         $products = Product::all();
         $subcategories = Subcategory::all();
-        return view('livewire.categories-subcategory', compact('categories','products','subcategories'));
+        $banners = Slider::where('status', 1)->orderBy('order', 'asc')->get();
+        return view('livewire.categories-subcategory', compact('categories','products','subcategories','banners'));
     }
 }

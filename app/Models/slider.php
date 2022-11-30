@@ -11,6 +11,8 @@ class Slider extends Model
 
     const ACTIVO = 1;
     const INACTIVO = 0;
+    const BANNER = 1;
+    const HEADER = 2;
 
-    protected $fillable = ['name','order','image','status'];
+    protected $fillable = ['name','order','image','status','type'];
 }

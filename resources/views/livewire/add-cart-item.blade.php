@@ -38,10 +38,14 @@
 
         </div>
     </div>
-    <div class="mt-8 mx-6 md:mx-0">
-        <p class="uppercase text-gray-400 font-normal">CODIGO DEL PRODUCTO: {{ $product->code }}</p>
-        {{-- <p class=" text-gray-400 font-normal">Categoría: <span class="uppercase"> {{$product->subcategory->name}}</span> </p> --}}
-
+    <div class="mt-8 md:mx-0">
+        <div>
+            <div class="mt-4 text-xs lg:text-sm">
+                <p class="uppercase text-gray-300 font-semibold">Código: {{ $product->code }}</p>
+                <p class=" text-gray-300 font-semibold">Categoría: <span class="uppercase">
+                        {{ $product->subcategory->name }}</span> </p>
+            </div>
+        </div>
     </div>
 
     <x-jet-dialog-modal wire:model="open_edit">

@@ -24,14 +24,15 @@
                     <div>
                         <p class="text-base font-medium text-gray-500 text-justify ">{{ $service->description }}</p>
                     </div>
+                    <div class="flex justify-end mt-6"> 
+                        <a href="https://wa.me/+51{{$service->nrowsp}}" target="_blank">
+                        <x-jet-button >
+                            Contactame
+                        </x-jet-button>
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <a href="{{route('contacto')}}">
-                    <x-jet-button >
-                        Contactame
-                    </x-jet-button>
-                </a>
-                </div>
+                
             
         </div>
         @endforeach

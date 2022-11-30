@@ -17,6 +17,7 @@ class ServiceFactory extends Factory
             //
             'title' => $this->faker->sentence(),
             'description' => $this->faker->text(600),
+            'nrowsp' => $this->faker->text(9),
             'image' => 'services/'. $this->faker->image('public/storage/services', 800, 600, null, false),
             'status' => 2
         ];

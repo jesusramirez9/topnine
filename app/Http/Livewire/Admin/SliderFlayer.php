@@ -11,7 +11,7 @@ class SliderFlayer extends Component
 {
     use WithFileUploads;
 
-    public $rand, $sliders, $slider, $editImage;
+    public $rand, $sliders, $slider, $editImage, $banner, $headerImage;
 
     protected $listeners = ['delete'];
 
@@ -26,6 +26,11 @@ class SliderFlayer extends Component
         'open' => false,
         'name' => null,
         'order' => null,
+        'image' => null,
+        'status' => null
+    ];
+
+    public $headerForm = [
         'image' => null,
         'status' => null
     ];
@@ -53,6 +58,16 @@ class SliderFlayer extends Component
     {
         $this->getSliders();
         $this->rand = rand();
+
+        $slider = Slider::where('type', 2)->first();
+
+        if($slider != null){
+            $this->banner = $slider;
+            $this->headerForm['status'] = $slider->status;
+            $this->headerForm['image'] = $slider->image;
+        }else{
+            $this->banner = new Slider();
+        }
     }
 
     public function getSliders()
@@ -128,6 +143,46 @@ class SliderFlayer extends Component
     {
         $slider->delete();
         $this->getSliders();
+    }
+
+    public function saveHeader()
+    {
+        $rules = [
+            'headerForm.status' => 'required',
+        ];
+
+        if ($this->headerImage) {
+            $rules['headerImage'] = 'image|max:1024';
+        }
+
+        $this->validate($rules);
+
+        if ($this->headerImage) {
+            if($this->headerForm['image']){
+                Storage::delete($this->headerForm['image']);
+            }
+            $this->headerForm['image'] = $this->headerImage->store('sliders');
+        }
+
+        $slider = Slider::where('type', 2)->first();
+
+        if($slider != null){
+            $slider->status = $this->headerForm['status'];
+            $slider->image = $this->headerForm['image'];
+            $slider->save();
+        }else{
+            Slider::create([
+                'name' => null,
+                'order' => 1,
+                'status' => $this->headerForm['status'],
+                'type' => 2,
+                'image' => $this->headerForm['image'],
+            ]);
+        }
+
+        $this->reset('headerImage');
+        $this->headerImage = null;
+        $this->emit('savedHead');
     }
 
     public function render()

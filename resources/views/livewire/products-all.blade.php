@@ -1,4 +1,8 @@
 <div>
+    @push('link')
+        
+    <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}"></script>
+    @endpush
     <div>
         <div class=" mt-14">
             <h1 class="font-medium text-xl px-4 mb-8">Lo Más Vendido</h1>
@@ -7,13 +11,13 @@
                     @foreach ($subcategories as $subcategory)
                         @foreach ($subcategory->products as $product)
                             <div class="mx-4 border-2 overflow-hidden border-white rounded-xl bg-white">
-                                <figure class="py-2 px-4 ">
+                                <figure>
 
                                     @if ($product->images->count())
-                                        <img class="h-80 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+                                        <img class="h-32 xl:h-80 w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                             src="{{ Storage::url($product->images->first()->url) }}" alt="">
                                     @else
-                                        <img class="h-80 w-full object-cover object-center"
+                                        <img class="h-32 xl:h-80 w-full object-cover object-center"
                                             src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
                                             alt="">
                                     @endif
@@ -21,7 +25,7 @@
                                 </figure>
                                 <a href="{{ route('products.show', $product) }}">
 
-                                    <div class="py-2 px-4 ">
+                                    <div class="py-2 px-1 lg:px-4 ">
                                         <p class="text-gray-400 font-medium text-xs  uppercase">
                                             {{ $product->subcategory->name }}</p>
 
@@ -30,7 +34,7 @@
                                             {{ Str::limit($product->name, 40, '...') }}
 
                                         </h1>
-                                        <div class="flex justify-between items-center">
+                                        <div class="lg:flex lg:justify-between items-center">
                                             @if ($product->offer != 0)
                                                <p class="text-xs text-gray-400">Precio normal: <span class=" text-gray-400 line-through">s/ {{ $product->offer }}
                                                 </span></p>
@@ -43,7 +47,7 @@
 
                                         <div class="flex justify-center py-4">
                                             <button
-                                                class="text-white w-full font-medium text-sm bg-orange-600 hover:bg-orange-500 px-5 py-2 rounded-lg"><i
+                                                class="text-white w-full font-medium text-xs lg:text-sm bg-orange-600 hover:bg-orange-500 px-2 lg:px-5 py-2 rounded-lg"><i
                                                     class="fa-solid fa-magnifying-glass mr-2"></i>Ver producto</button>
                                         </div>
 
@@ -69,14 +73,11 @@
     </div>
 
     @push('script')
+    
+    <script src="{{ asset('vendor/flexSlider/jquery.flexslider-min.js') }}"></script>
         <script>
             // Can also be used with $(document).ready()
-            $(document).ready(function() {
-                $('.flexslider').flexslider({
-                    animation: "slide",
-                    controlNav: "thumbnails"
-                });
-            });
+           
 
             new Glider(document.querySelector('.prelacionado'), {
                 slidesToShow: 3,
@@ -131,9 +132,9 @@
                     },
                     {
                         // screens greater than >= 1024px
-                        breakpoint: 480,
+                        breakpoint: 425,
                         settings: {
-                            slidesToShow: 1,
+                            slidesToShow: 3,
                             slidesToScroll: 1,
                             itemWidth: 150,
                             duration: 0.25,
