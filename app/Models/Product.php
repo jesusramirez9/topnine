@@ -17,50 +17,54 @@ class Product extends Model
 
     //accesores
 
-    public function getStockAttribute(){
+    public function getStockAttribute()
+    {
         if ($this->subcategory->size) {
-            return  ColorSize::whereHas('size.product', function(Builder $query){
-                        $query->where('id', $this->id);
-                    })->sum('quantity');
-        } elseif($this->subcategory->color) {
-            return  ColorProduct::whereHas('product', function(Builder $query){
-                        $query->where('id', $this->id);
-                    })->sum('quantity');
-        }else{
-
+            return  ColorSize::whereHas('size.product', function (Builder $query) {
+                $query->where('id', $this->id);
+            })->sum('quantity');
+        } elseif ($this->subcategory->color) {
+            return  ColorProduct::whereHas('product', function (Builder $query) {
+                $query->where('id', $this->id);
+            })->sum('quantity');
+        } else {
             return $this->quantity;
-
         }
-        
     }
 
 
     //Relacion uno a muchos
 
-    public function reviews(){
+    public function reviews()
+    {
         return $this->hasMany(Review::class);
     }
 
-    public function sizes(){
+    public function sizes()
+    {
         return $this->hasMany(Size::class);
     }
 
     //Relacion uno a muchos inversa
-    public function brand(){
+    public function brand()
+    {
         return $this->belongsTo(Brand::class);
     }
 
-    public function subcategory(){
+    public function subcategory()
+    {
         return $this->belongsTo(Subcategory::class);
     }
 
     //Relacion muchos a muchos
-    public function colors(){
-        return $this->belongsToMany(Color::class)->withPivot('quantity', 'id');
+    public function colors()
+    {
+        return $this->belongsToMany(Color::class)->withPivot('quantity', 'id', 'image');
     }
 
     //relacion uno a muchos polimoefica
-    public function images(){
+    public function images()
+    {
         return $this->morphMany(Image::class, "imageable");
     }
 

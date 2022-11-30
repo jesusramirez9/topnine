@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ColorSize;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +24,9 @@ class CreateColorSizeTable extends Migration
             $table->foreign('size_id')->references('id')->on('sizes')->onDelete('cascade');
 
             $table->integer('quantity');
+            $table->string('image')->nullable();
+            //1 ACTIVO, 0 INACTIVO
+            $table->enum('status',[ColorSize::ACTIVO, ColorSize::INACTIVO])->default(ColorSize::INACTIVO);
 
             $table->timestamps();
         });

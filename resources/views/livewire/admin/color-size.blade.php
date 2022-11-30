@@ -1,33 +1,53 @@
 <div class="mt-4">
     <div class="bg-gray-100  shadow-lg rounded-lg p-6">
-        {{-- color --}}
-        <div class="mb-6">
-            <x-jet-label>
-                Color
-            </x-jet-label>
+        <div class="grid grid-cols-6 gap-6">
+            <div class="col-span-6 sm:col-span-3">
+                <x-jet-label>
+                    Color
+                </x-jet-label>
 
-            <div class="grid grid-cols-6 gap-6">
-                @foreach ($colors as $color)
-                    <label>
-                        <input wire:model.defer="color_id" type="radio" name="color_id" value="{{ $color->id }}">
-                        <span class="ml-2 text-gray-700 capitalize bg_clds"
-                            style="background-color:{{ $color->name }} ">
-
-                        </span>
-                    </label>
-                @endforeach
+                <div class="mb-6">
+                    <div class="">
+                        <select class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            wire:model.defer="color_id">
+                            <option selected>Seleccionar color</option>
+                            @foreach ($colors as $color)
+                                <option value="{{ $color->id }}">{{ strtoupper($color->name) }}</option>
+                            @endforeach
+                        </select>
+                        <x-jet-input-error for="color_id" />
+                    </div>
+                </div>
+                
+                <div>
+                    <x-jet-label>Cantidad</x-jet-label>
+                    <x-jet-input class="w-full" placeholder="Ingrese una cantidad" wire:model.defer="quantity" type="number" />
+                    <x-jet-input-error for="quantity" />
+                </div>
             </div>
-            <x-jet-input-error for="color_id" />
+            <div class="col-span-6 sm:col-span-3">
+                <x-jet-label>Imagen(Referencia)</x-jet-label>
+                @if ($imageColor)
+                    <div class="my-2 block">
+                        <img class="w-full h-20 object-contain object-center" src="{{ $imageColor->temporaryUrl() }}">
+                    </div>
+                @endif
+                <div class="">
+                    <div wire:loading wire:model.defer="imageColor"
+                        class="mb-4 bg-red-100 border border-red-400 text-xs text-red-700 px-4 py-3 rounded relative">
+                        <strong class="font-bold">
+                            Imagen Cargando,
+                        </strong>
+                        <span class="block sm:inline">espere un momento hasta que la imagen se haya procesado..</span>
+                    </div>
+                </div>
+                <div class="">
+                    <input wire:model.defer="imageColor" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="file">
+                    <x-jet-input-error for="imageColor" />
+                </div>
+            </div>
         </div>
 
-        <div>
-            <x-jet-label>
-                Cantidad
-            </x-jet-label>
-            <x-jet-input class="w-full" placeholder="Ingrese una cantidad" wire:model.defer="quantity"
-                type="number" />
-            <x-jet-input-error for="quantity" />
-        </div>
         <div class="flex mt-4 justify-end items-center">
             <x-jet-action-message class="mr-3" on="saved">
                 Agregado
@@ -39,43 +59,44 @@
     </div>
     @if ($size_colors->count())
         <div class="mt-8">
-            <table>
+            <table class="w-full">
                 <thead>
                     <tr>
-                        <th class="px-4 py-2 w-1/3">Color</th>
-                        <th class="px-4 py-2 w-1/3">Cantidad</th>
-                        <th class="px-4 py-2 w-1/3"></th>
+                        <th class="px-4 py-2 w-1/4">Color</th>
+                        <th class="px-4 py-2 w-1/4">Imagen(Referencia)</th>
+                        <th class="px-4 py-2 w-1/4">Cantidad</th>
+                        <th class="px-4 py-2 w-1/4"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($size_colors as $size_color)
                         <tr wire:key="size_color-{{ $size_color->pivot->id }}">
                             <td class="capitalize px-4 py-2">
-                                <span class="ml-2 text-gray-700 capitalize bg_clds"
-                                    style="background-color:{{ $colors->find($size_color->pivot->color_id)->name }} ">
-
-                                </span>
-                                {{-- {{ __($colors->find($size_color->pivot->color_id)->name) }} --}}
-
+                                {{ $colors->find($size_color->pivot->color_id)->name }}
                             </td>
-                            <td class="px-4 py-2 ">
+                            <td class="px-4 py-2">
+                                @if ($size_color->pivot->image)
+                                    <img src="{{ Storage::url($size_color->pivot->image) }}" width="80px">
+                                @else
+                                    <span>No tiene imagen</span>
+                                @endif
+                            </td>
+                            <td class="px-4 py-2">
                                 {{ $size_color->pivot->quantity }} unidades
-
                             </td>
-                            <td class="px-4 py-2 flex">
-                                <x-jet-secondary-button class="ml-auto mr-2"
-                                    wire:click="edit({{ $size_color->pivot->id }})" wire:loading.attr="disabled"
-                                    wire:target="edit({{ $size_color->pivot->id }})">
-                                    Actualizar
-                                </x-jet-secondary-button>
-
-                                <x-jet-danger-button
-                                    wire:click="$emit('deleteColorSize',{{ $size_color->pivot->id }} )">
-                                    Eliminar
-                                </x-jet-danger-button>
-                              
+                            <td class="px-4 py-2">
+                                <div class="flex">
+                                    <x-jet-secondary-button class="ml-auto mr-2"
+                                        wire:click="edit({{ $size_color->pivot->id }})" wire:loading.attr="disabled"
+                                        wire:target="edit({{ $size_color->pivot->id }})">
+                                        Actualizar
+                                    </x-jet-secondary-button>
+                                    <x-jet-danger-button
+                                        wire:click="$emit('deleteColorSize',{{ $size_color->pivot->id }} )">
+                                        Eliminar
+                                    </x-jet-danger-button>
+                                </div>
                             </td>
-
                         </tr>
                     @endforeach
                 </tbody>
@@ -86,36 +107,46 @@
     {{-- modal --}}
 
     <x-jet-dialog-modal wire:model="open">
-
-        <x-slot name="title">
-            Editar colores
-        </x-slot>
+        <x-slot name="title">Editar colores</x-slot>
         <x-slot name="content">
             <div class="mb-4">
-                <x-jet-label>
-                    Color
-                </x-jet-label>
-                <select
-                    class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                <x-jet-label>Color</x-jet-label>
+                <select class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                     wire:model="pivot_color_id">
                     <option value="{{ $color->id }}" disabled>Seleccione un color</option>
                     @foreach ($colors as $color)
-                        <option value="{{ $color->id }}"  style="background-color:{{ $color->name }}" >
-                            
-                            
-                            
-                        </option>
+                        <option value="{{ $color->id }}">{{ strtoupper($color->name) }}</option>
                     @endforeach
                 </select>
             </div>
-            <div>
-                <x-jet-label>
-                    Cantidad
-                </x-jet-label>
-                <x-jet-input wire:model="pivot_quantity" type="number" placeholder="Ingrese una cantidad"
-                    class="w-full">
-
-                </x-jet-input>
+            <div class="mb-4">
+                <x-jet-label>Cantidad</x-jet-label>
+                <x-jet-input wire:model="pivot_quantity" type="number" placeholder="Ingrese una cantidad" class="w-full"></x-jet-input>
+            </div>
+            <div class="">
+                <x-jet-label>Imagen(Referencia)</x-jet-label>
+                @if ($editImage)
+                    <div class="my-2 block">
+                        <img class="w-full h-20 object-contain object-center" src="{{ $editImage->temporaryUrl() }}">
+                    </div>
+                @elseif ($pivot_image)
+                    <div class="my-2 block">
+                        <img class="w-full h-20 object-contain object-center" src="{{ Storage::url($pivot_image) }}">
+                    </div>
+                @endif
+                <div class="">
+                    <div wire:loading wire:model.defer="editImage"
+                        class="mb-4 bg-red-100 border border-red-400 text-xs text-red-700 px-4 py-3 rounded relative">
+                        <strong class="font-bold">
+                            Imagen Cargando,
+                        </strong>
+                        <span class="block sm:inline">espere un momento hasta que la imagen se haya procesado..</span>
+                    </div>
+                </div>
+                <div class="">
+                    <input wire:model.defer="editImage" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="file">
+                    <x-jet-input-error for="editImage" />
+                </div>
             </div>
         </x-slot>
         <x-slot name="footer">
@@ -129,8 +160,6 @@
 
     </x-jet-dialog-modal>
     @push('script')
-    <script>
-           
-    </script>
+        <script></script>
     @endpush
 </div>

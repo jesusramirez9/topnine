@@ -24,11 +24,9 @@
         <p class="text-sm">Tamaño recomendado: 600*650px </p>
         <p class="text-sm">Peso recomendado: menor a 1Mb</p>
 
-
-        <div class="mb-4" wire:ignore>
-            <form action="{{ route('admin.products.files', $product) }}" method="POST" class="dropzone"
+        <div class="mt-2 mb-4" wire:ignore>
+            <form action="{{ route('admin.products.files', $product) }}" method="POST" class="dropzone shadow rounded-lg"
                 id="my-awesome-dropzone"></form>
-
         </div>
 
         @if ($product->images->count())

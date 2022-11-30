@@ -11,6 +11,8 @@ class ColorSize extends Model
     
     protected $table = "color_size";
 
+    const ACTIVO = 1;
+    const INACTIVO = 0;
     
     public function color(){
         return $this->belongsTo(Color::class);

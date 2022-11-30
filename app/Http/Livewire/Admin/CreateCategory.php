@@ -18,7 +18,6 @@ class CreateCategory extends Component
     protected $listeners = ['delete'];
 
     public $createForm = [
-       
         'name' => null,
         'slug' => null,
         'icon' => null,
@@ -94,7 +93,7 @@ class CreateCategory extends Component
 
         $image =  $this->createForm['image']->store('categories');
 
-       $category = Category::create([
+        $category = Category::create([
             'name' => $this->createForm['name'],
             'slug' => $this->createForm['slug'],
             'icon' => $this->createForm['icon'],

@@ -11,6 +11,9 @@ class ColorProduct extends Model
 
     protected $table = "color_product";
 
+    const ACTIVO = 1;
+    const INACTIVO = 0;
+
     // relacion 1 a muchos inversa
 
     public function color(){

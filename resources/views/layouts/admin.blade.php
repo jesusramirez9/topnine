@@ -52,7 +52,7 @@
         @endif
 
         <!-- Page Content -->
-        <main class="h-auto">
+        <main class="h-auto bg-gray-50">
             {{ $slot }}
         </main>
         
