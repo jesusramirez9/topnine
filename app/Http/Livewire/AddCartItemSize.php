@@ -2,12 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Color;
 use App\Models\Size;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 use Illuminate\Support\Facades\Storage;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Illuminate\Support\Facades\Log;
 
 class AddCartItemSize extends Component
 {
@@ -18,7 +18,7 @@ class AddCartItemSize extends Component
     public $quantity = 0;
     public $size_id = "";
     public $options = [];
-    public $colors = [];
+    //public $colors = [];
     public $open_edit = false;
 
     public function mount(){
@@ -27,30 +27,30 @@ class AddCartItemSize extends Component
     }
 
     public function updatedSizeId($value){
-        
+        Log::debug('IdTalla: '.$value);
         $size = Size::find($value);
-        $this->colors = $size->colors;
         $this->options['size'] = $size->name;
         $this->options['size_id'] = $size->id;
-        if(isset($this->options['color_id'])){
-            $this->quantity = qty_available($this->product->id, $this->options['color_id'], $size->id);
-        }
+        $this->options['color_id'] = null;
+        $this->quantity = 0;
     }
+
     public function updatedColorId($value){
         $size = Size::find($this->size_id);
         $color= $size->colors->find($value);
         $this->quantity = qty_available($this->product->id, $color->id, $size->id);
         $this->options['color'] = $color->name;
         $this->options['color_id'] = $color->id;
-
     }
 
     public function decrement(){
         $this->qty = $this->qty - 1;
     }
+
     public function increment(){
         $this->qty = $this->qty + 1;
     }
+
     public function addItem(){
         Cart::add([
             'id' => $this->product->id,
@@ -71,10 +71,11 @@ class AddCartItemSize extends Component
 
     public function cerrar(){
         $this->open_edit = false;
-
     }
+
     public function render()
     {
-        return view('livewire.add-cart-item-size');
+        $colors = $this->size_id != "" ? Size::find($this->size_id)->colors : [];
+        return view('livewire.add-cart-item-size', compact('colors'));
     }
 }

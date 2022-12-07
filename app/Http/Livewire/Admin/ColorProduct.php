@@ -102,6 +102,9 @@ class ColorProduct extends Component
 
     public function delete(Pivot $pivot)
     {
+        if($pivot->image){
+            Storage::delete($pivot->image);
+        }
         $pivot->delete();
         $this->product = $this->product->fresh();
     }

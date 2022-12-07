@@ -31,7 +31,6 @@ class EditProduct extends Component
         'product.brand_id' => 'required',
         'product.price' => 'required',
         'product.offer' => 'required',
-        'product.quantity' => 'numeric',
     ];
 
     protected $listeners = ['refreshProduct', 'delete'];
@@ -88,11 +87,11 @@ class EditProduct extends Component
         $rules = $this->rules;
         $rules['slug'] = 'required|unique:products,slug,' . $this->product->id;
 
-        if ($this->product->subcategory_id) {
+        /*if ($this->product->subcategory_id) {
             if (!$this->subcategory->color && !$this->subcategory->size) {
                 $rules['product.quantity'] = 'required|numeric';
             }
-        }
+        }*/
 
         $this->validate($rules);
 

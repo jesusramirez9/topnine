@@ -12,7 +12,7 @@
                 Filtrar
             </button>
         </div>
-        <aside class="category_filter_web  rounded-lg ">
+        <aside class="category_filter_web rounded-lg">
             <div class="bg-white p-4">
             <p class="font-bold text-xl ">Filtros</p>
             <hr class="bg-gray-400 my-1 ">
@@ -70,17 +70,21 @@
                 <div class="accordion-container">
                     <a class="accordion-titulo open">Colores<span class="toggle-icon"></span></a>
                     <div class="accordion-content block">
-                        <ul class="grid grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-2 ">
+                        {{-- <ul class="grid grid-cols-6 md:grid-cols-4 lg:grid-cols-4 gap-2 ">
                             @foreach ($colors_product as $coloritem)
                                 <li class=" py-2 text-sm rronmaa font-semibold">
-                                    
                                     <a class="cursor-pointer  hover:text-orange-500 capitalize {{ $color == $coloritem->id ? 'text-orange-500 font-semibold' : '' }} "
                                         wire:click="$set('color','{{ $coloritem->id }}')">
-                                        
-                                        <span class="ml-2 text-gray-700 capitalize bg_clds" style="background-color:{{$coloritem->name}} ">
-                            
-                                        </span>
+                                        <span class="ml-2 text-gray-700 capitalize bg_clds" style="background-color:{{$coloritem->name}} "></span>
                                     </a>
+                                </li>
+                            @endforeach
+                        </ul> --}}
+                        <ul class="divide-y divide-gray-200">
+                            @foreach ($colors_product as $coloritem)
+                                <li class="py-2 text-sm rronmaa font-semibold pl-3">
+                                    <a class="cursor-pointer hover:text-orange-500 capitalize {{ $color == $coloritem->id ? 'text-orange-500 font-semibold' : '' }} "
+                                        wire:click="$set('color','{{ $coloritem->id }}')">{{ $coloritem->name }}</a>
                                 </li>
                             @endforeach
                         </ul>
@@ -91,7 +95,7 @@
                     <div class="accordion-content block">
                         <ul class="divide-y divide-gray-200">
                             @foreach ($talla_product as $itemtalla)
-                                <li class="py-2 text-sm rronmaa font-semibold">
+                                <li class="py-2 text-sm rronmaa font-semibold pl-3">
                                     <a class="cursor-pointer hover:text-orange-500 capitalize {{ $talla == $itemtalla->name ? 'text-orange-500 font-semibold' : '' }} "
                                         wire:click="$set('talla','{{ $itemtalla->name }}')">{{ $itemtalla->name }}</a>
                                 </li>
@@ -101,9 +105,8 @@
                 </div> 
             </div>
 
-
             <x-jet-button class="mt-4 w-full justify-center" wire:click="limpiar">
-                Eliminar filtros
+                Eliminar filtros2
             </x-jet-button>
         </div>
         </aside>

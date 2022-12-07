@@ -11,6 +11,7 @@ use App\Models\Product;
 use App\Models\Size;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class CategoryFilter extends Component
 {
@@ -28,7 +29,6 @@ class CategoryFilter extends Component
     public function render()
     {
         $tipoconsulta = 1;
-
         $colors_product = Color::all();
         $talla_product = DB::table('sizes')->select('name')->groupBy('name')->get();
         $precio_product = [
@@ -54,8 +54,6 @@ class CategoryFilter extends Component
             ]
         ];
 
-      
-
         if ($this->precio != null) {
             # code...
             foreach ($precio_product as $itemp) {
@@ -74,16 +72,16 @@ class CategoryFilter extends Component
             }else{
                 $query->where('id', $this->category->id)->whereBetween('price', [$this->preciomin, $this->preciomax]);
             }
-          
         });
         
-
         if ($this->subcategoria) {
             # code...
             $productsQuery =  $productsQuery->whereHas('subcategory', function (Builder $query) {
                 $query->where('slug', $this->subcategoria);
             });
         }
+
+        
 
         if ($this->marca) {
             $productsQuery =  $productsQuery->whereHas('brand', function (Builder $query) {
@@ -92,14 +90,13 @@ class CategoryFilter extends Component
         }
 
         if ($this->talla) {
-
             $productsQuery =  $productsQuery->whereHas('sizes', function (Builder $query) {
                 $query->where('name', $this->talla);
             });
         }
 
         if ($this->color) {
-
+            Log::info('Color: ' . $this->color);
             $productsQuery =  $productsQuery->whereHas('sizes.colorsizes', function (Builder $query) {
                 $query->where('color_id', $this->color);
             });
@@ -109,6 +106,7 @@ class CategoryFilter extends Component
         $categories = Category::all();
         return view('livewire.category-filter', compact('categories','products', 'colors_product', 'talla_product', 'precio_product'));
     }
+
     public function limpiar()
     {
         $this->reset(['subcategoria', 'marca', 'talla', 'color', 'precio']);
@@ -123,10 +121,12 @@ class CategoryFilter extends Component
     {
         $this->resetPage();
     }
+
     public function updatedColor()
     {
         $this->resetPage();
     }
+
     public function updatedPrecio()
     {
         $this->resetPage();

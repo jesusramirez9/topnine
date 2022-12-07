@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-span-6 sm:col-span-3">
-                <x-jet-label>Imagen(Referencia)</x-jet-label>
+                <x-jet-label>Imagen(Producto)</x-jet-label>
                 @if ($imageColor)
                     <div class="my-2 block">
                         <img class="w-full h-20 object-contain object-center" src="{{ $imageColor->temporaryUrl() }}">
@@ -63,7 +63,7 @@
                 <thead>
                     <tr>
                         <th class="px-4 py-2 w-1/4">Color</th>
-                        <th class="px-4 py-2 w-1/4">Imagen(Referencia)</th>
+                        <th class="px-4 py-2 w-1/4">Imagen(Producto)</th>
                         <th class="px-4 py-2 w-1/4">Cantidad</th>
                         <th class="px-4 py-2 w-1/4"></th>
                     </tr>
@@ -124,7 +124,7 @@
                 <x-jet-input wire:model="pivot_quantity" type="number" placeholder="Ingrese una cantidad" class="w-full"></x-jet-input>
             </div>
             <div class="">
-                <x-jet-label>Imagen(Referencia)</x-jet-label>
+                <x-jet-label>Imagen(Producto)</x-jet-label>
                 @if ($editImage)
                     <div class="my-2 block">
                         <img class="w-full h-20 object-contain object-center" src="{{ $editImage->temporaryUrl() }}">

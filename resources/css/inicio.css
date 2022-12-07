@@ -136,6 +136,24 @@ main{
     margin: .5rem 0;
     opacity: 1!important;
 }
+.loginGoogle{
+    display: flex;
+    align-items: center;
+    background-color: #3d6ad6;
+    color: #fff;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
+.loginFacebook{
+    display: flex;
+    align-items: center;
+    background-color: #3d6ad6;
+    color: #fff;
+    border: 1px solid rgb(209, 213, 219);
+    border-radius: 0.375rem;
+    overflow: hidden;
+}
 
 @media (min-width: 320px) {
     .head_web {

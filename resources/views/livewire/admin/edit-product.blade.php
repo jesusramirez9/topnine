@@ -152,8 +152,8 @@
 
             </div>
 
-            <div class="grid grid-cols-3 gap-6 mb-4">
-                <div class="mb-4">
+            <div class="grid grid-cols-6 gap-6 mb-4">
+                <div class="col-span-6 md:col-span-2 mb-3">
                     {{-- Marca --}}
                     <x-jet-label value="Marca" />
                     <select
@@ -165,38 +165,36 @@
                         @endforeach
                     </select>
                     <x-jet-input-error for="brand_id" />
-
                 </div>
-                {{-- Precio --}}
-                <div>
+                
+                <div class="col-span-6 md:col-span-1 mb-3">
+                    {{-- Precio --}}
                     <x-jet-label value="Precio final" />
                     <x-jet-input wire:model="product.price" type="number" class="w-full" step=".01" />
                     <x-jet-input-error for="price" />
-
                 </div>
-                <div>
+                <div class="col-span-6 md:col-span-3">
                     <x-jet-label value="Precio Aumentado para promociones" />
                     <x-jet-input wire:model="product.offer" type="number"  class="w-full" step=".01" />
                     <x-jet-input-error for="offer" />
-        
                 </div>
             </div>
 
             @if ($this->subcategory)
-
-                @if (!$this->SubCategory->color && !$this->SubCategory->size)
-
+                @if (!$this->subcategory->color && !$this->subcategory->size)
                     <div>
                         <x-jet-label value="Cantidad" />
                         <x-jet-input wire:model="product.quantity" type="number" class="w-full" />
                         <x-jet-input-error for="product.quantity" />
-
                     </div>
-
-
                 @endif
-
             @endif
+
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
             <div class="flex mt-4 justify-end items-center">
                 <x-jet-action-message class="mr-3" on="saved">
                     Actualizado
@@ -218,8 +216,6 @@
 
             @endif
         @endif
-
-
     </div>
     @push('script')
         <script>

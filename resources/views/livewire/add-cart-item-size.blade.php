@@ -1,28 +1,21 @@
 <div x-data>
     <div class="text-xl text-gray-700">
         <p class="sizecol mb-4">Elige tu talla:  </p>
-        <div wire:model="size_id" class="divsize">
+        <div class="divsize">
             @foreach ($sizes as $size)
-               
-
                 <div class="btn-group" role="group">
-                    <input type="radio" class="btn-check" value="{{ $size->id }}" name="size" id="{{ $size->name }}"
+                    <input wire:model="size_id" type="radio" class="btn-check" value="{{ $size->id }}" name="size" id="{{ $size->name }}"
                         autocomplete="off"  >
-                    <label class="  mr-3 btn_talla" for="{{ $size->name }}"
+                    <label class="mr-3 btn_talla" for="{{ $size->name }}"
                         >{{ $size->name }}</label>
                 </div>
-
             @endforeach
         </div>
-        
-    
-
     </div>
 
     <div class="text-xl text-gray-700 mt-4">
         <p class="sizecol mt-8 mb-4">Elige tu color:</p>
-
-        <div wire:model="color_id" class="divsize">
+        <div class="divsize">
             {{-- @foreach ($colors as $color)
 
               <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option> 
@@ -36,20 +29,17 @@
 
             @endforeach --}}
             
-            @forelse ($colors as $color)    
-
-            <div class="btn-group" role="group">
-                <input type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
-                    autocomplete="off" >
-                <label class="  mr-3 btn_talla btn_color" for="{{ __($color->name) }}"
-                  style="background-color: {{ $color->name }}" ></label>
-            </div>
-            
+            @forelse ($colors as $color)
+                <div class="btn-group" role="group">
+                    <input wire:model="color_id" type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
+                        autocomplete="off" >
+                    <label class="mr-3 btn_talla btn_color" for="{{ __($color->name) }}" title="{{$color->name}}">
+                        <div class="imageProduct" style="background-image: url('{{ $color->pivot ? Storage::url($color->pivot->image) : '' }}')"></div>
+                    </label>
+                </div>
             @empty
                 <p class="text-sm">Elige una talla para elegir un color</p>
-                
             @endforelse
-
             {{-- <span><a class="ml-4 underline font-bold cursor-pointer colorbrown">Tabla de tallas</a></span> --}}
         </div>
 
@@ -60,7 +50,6 @@
                 <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option>
             @endforeach
         </select> --}}
-      
     </div>
     <hr class="mt-8 mb-4 hrgreen">
     <p class="text-gray-700 my-4"> <span class="text-lg font-semibold">Stock disponible: </span>
@@ -84,12 +73,11 @@
             </x-jet-secondary-button>
         </div>
         <div class="flex-1">
-
             <div class="itemcolbtnweb">
                 <x-button x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity"
                     wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" color="orange"
                     class="w-full">
-                    Realizar compra
+                    Agregar al carrito
                 </x-button>
             </div>
             <div class="itemcolorbtn">
@@ -100,9 +88,6 @@
                 </x-button>
             </div>
            
-
-
-
             {{-- <button x-bind:disabled="!$wire.quantity" x-bind:disabled="$wire.qty > $wire.quantity"
                 wire:click="addItem" wire:loading.attr="disabled" wire:target="addItem" color="orange" type="button" class="btn_grupe w-full divide-x divide-gray-700">
                 <span class="button__img">
@@ -113,7 +98,6 @@
                 </span>
             </button> --}}
         </div>
-       
     </div>
     <div class="mt-8">
         <div>
@@ -132,7 +116,6 @@
                 <div class="slide_rlg">
                     @livewire('modal-cart')
                 </div>
-
             </x-slot>
             <x-slot name="footer">
                 <x-jet-button wire:click="$set('open_edit', false)" class="mr-4">

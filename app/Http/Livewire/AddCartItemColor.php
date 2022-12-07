@@ -9,7 +9,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 class AddCartItemColor extends Component
 {
     use LivewireAlert;
-    public $product, $colors;
+    public $product;
     public $color_id = "";
     public $qty = 1;
     public $open_edit = false;
@@ -19,7 +19,6 @@ class AddCartItemColor extends Component
     ];
 
     public function mount(){
-        $this->colors = $this->product->colors;
         $this->options['image'] = Storage::url($this->product->images->first()->url);
     }
     
@@ -60,6 +59,7 @@ class AddCartItemColor extends Component
     }
     public function render()
     {
-        return view('livewire.add-cart-item-color');
+        $colors = $this->product->colors;
+        return view('livewire.add-cart-item-color', compact('colors'));
     }
 }

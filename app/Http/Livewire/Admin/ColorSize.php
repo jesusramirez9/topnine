@@ -102,6 +102,9 @@ class ColorSize extends Component
 
     public function delete(Pivot $pivot)
     {
+        if($pivot->image){
+            Storage::delete($pivot->image);
+        }
         $pivot->delete();
         $this->size = $this->size->fresh();
     }

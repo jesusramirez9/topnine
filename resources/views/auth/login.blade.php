@@ -25,6 +25,20 @@
                             {{ session('status') }}
                         </div>
                     @endif
+
+                    <div class="mt-4 mb-4">
+                        <a href="{{ url('login-google') }}" class="loginGoogle">
+                            <div class="p-3 mr-2 bg-white"><img src="{{asset('images/icon_google.png')}}" alt="Google" width="20px"></div>
+                            <p class="mb-0">Continuar con Google</p>
+                        </a>
+                    </div>
+                    {{-- <div class="mb-4">
+                        <a href="{{ url('login-google') }}" class="loginFacebook">
+                            <div class="p-3 mr-2 bg-white"><img src="{{asset('images/icon_facebook.png')}}" alt="Facebook" width="20px"></div>
+                            <p class="mb-0">Continuar con Facebook</p>
+                        </a>
+                    </div> --}}
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -40,8 +54,6 @@
                                 type="password" name="password" required autocomplete="current-password" />
                         </div>
 
-
-
                         <div class="flex items-center justify-between mt-4">
                             <div class="">
                                 <label for="remember_me" class="flex items-center">
@@ -49,9 +61,9 @@
                                     <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                                 </label>
                             </div>
-                            <div>
+                            <div class="text-right">
                                 @if (Route::has('password.request'))
-                                    <a class="underline text-xs sm:text-sm text-gray-600 hover:text-gray-900"
+                                    <a class="underline text-xs text-gray-600 hover:text-gray-900"
                                         href="{{ route('password.request') }}">
                                         {{ __('Forgot your password?') }}
                                     </a>
@@ -65,7 +77,7 @@
                         </div>
                     </form>
                     <div class="flex mt-4 text-center">
-                        <p class="text-xs md:text-base">¿Aún no tienes una cuenta?</p>
+                        <p class="text-sm text-left">¿Aún no tienes una cuenta?</p>
                         <a href="{{ route('register') }}"
                             class="text-sm md:text-base ml-2 underline  font-bold">Regístrate</a>
                     </div>

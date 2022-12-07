@@ -1,12 +1,24 @@
 <div x-data>
     <p class="text-xl text-gray-700 ">Color:</p>
-    <select wire:model="color_id"
-        class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-        <option value="" selected disabled>Seleccionar un color</option>
+    <div class="divsize mt-2">
         @foreach ($colors as $color)
-            <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option>
+            <div class="btn-group" role="group">
+                <input wire:model="color_id" type="radio" class="btn-check" value="{{ $color->id }}" name="color" id="{{ __($color->name) }}"
+                    autocomplete="off" >
+                <label class="mr-3 btn_talla btn_color" for="{{ __($color->name) }}" title="{{$color->name}}">
+                    <div class="imageProduct" style="background-image: url('{{ $color->pivot ? Storage::url($color->pivot->image) : '' }}')"></div>
+                </label>
+            </div>
         @endforeach
-    </select>
+
+        {{-- <select wire:model="color_id"
+        class="w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
+            <option value="" selected disabled>Seleccionar un color</option>
+            @foreach ($colors as $color)
+                <option class="capitalize" value="{{ $color->id }}">{{ __($color->name) }}</option>
+            @endforeach
+        </select> --}}
+    </div>
     <p class="text-gray-700 my-4 text-sm lg:text-base">
         <span class="text-lg font-semibold">Stock disponible: </span>
         @if ($quantity)
