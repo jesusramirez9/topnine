@@ -1,7 +1,6 @@
 <div>
-    <hr class="mt-2 ">
     <div class="container ">
-        <p class="text-center mt-8 mb-8 lg:mb-16 lg:mx-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse eligendi, atque
+        <p class="text-center mb-8 lg:mb-16 lg:mx-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse eligendi, atque
             autem labore ut, quidem eos beatae voluptate error aliquid optio temporibus odio sit molestias reprehenderit
             aliquam! Maiores, voluptates.</p>
     </div>

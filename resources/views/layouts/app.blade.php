@@ -113,7 +113,7 @@
                         @else
                             <x-jet-dropdown margintop="m32" align="right" width="48">
                                 <x-slot name="trigger">
-                                    <i class="fas fa-user-circle text-white text-3xl cursor-pointer filt_imggriss"></i>
+                                    <i class="fas fa-user-circle text-white text-3xl cursor-pointer top_naranja"></i>
                                 </x-slot>
                                 <x-slot name="content">
                                     <x-jet-dropdown-link href="{{ route('login') }}">

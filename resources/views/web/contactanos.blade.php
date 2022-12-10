@@ -74,16 +74,17 @@
                     </div>
                     <div class=" border-r-2 border-gray-500 border-opacity-10 py-4">
                         <div>
-                            <i class="fas fa-phone font-24 text-blue-600"></i>
-                            <h1 class="font-bold text-sm lg:text-base top_naranja">Teléfono</h1>
-                            <p class="text-xs lg:text-base">(01) 000 0000</p>
+                            <i class="fa-solid fa-clock text-blue-600"></i>
+                            <h1 class="font-bold text-sm lg:text-base top_naranja">Horario de atención</h1>
+                            <p class="text-xs lg:text-base">L-V de 9:00 a 19:00 </p>
+                            <p class="text-xs lg:text-base">Sábados de 8:00 a 14:00 </p>
                         </div>
                     </div>
                     <div class="py-4">
                         <div>
                             <i class="fa-regular fa-envelope text-red-600"></i>
                             <h1 class="font-bold text-sm lg:text-base top_naranja">Email</h1>
-                            <p class="text-xs lg:text-base">atencion@pomalca.com.pe</p>
+                            <p class="text-xs lg:text-base">ventas@topnain.com</p>
                         </div>
                     </div>
                 </div>

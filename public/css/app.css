@@ -2343,6 +2343,10 @@ background-color: #FFB368;
     background-color: #8CDAB0;
 }.bg_top_naranja{
     background-color: #FF6100;
+}.bg_griss_top{
+    background-color: #1f1b1b;
+}.fa-25x{
+    font-size: 1.4em;
 }.form-control{
     border:2px solid #9c303d;
     margin: 13px 0px;
@@ -4359,9 +4363,18 @@ background-color: #FFF7F4;
 	}.md\:mx-0{
 		margin-left: 0px;
 		margin-right: 0px;
+	}.md\:mx-1{
+		margin-left: 0.25rem;
+		margin-right: 0.25rem;
 	}.md\:mx-6{
 		margin-left: 1.5rem;
 		margin-right: 1.5rem;
+	}.md\:mx-2{
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
+	}.md\:mx-3{
+		margin-left: 0.75rem;
+		margin-right: 0.75rem;
 	}.md\:mt-0{
 		margin-top: 0px;
 	}.md\:mt-2{
@@ -4376,6 +4389,14 @@ background-color: #FFF7F4;
 		margin-bottom: 1.5rem;
 	}.md\:mt-6{
 		margin-top: 1.5rem;
+	}.md\:mr-2{
+		margin-right: 0.5rem;
+	}.md\:ml-2{
+		margin-left: 0.5rem;
+	}.md\:mr-3{
+		margin-right: 0.75rem;
+	}.md\:ml-3{
+		margin-left: 0.75rem;
 	}.md\:block{
 		display: block;
 	}.md\:flex{

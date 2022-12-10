@@ -10,7 +10,7 @@
         </div>
     @endif
 
-    <div class="bg-white text-gray-700 py-2 md:py-5 hidden md:block">
+    <div class="bg-white text-gray-700 py-2 md:py-5 hidden md:block bg_top_verde">
         <div class=" flex items-center container  justify-between">
             <a href="/" class="">
                 <img src="{{ asset('img/logo/logo1.png') }}" class="block h-28 md:h-16 w-auto"alt="">
@@ -100,7 +100,7 @@
 
                                         <div class="flex items-center px-2 py-2 rounded-lg">
                                             <div>
-                                                <i class="fas fa-user-circle  text-3xl cursor-pointer"></i>
+                                                <i class="fas fa-user-circle  text-3xl cursor-pointer top_naranja"></i>
                                             </div>
                                             <p class="ml-2 cursor-pointer">
                                                 Iniciar sesión
@@ -175,15 +175,21 @@
                 </a>
                 <a href="{{ route('contacto') }}"
                     class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('contactanos') ? 'active ' : '' }}">
-                    Escríbenos
+                    Contáctanos
                 </a>
             </div>
             <div class="flex">
-                <a href="#" class="md:mx-6 hidden md:block">
-                    <i class="fa-brands fa-facebook-square fa-2x"></i></a>
-                <a href="#" class=" hidden md:block"><img class="w-9 h-9"
-                        src="{{ asset('img/iconos/insta.png') }}" alt=""></a>
-
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-facebook-f fa-25x"></i></a>
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-instagram fa-25x"></i>
+                </a>
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-youtube fa-25x"></i>
+                </a>
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-tiktok fa-25x"></i>
+                </a>
             </div>
 
             {{-- <a href="#" class="md:mx-6">
@@ -235,36 +241,36 @@
                         </div>
                     </div>
                     <div class="bg-white md:hidden p-6">
-                         <ul>
+                        <ul>
                             @if ($categories->count() > 0)
-                            @foreach ($categories as $category)
-                            @if ($category->products->count() > 0)
-                                <li
-                                    class="navigation-link text-trueGray-700 hover:font-bold hover:bg-gray-200 hover:text-black">
-                                    <a href="{{ route('categories.show', $category) }}"
-                                        class="py-2  text-xs xl:text-sm flex items-center">
-                                        <span class="flex justify-center w-9">
-                                            {!! $category->icon !!}
-                                        </span>
-                                        <span class="flex justify-center w-1 bg-orange-500 h-4 mr-2">
+                                @foreach ($categories as $category)
+                                    @if ($category->products->count() > 0)
+                                        <li
+                                            class="navigation-link text-trueGray-700 hover:font-bold hover:bg-gray-200 hover:text-black">
+                                            <a href="{{ route('categories.show', $category) }}"
+                                                class="py-2  text-xs xl:text-sm flex items-center">
+                                                <span class="flex justify-center w-9">
+                                                    {!! $category->icon !!}
+                                                </span>
+                                                <span class="flex justify-center w-1 bg-orange-500 h-4 mr-2">
 
-                                        </span>
-                                        {{ $category->name }}
-                                    </a>
-                                    <hr>
+                                                </span>
+                                                {{ $category->name }}
+                                            </a>
+                                            <hr>
 
-                                </li>
-                                @endif
-                            @endforeach
+                                        </li>
+                                    @endif
+                                @endforeach
                             @endif
-                        </ul> 
+                        </ul>
                         {{-- <ul> --}}
-                            {{-- <div class="accordion-container"> --}}
-                                {{-- @if ($categories->count() > 0) --}}
-                                {{-- @foreach ($categories as $categoryt) --}}
-                                    {{-- @if ($categoryt->products->count() > 0) --}}
-                                    
-                                    {{-- <a class="accordion-titulo open py-1 text-xs flex items-center">
+                        {{-- <div class="accordion-container"> --}}
+                        {{-- @if ($categories->count() > 0) --}}
+                        {{-- @foreach ($categories as $categoryt) --}}
+                        {{-- @if ($categoryt->products->count() > 0) --}}
+
+                        {{-- <a class="accordion-titulo open py-1 text-xs flex items-center">
                                         <div class="flex">
                                             <span class="flex justify-center w-9">
                                                 {!! $categoryt->icon !!}
@@ -289,10 +295,10 @@
 
                                         </ul>
                                     </div> --}}
-                                    {{-- @endif --}}
-                                {{-- @endforeach --}}
-                                {{-- @endif --}}
-                            {{-- </div> --}}
+                        {{-- @endif --}}
+                        {{-- @endforeach --}}
+                        {{-- @endif --}}
+                        {{-- </div> --}}
                         {{-- </ul> --}}
                         @auth
 
@@ -356,6 +362,5 @@
     </header>
 
     @push('script')
-    
     @endpush
 </div>

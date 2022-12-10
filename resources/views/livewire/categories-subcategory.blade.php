@@ -64,19 +64,19 @@
                             </div>
                             <div class="rounded-xl">
                                 <div class="promocion rounded-xl">
-                                    <div class="bg-white rounded-lg ">
+                                    <div class="rounded-lg ">
                                         <div class="grid grid-cols-2 gap-3">
                                             <div>
-                                                <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
+                                                <img src="{{ asset('img/logo/ron.png') }}" alt="">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
+                                                <img src="{{ asset('img/logo/ron.png') }}" alt="">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
+                                                <img src="{{ asset('img/logo/ron.png') }}" alt="">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
+                                                <img src="{{ asset('img/logo/ron.png') }}" alt="">
                                             </div>
                                             
                                         </div>
