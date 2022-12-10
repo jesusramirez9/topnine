@@ -1,5 +1,7 @@
 <x-app-layout>
-
+    <div class="container">
+        @livewire('navigation-responsive')
+    </div>
     <div class="container py-8">
         <h1 class="text-2xl font-bold">Políticas de privacidad</h1>
 

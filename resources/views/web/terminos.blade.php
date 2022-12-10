@@ -1,4 +1,7 @@
 <x-app-layout>
+    <div class="container pt-8">
+        @livewire('navigation-responsive')
+    </div>
     <div class="container py-8 text-justify">
         <div class="my-6">
             <h1 class="text-2xl font-medium">Términos y condiciones</h1>
