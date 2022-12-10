@@ -3,7 +3,8 @@
         <x-slot name="trigger">
             <span class="relative inline-block cursor-pointer">
                 <div class="flex items-center">
-                    <x-cart color="gray" size="30" />
+                    {{-- <x-cart color="gray" size="30" /> --}}
+                    <i class="fa-solid fa-cart-shopping top_naranja fa-2x"></i>
                     <p class="pl-2">Mi carrito</p>
                 </div>
 

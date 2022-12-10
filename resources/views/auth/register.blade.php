@@ -10,11 +10,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 ">
                 <div class="alselcent">
                     <div class="flex items-center justify-center text-center pb-6 ">
-                        <div>
+                        
                             <x-jet-authentication-card-logo /> 
-                        </div>
+                        
+                    </div>
+                    <div class="flex items-center justify-center text-center pb-6 ">
+                        
                         <div>
-                            <p class="ml-4 text-xl md:text-2xl  font-bold">Crea tu cuenta</p>
+                            <p class="text-lg  font-bold">Crea tu cuenta</p>
                         </div>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
@@ -67,7 +70,7 @@
                             </x-jet-button>
                         </div>
                     </form>
-                    <div class="mt-4 flex justify-center text-center">
+                    <div class="mt-4 flex justify-center text-center top_naranja">
                         <p>¿Ya tienes tu cuenta?</p>
                         <a href="{{ route('login') }}" class="ml-2 underline font-bold">Inicia sesión</a>
                     </div>

@@ -5,9 +5,28 @@
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     @endpush
     <div class="bg-gray-100">
-       
-     
-        <div class="container py-8 d-none md:block">
+        <div>
+            @livewire('navigation-responsive')
+        </div>
+
+        <div class="container pt-8 md:hidden"> 
+            <div class="rounded-lg w-full">
+                <div class="glider-contain ">
+                    <div class="sliderm">
+                        @foreach ($banners as $banner)
+                        <div class="overflow-hidden rounded-lg">
+                            <figure class="">
+                                <img class="lg:h-20 xl:h-36 w-full object-cover object-center rounded-lg"
+                                    src="{{Storage::url($banner->image)}}">
+                            </figure>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pb-8 d-none md:block">
             @livewire('categories-subcategory')
         </div>
 
@@ -57,7 +76,6 @@
                 new Glider(document.querySelector('.glider-' + id), {
                     slidesToScroll: 1,
                     slidesToShow: 1,
-                    draggable: true,
              //       dots: '.glider-' + id + '~ .dots',
                     dots: false,
                     arrows: {
@@ -81,6 +99,7 @@
                         },
                         {
                             breakpoint: 768,
+                            draggable: true,
                             settings: {
                                 slidesToScroll: 3.5,
                                 slidesToShow: 3,

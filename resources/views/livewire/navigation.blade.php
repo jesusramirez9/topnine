@@ -3,16 +3,18 @@
         <div class="">
             <div class="sliderjss">
                 <div>
-                    <img src="{{ Storage::url($bannerHeader->image) }}" class="w-full h-20 object-cover object-bottom" alt="">
+                    <img src="{{ Storage::url($bannerHeader->image) }}" class="w-full h-20 object-cover object-bottom"
+                        alt="">
                 </div>
             </div>
         </div>
     @endif
 
-    <div class="bg-white text-gray-700 py-2 md:py-5 hidden md:block">
+    <div class="bg-white text-gray-700 py-2 md:py-5 hidden md:block bg_top_verde">
         <div class=" flex items-center container  justify-between">
             <a href="/" class="">
-                <x-jet-application-mark class="block h-10 md:h-16 w-auto" />
+                <img src="{{ asset('img/logo/logo1.png') }}" class="block h-28 md:h-16 w-auto"alt="">
+                {{-- <x-jet-application-mark class="block h-10 md:h-16 w-auto" /> --}}
             </a>
 
             <div class="flex-1 mx-8 justify-center">
@@ -21,15 +23,15 @@
                     @livewire('search')
                     <div class="flex justify-center items-center  text-gray-600 font-semibold d-none lg:block">
                         <div
-                            class=" grid grid-cols-1 md:py-3 text-xs xl:text-sm gap-4 text-center md:flex items-center">
+                            class="justify-center grid grid-cols-1 md:py-3 text-xs xl:text-sm gap-4 text-center md:flex items-center">
                             <div class="mr-4">
-                                <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@trepstom.com</p>
+                                <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@topnain.com</p>
                             </div>
                             <div class="mr-4 hidden md:block border-r-2 border-l-2 border-x-white">
-                                <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>998 905 385</p>
+                                <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>940 439 490</p>
                             </div>
                             <div class="mr-4 hidden md:block">
-                                <p><i class="fas fa-map-marker-alt  mr-1 xl:mr-4"></i>Direccion Trepstom</p>
+                                <p><i class="fas fa-map-marker-alt  mr-1 xl:mr-4"></i>Calle cantuarias 140, T-48</p>
                             </div>
                         </div>
                     </div>
@@ -98,7 +100,7 @@
 
                                         <div class="flex items-center px-2 py-2 rounded-lg">
                                             <div>
-                                                <i class="fas fa-user-circle  text-3xl cursor-pointer"></i>
+                                                <i class="fas fa-user-circle  text-3xl cursor-pointer top_naranja"></i>
                                             </div>
                                             <p class="ml-2 cursor-pointer">
                                                 Iniciar sesión
@@ -134,12 +136,16 @@
         x-data="dropdown()">
 
         <div class="container flex items-center h-12 justify-between  enlace ">
-            <div class="block md:hidden p-4 md:p-0">
+            <div class="block md:hidden py-4 px-2 md:p-0">
                 <a href="/">
-                    <x-jet-application-mark class="block h-10 md:h-16 w-auto" />
+                    <img src="{{ asset('img/logo/logo1.png') }}" class="block h-8 "alt="">
+                    {{-- <x-jet-application-mark class="block h-10 md:h-16 w-auto" /> --}}
                 </a>
             </div>
+            <div class="md:hidden flex-1">
 
+                @livewire('search')
+            </div>
             <a :class="{ 'bg-opacity-100 text-orange-500': open }" x-on:click="show()"
                 class="flex flex-col items-center justify-center order-last md:order-first px-6 md:px-4 bg-white bg-opacity-25  cursor-pointer font-semibold h-full">
                 <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
@@ -169,15 +175,21 @@
                 </a>
                 <a href="{{ route('contacto') }}"
                     class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('contactanos') ? 'active ' : '' }}">
-                    Escríbenos
+                    Contáctanos
                 </a>
             </div>
             <div class="flex">
-                <a href="#" class="md:mx-6 hidden md:block">
-                    <i class="fa-brands fa-facebook-square fa-2x"></i></a>
-                <a href="#" class=" hidden md:block"><img class="w-9 h-9"
-                        src="{{ asset('img/iconos/insta.png') }}" alt=""></a>
-
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-facebook-f fa-25x"></i></a>
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-instagram fa-25x"></i>
+                </a>
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-youtube fa-25x"></i>
+                </a>
+                <a href="#" class="md:mx-3 hidden md:block">
+                    <i class="fa-brands fa-tiktok fa-25x"></i>
+                </a>
             </div>
 
             {{-- <a href="#" class="md:mx-6">
@@ -230,12 +242,64 @@
                     </div>
                     <div class="bg-white md:hidden p-6">
                         <ul>
-                            <li><a href="/">Inicio</a></li>
-                            <li><a href="{{route('conocenos')}}">Conócenos</a></li>
-                            <li><a href="{{route('servicios')}}">Servicios</a></li>
-                            <li><a href="{{route('contacto')}}">Escríbenos</a></li>
+                            @if ($categories->count() > 0)
+                                @foreach ($categories as $category)
+                                    @if ($category->products->count() > 0)
+                                        <li
+                                            class="navigation-link text-trueGray-700 hover:font-bold hover:bg-gray-200 hover:text-black">
+                                            <a href="{{ route('categories.show', $category) }}"
+                                                class="py-2  text-xs xl:text-sm flex items-center">
+                                                <span class="flex justify-center w-9">
+                                                    {!! $category->icon !!}
+                                                </span>
+                                                <span class="flex justify-center w-1 bg-orange-500 h-4 mr-2">
+
+                                                </span>
+                                                {{ $category->name }}
+                                            </a>
+                                            <hr>
+
+                                        </li>
+                                    @endif
+                                @endforeach
+                            @endif
                         </ul>
-                        <hr class="mt-2">
+                        {{-- <ul> --}}
+                        {{-- <div class="accordion-container"> --}}
+                        {{-- @if ($categories->count() > 0) --}}
+                        {{-- @foreach ($categories as $categoryt) --}}
+                        {{-- @if ($categoryt->products->count() > 0) --}}
+
+                        {{-- <a class="accordion-titulo open py-1 text-xs flex items-center">
+                                        <div class="flex">
+                                            <span class="flex justify-center w-9">
+                                                {!! $categoryt->icon !!}
+                                            </span>
+                                            <span class="flex justify-center w-1 bg-orange-500 h-4 mr-2">
+    
+                                            </span>
+                                        {{ $categoryt->name }}
+                                        <i class="fa-sharp fa-solid fa-caret-down ml-3"></i>
+                                        </div>
+                                    </a>
+                                    <div class="accordion-content block">
+                                        <ul class="divide-y divide-gray-200">
+                                            @foreach ($categoryt->subcategories as $subcategory)
+                                                <li class="py-1 font-semibold pl-3 text-xs ">
+                                                    <a class="capitalize "
+                                                        wire:click="$set('subcategoria', '{{ $subcategory->slug }}')">
+                                                        {{ $subcategory->name }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div> --}}
+                        {{-- @endif --}}
+                        {{-- @endforeach --}}
+                        {{-- @endif --}}
+                        {{-- </div> --}}
+                        {{-- </ul> --}}
                         @auth
 
                             <div name="trigger">
@@ -271,20 +335,18 @@
 
                                         <div class="">
                                             <div class="flex items-center px-2 py-2 rounded-lg">
-                                                <div>
-                                                    <i class="fas fa-user-circle  text-3xl cursor-pointer"></i>
-                                                </div>
+
                                                 <a href="{{ route('login') }}" class="ml-2 cursor-pointer">
                                                     Iniciar sesión
                                                 </a>
                                             </div>
                                             <div class="text-left  px-2">
-                                                <a href="{{ route('register') }}">
+                                                <a href="{{ route('register') }}" class="ml-2">
                                                     Regístrate
                                                 </a>
                                             </div>
                                         </div>
-                                        
+
 
                                     </div>
                                 </div>

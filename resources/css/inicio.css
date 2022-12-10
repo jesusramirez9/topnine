@@ -193,10 +193,11 @@ body {
     z-index: 9;
 }
 
-.slick-prev{  
+.slick-prev {
     left: 1.5px;
 }
-.slick-next{
+
+.slick-next {
     right: 1.5px;
 }
 
@@ -307,12 +308,9 @@ body {
 
 }
 
-@media (min-width: 425px) {}
-
 @media (min-width: 768px) {
     .bg-inisec3rp {
         display: none;
-
     }
 
     .bg-inisec3 {
@@ -411,7 +409,6 @@ body {
 
     .imginicio {
         width: 18rem;
-        /* right: -19px; */
     }
 
     .positionimg {
@@ -583,7 +580,6 @@ body {
 
     .invierno_wb {
         font-size: 5rem !important;
-
     }
 
     .anio_sec3 {
@@ -608,7 +604,6 @@ body {
 
     .imginicio {
         width: 23rem;
-        /* right: -19px; */
     }
 
     .txtp_welcome {

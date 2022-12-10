@@ -1,23 +1,22 @@
-.bgfondo{
+.bgfondo {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.bg_orange{
+.bg_orange {
     background-color: #FF6000;
 }
 
-.imgbg{
+.imgbg {
     width: 28rem;
 }
 
-.bg_pricipal{
-
+.bg_pricipal {
     background-color: #04214D;
 }
 
-header.abajo{
+header.abajo {
     background: #fff;
     position: fixed;
     top: 0;
@@ -25,7 +24,30 @@ header.abajo{
     border-bottom: 2px solid rgb(219, 212, 212);
 }
 
-.text-center-special{
+.text-center-special {
     text-align: -webkit-center;
 }
- 
+
+.top_verde {
+    color: #8CDAB0;
+}
+
+.top_naranja {
+    color: #FF6100;
+}
+
+.bg_top_verde {
+    background-color: #8CDAB0;
+}
+
+.bg_top_naranja {
+    background-color: #FF6100;
+}
+
+.bg_griss_top {
+    background-color: #1f1b1b;
+}
+
+.fa-25x {
+    font-size: 1.4em;
+}

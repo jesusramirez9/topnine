@@ -2,11 +2,9 @@
     @apply max-w-7xl mx-auto px-2;
 }
 
-.max-w-8xl{
+.max-w-8xl {
     max-width: 88rem;
 }
-
-
 
 @media(min-width:640px) {
     .container {
@@ -31,6 +29,7 @@
         @apply px-8;
     }
 }
+
 @media(min-width:1900px) {
     .container {
         @apply px-8;
@@ -48,5 +47,3 @@
         @apply px-8;
     }
 }
-
-

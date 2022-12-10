@@ -18,10 +18,10 @@
                                 @endif
                             </div>
                             @if ($product->images->count())
-                                <img class="h-36 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+                                <img class=" w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                     src="{{ Storage::url($product->images->first()->url) }}" alt="">
                             @else
-                                <img class="h-36 w-full object-cover object-center"
+                                <img class=" w-full object-cover object-center"
                                     src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
                                     alt="">
                             @endif
@@ -64,10 +64,10 @@
                 @endforeach
             </ul>
 
-            <button aria-label="Previous" class="glider-prev"> <span
+            <button aria-label="Previous" class="glider-prev hidden md:block"> <span
                     class="bg-white border-2 border-gray-200 rounded-lg p-3"> <i
                         class="text-xl  fas fa-chevron-left"></i> </button>
-            <button aria-label="Next" class="glider-next">
+            <button aria-label="Next" class="glider-next hidden md:block">
                 <span class="bg-white border-2 border-gray-200 rounded-lg p-3"> <i
                         class="text-xl  fas fa-chevron-right"></i>
             </button>

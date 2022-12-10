@@ -8,11 +8,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 ">
                 <div class="alselcent">
                     <div class="flex items-center justify-center text-center pb-6 ">
+                        <x-jet-authentication-card-logo />
+                    </div>
+                    <div class="flex items-center justify-center text-center pb-6 ">
+                        
                         <div>
-                            <x-jet-authentication-card-logo />
-                        </div>
-                        <div>
-                            <p class="ml-4 text-xl md:text-3xl  text-left font-bold">Restablecer <br>tu
+                            <p class="ml-4 text-lg  text-left font-bold">Restablecer tu
                                 contraseña </p>
                         </div>
                     </div>

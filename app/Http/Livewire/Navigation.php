@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Slider;
+use App\Models\Subcategory;
 use Livewire\Component;
 
 class Navigation extends Component
@@ -12,6 +13,7 @@ class Navigation extends Component
     {
         $categories = Category::all();
         $bannerHeader = Slider::where([['type', '2'], ['status', '1']])->first();
-        return view('livewire.navigation', compact('categories','bannerHeader'));
+        $subcategories = Subcategory::all();
+        return view('livewire.navigation', compact('categories','bannerHeader','subcategories'));
     }
 }
