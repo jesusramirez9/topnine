@@ -4,14 +4,11 @@ namespace App\Http\Livewire;
 
 use App\Models\Category;
 use App\Models\Color;
-use App\Models\ColorSize;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Models\Product;
-use App\Models\Size;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 
 class CategoryFilter extends Component
 {
@@ -21,11 +18,8 @@ class CategoryFilter extends Component
     public $view = 'grid';
     public $i = 1;
     protected $queryString = ['subcategoria', 'marca', 'talla', 'page', 'color', 'precio'];
-
-    protected   $preciomin = 0, $preciomax = 0;
-
+    protected $preciomin = 0, $preciomax = 0;
     
-
     public function render()
     {
         $tipoconsulta = 1;
@@ -34,23 +28,33 @@ class CategoryFilter extends Component
         $precio_product = [
             [
                 'id' => 1,
+                'label' => 'S/0 - S/100',
                 'min' => 0,
-                'max' => 50,
-            ],
-            [
-                'id' => 2,
-                'min' => 50,
                 'max' => 100,
             ],
             [
-                'id' => 3,
+                'id' => 2,
+                'label' => 'S/100 - S/500',
                 'min' => 100,
-                'max' => 150,
+                'max' => 500,
+            ],
+            [
+                'id' => 3,
+                'label' => 'S/500 - S/1000',
+                'min' => 500,
+                'max' => 1000,
             ],
             [
                 'id' => 4,
-                'min' => 150,
-                'max' => 200,
+                'label' => 'S/1000 - S/3000',
+                'min' => 1000,
+                'max' => 3000,
+            ],
+            [
+                'id' => 5,
+                'label' => 'S/3000 a más',
+                'min' => 3000,
+                'max' => 999999,
             ]
         ];
 
@@ -75,13 +79,10 @@ class CategoryFilter extends Component
         });
         
         if ($this->subcategoria) {
-            # code...
             $productsQuery =  $productsQuery->whereHas('subcategory', function (Builder $query) {
                 $query->where('slug', $this->subcategoria);
             });
         }
-
-        
 
         if ($this->marca) {
             $productsQuery =  $productsQuery->whereHas('brand', function (Builder $query) {
@@ -96,10 +97,26 @@ class CategoryFilter extends Component
         }
 
         if ($this->color) {
-            Log::info('Color: ' . $this->color);
-            $productsQuery =  $productsQuery->whereHas('sizes.colorsizes', function (Builder $query) {
-                $query->where('color_id', $this->color);
-            });
+            if($this->subcategoria){
+                $subCategory = $this->category->subcategories->where('slug', $this->subcategoria)->first();
+                if($subCategory->color && !$subCategory->size){
+                    $productsQuery =  $productsQuery->whereHas('colors', function (Builder $query) {
+                        $query->where('color_id', $this->color);
+                    });
+                }
+                if($subCategory->color && $subCategory->size){
+                    $productsQuery =  $productsQuery->whereHas('sizes.colorsizes', function (Builder $query) {
+                        $query->where('color_id', $this->color);
+                    });
+                } 
+            }else{
+                $productsQuery =  $productsQuery->whereHas('sizes.colorsizes', function (Builder $query) {
+                    $query->where('color_id', $this->color);
+                });
+                $productsQuery =  $productsQuery->orWhereHas('colors', function (Builder $query) {
+                    $query->where('color_id', $this->color);
+                });
+            }   
         }
 
         $products = $productsQuery->where('status', 2)->paginate(12);

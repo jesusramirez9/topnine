@@ -36,7 +36,7 @@
                 <x-jet-input-error for="description" />
             </div>
             <div class="mb-4">
-                <input  type="file" wire:model="image" id="{{$identificador}}" accept="image/*">
+                <input type="file" wire:model="image" id="{{$identificador}}" accept="image/*" class="customFile shadow-sm rounded-md w-full">
             </div>
             <div class="bg-white shadow-xl rounded-lg p-6 mb-4">
                 <p class="font-semibold mb-2">Estado del producto</p>

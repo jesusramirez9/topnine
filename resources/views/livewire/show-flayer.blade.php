@@ -20,7 +20,6 @@
                         </div>
                     @endforeach
                 </div>
-
             </x-slot>
             <x-slot name="footer">
                 <x-jet-button wire:click="$set('open_edit', false)" class="mr-4">
@@ -33,7 +32,6 @@
     @push('script')
     <script type="text/javascript" src="{{asset('js/slick.min.js')}}"></script>
         <script>
-          
             $(document).ready(function() {
                 $('.flayer').slick();
             });

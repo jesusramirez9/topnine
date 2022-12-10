@@ -40,7 +40,7 @@
                 <x-jet-input wire:model="nrowsp" type="number" class="w-full" />
             </div>
             <div class="mt-4 mb-4">
-                <input  type="file" wire:model="image" id="{{$identificador}}" accept="image/*">
+                <input type="file" wire:model="image" id="{{$identificador}}" accept="image/*" class="customFile shadow-sm rounded-md w-full">
             </div>
             <div class="mt-4 mb-4">
                

@@ -8,7 +8,7 @@
         <div class="flex-1 py-4 px-6 flex flex-col">
             <div class="lg:flex justify-between">
                 <div>
-                    <h1 class="text-lg font-semibold text-gray-700">{{ $product->name }}</h1>
+                    <h1 class="text-lg font-semibold text-gray-700 truncate">{{ $product->name }}</h1>
                     <p class="font-bold text-gray-700">S/ {{ $product->price }}</p>
                 </div>
                 <div class="flex items-center">

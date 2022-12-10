@@ -11,7 +11,7 @@ class Navigation extends Component
     public function render()
     {
         $categories = Category::all();
-        $bannerHeader = Slider::where('type', 2)->first();
+        $bannerHeader = Slider::where([['type', '2'], ['status', '1']])->first();
         return view('livewire.navigation', compact('categories','bannerHeader'));
     }
 }

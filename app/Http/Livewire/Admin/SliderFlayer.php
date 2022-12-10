@@ -72,7 +72,7 @@ class SliderFlayer extends Component
 
     public function getSliders()
     {
-        $this->sliders = Slider::all();
+        $this->sliders = Slider::where('type', 1)->get();
     }
 
     public function save()

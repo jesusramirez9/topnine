@@ -1,38 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 
 body {
-  
     font-family: 'Montserrat', sans-serif;
-   
 }
+
 .font-sans {
     font-family: Montserrat, sans-serif !important;
 }
-.d-blck{
+
+.d-blck {
     display: block !important;
 }
-.jtifyend{
+
+.jtifyend {
     justify-self: end;
 }
-.alselcent{
+
+.alselcent {
     align-self: center;
 }
 
-.inptvrd{
+.inptvrd {
     border-radius: 0;
 }
 
-.carlogin{
-
+.customFile{
+    border: 1px solid #ccc !important;
+    overflow: hidden !important;
 }
 
-@media(min-width:768px){
-    .carlogin{
-        max-width: 41rem ;
+.customFile::file-selector-button {
+    border: 1px solid rgb(31, 41, 55);
+    padding: 0.2em 0.4em;
+    color: #fff;
+    background-color: rgb(31, 41, 55);
+}
+
+.dropzone {
+    border: 2px solid rgb(239 68 68 / 50%) !important;
+}
+
+@media(min-width:768px) {
+    .carlogin {
+        max-width: 41rem;
     }
 }
-@media(min-width:1024px){
-    .carlogin{
+
+@media(min-width:1024px) {
+    .carlogin {
         max-width: 41rem;
     }
 }

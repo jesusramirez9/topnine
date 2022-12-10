@@ -36,7 +36,7 @@
                 <x-jet-input-error for="content" />
             </div>
             {{-- <div class="mb-4">
-                <input  type="file" wire:model="image" id="{{$identificador}}" accept="image/*">
+                <input  type="file" wire:model="image" id="{{$identificador}}" accept="image/*" class="customFile shadow-sm rounded-md w-full">
             </div> --}}
         </x-slot>
 

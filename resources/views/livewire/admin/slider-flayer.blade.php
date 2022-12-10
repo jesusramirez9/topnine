@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <input wire:model="headerImage" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="headerImage">
+                    <input wire:model="headerImage" accept="image/*" class="mt-1 customFile shadow-sm rounded-md w-full" type="file" name="headerImage">
                     <x-jet-input-error for="headerImage" />
                 </div>
             </div>
@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <input wire:model="createForm.image" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="file">
+                    <input wire:model="createForm.image" accept="image/*" class="mt-1 customFile shadow-sm rounded-md w-full" type="file" name="file">
                     <x-jet-input-error for="createForm.image" />
                 </div>
             </div>
@@ -222,7 +222,7 @@
                 </div>
                 <div>
                     <x-jet-label>Imagen</x-jet-label>
-                    <input wire:model="editImage" accept="image/*" class="mt-1" type="file" name="file">
+                    <input wire:model="editImage" accept="image/*" class="mt-1 customFile shadow-sm rounded-md w-full" type="file" name="file">
                     <x-jet-input-error for="editImage" />
                 </div>
             </div>

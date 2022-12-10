@@ -15,7 +15,7 @@ class CategoriesSubcategory extends Component
         $categories = Category::all();
         $products = Product::all();
         $subcategories = Subcategory::all();
-        $banners = Slider::where('status', 1)->orderBy('order', 'asc')->get();
+        $banners = Slider::where([['type', '1'], ['status', '1']])->orderBy('order', 'asc')->get();
         return view('livewire.categories-subcategory', compact('categories','products','subcategories','banners'));
     }
 }

@@ -55,7 +55,7 @@
                 <x-jet-label>
                     Imagen
                 </x-jet-label>
-                <input wire:model="createForm.image" accept="image/*" class="mt-1" type="file" name="file"
+                <input wire:model="createForm.image" accept="image/*" class="mt-1 customFile shadow-sm rounded-md w-full" type="file" name="file"
                     id="{{ $rand }}">
                 <x-jet-input-error for="createForm.image" />
             </div>
@@ -181,7 +181,7 @@
                     <x-jet-label>
                         Imagen
                     </x-jet-label>
-                    <input wire:model="editImage" accept="image/*" class="mt-1" type="file" name="file"
+                    <input wire:model="editImage" accept="image/*" class="mt-1 customFile shadow-sm rounded-md w-full" type="file" name="file"
                         id="{{ $rand }}">
                     <x-jet-input-error for="editImage" />
                 </div>

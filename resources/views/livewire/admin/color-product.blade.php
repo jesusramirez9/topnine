@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <input wire:model.defer="imageColor" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="file">
+                    <input wire:model.defer="imageColor" accept="image/*" class="customFile shadow-sm rounded-md w-full" type="file" name="file">
                     <x-jet-input-error for="imageColor" />
                 </div>
             </div>
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="">
-                    <input wire:model.defer="editImage" accept="image/*" class="mt-1 customFile form-control-file block w-full text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" type="file" name="file">
+                    <input wire:model.defer="editImage" accept="image/*" class="customFile shadow-sm rounded-md w-full mt-1" type="file" name="file">
                     <x-jet-input-error for="editImage" />
                 </div>
             </div>

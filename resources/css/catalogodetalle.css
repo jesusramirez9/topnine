@@ -44,20 +44,6 @@
     background: #FFF7F4;
     padding: 1.5rem 2rem;
 }
-.slick-prev{  
-    position: absolute;
-    z-index: 1;
-    left: 1.2%;
-    top: 40%;
-    font-size: 2rem;
-}
-.slick-next{
-    position: absolute;
-    z-index: 1;
-    right: 1.5px;
-    top: 40%;
-    font-size: 2rem;
-}
 .slidehomenext{
     right: 2px !important;
     left: auto !important;
