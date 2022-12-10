@@ -12,12 +12,13 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 ">
                 <div class="alselcent">
+                    <div  class="flex items-center justify-center text-center pb-6 ">
+                        <x-jet-authentication-card-logo />
+                    </div>
                     <div class="flex items-center justify-center text-center pb-6 ">
+                        
                         <div>
-                            <x-jet-authentication-card-logo />
-                        </div>
-                        <div>
-                            <p class="ml-4 text-xl md:text-2xl text-left font-bold">He olvidado <br>mi contraseña </p>
+                            <p class=" text-lg md:text-lg  font-bold">He olvidado mi contraseña </p>
                         </div>
                     </div>
                     <form method="POST" action="{{ route('password.email') }}">

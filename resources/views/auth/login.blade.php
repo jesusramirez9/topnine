@@ -10,12 +10,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-2 lg:gap-10">
                 <div class="alselcent">
                     <div class="flex items-center justify-center text-center pb-6 ">
-                        <div>
-                            <x-jet-authentication-card-logo />
-                        </div>
+                        <x-jet-authentication-card-logo />
+                    </div>
 
+                    <div class="flex items-center justify-center text-center pb-6 ">
+                      
                         <div>
-                            <p class="ml-4 text-xl md:text-3xl font-bold">Inicia sesión</p>
+                            <p class="text-lg font-bold">Inicia sesión</p>
                         </div>
 
                     </div>
@@ -76,7 +77,7 @@
                             </x-jet-button>
                         </div>
                     </form>
-                    <div class="flex mt-4 text-center">
+                    <div class="flex mt-4 text-center top_naranja">
                         <p class="text-sm text-left">¿Aún no tienes una cuenta?</p>
                         <a href="{{ route('register') }}"
                             class="text-sm md:text-base ml-2 underline  font-bold">Regístrate</a>

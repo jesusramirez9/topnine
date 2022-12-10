@@ -3,7 +3,8 @@
     <div class="max-w-8xl mx-auto px-2  grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-16">
         <div>
             <div class="mb-6 flex justify-center md:justify-start md:block">
-                <x-jet-application-mark class="block h-10 md:h-16 w-auto" />
+                {{-- <x-jet-application-mark class="block h-10 md:h-16 w-auto" /> --}}
+                <img src="{{asset('img/logo/logo1.png')}}" class="block h-8 "alt="">
             </div>
             <div class="flex  mb-6 justify-center md:justify-start md:block">
                 <div>
@@ -33,10 +34,8 @@
             <p class="text-sm font-bold mb-3 text-center md:text-left">CONTACTO</p>
             <div class="flex justify-center md:block">
                 <ul class="text-xs ulli ulcontact">
-                    <li><i class="fas fa-map-marker-alt mr-2"></i>Av. Canada 3770 - San Luis</li>
-                    <li><i class="fas fa-phone color-icon-footer mr-2"></i> (01) 436 6643</li>
-                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 989 056 593 </li>
-                    <li><i class="fab fa-whatsapp color-icon-footer mr-2"></i>914 673 518</li>
+                    <li><i class="fas fa-map-marker-alt mr-2"></i>Calle cantuarias 140, semisotano, puesto 48.</li>
+                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 940 439 490 </li>
                     <li><i class="far fa-envelope color-icon-footer mr-2"></i>ventas@topnain.com</li>
                 </ul>
             </div>
@@ -64,10 +63,9 @@
             <p class="text-sm font-bold mb-3 text-center md:text-left">VENTA CORPORATIVA</p>
             <div class="flex justify-center md:block">
                 <ul class="text-xs ulli ulcontact">
-                    <li><i class="fas fa-phone color-icon-footer mr-2"></i> (01) 436 6643</li>
-                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 989 056 593 </li>
+                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 940 439 490 </li>
                     <li><i class="far fa-envelope color-icon-footer mr-2"></i>ventas@topnain.pe</li>
-                    <li><i class="fas fa-map-marker-alt mr-2"></i>Av. Canada 3770 - San Luis</li>
+                    <li><i class="fas fa-map-marker-alt mr-2"></i>Calle cantuarias 140, semisotano, puesto 48.</li>
 
                 </ul>
             </div>

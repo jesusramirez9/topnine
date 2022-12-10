@@ -78,7 +78,9 @@
                                             <div>
                                                 <img src="{{ asset('imgz/catalogo/cat3.jpg') }}" alt="">
                                             </div>
+                                            
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -143,10 +145,10 @@
                                         @endforeach
                                     @endforeach
                                 </div>
-                                <button aria-label="Previous" class="glider-prev slidehomeprev">
+                                <button aria-label="Previous" class="hidden md:block glider-prev slidehomeprev">
                                     <span class="text-4xl">«</span>
                                 </button>
-                                <button aria-label="Next" class="glider-next slidehomenext">
+                                <button aria-label="Next" class="hidden md:block glider-next slidehomenext">
                                     <span class="text-4xl">»</span>
                                 </button>
                             </div>

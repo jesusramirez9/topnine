@@ -64,10 +64,10 @@
                 @endforeach
             </ul>
 
-            <button aria-label="Previous" class="glider-prev"> <span
+            <button aria-label="Previous" class="glider-prev hidden md:block"> <span
                     class="bg-white border-2 border-gray-200 rounded-lg p-3"> <i
                         class="text-xl  fas fa-chevron-left"></i> </button>
-            <button aria-label="Next" class="glider-next">
+            <button aria-label="Next" class="glider-next hidden md:block">
                 <span class="bg-white border-2 border-gray-200 rounded-lg p-3"> <i
                         class="text-xl  fas fa-chevron-right"></i>
             </button>

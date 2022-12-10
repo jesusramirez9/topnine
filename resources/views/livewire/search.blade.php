@@ -1,7 +1,7 @@
 <div class="flex-1 relative" x-data>
 
     <form action="{{route('search')}}" autocomplete="off">
-        <x-jet-input name="name" wire:model="search" type="text" class="w-full buscador" placeholder="¿Qué estás buscando?" />
+        <x-jet-input name="name" wire:model="search" type="text" class="w-full buscador text-xs" placeholder="¿Qué estás buscando?" />
     <button class="absolute top-0 right-0 w-12 h-full  flex items-center btn_searc justify-center rounded-r-md">
         <x-search size="35" color="white"/>
     </button>

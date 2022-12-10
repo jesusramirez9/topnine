@@ -1,6 +1,7 @@
 <div>
+
     <div class="container ">
-        <p class="text-center mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse eligendi, atque
+        <p class="text-center mb-16 lg:mx-12">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse eligendi, atque
             autem labore ut, quidem eos beatae voluptate error aliquid optio temporibus odio sit molestias reprehenderit
             aliquam! Maiores, voluptates.</p>
     </div>
@@ -18,16 +19,17 @@
                 <div class="col-span-2">
                     <div>
                         <h1
-                            class="text-lg lg:text-2xl font-semibold text-gray-700 tracking-wide uppercase text-center mb-4">
+                            class="text-lg lg:text-2xl  font-semibold top_naranja tracking-wide uppercase text-center mb-4">
                             {{ $service->title }}</h1>
                     </div>
                     <div>
                         <p class="text-base font-medium text-gray-500 text-justify ">{{ $service->description }}</p>
                     </div>
-                    <div class="flex justify-end mt-6"> 
+                    <div class="flex justify-end mt-6 items-center"> 
+                        
                         <a href="https://wa.me/+51{{$service->nrowsp}}" target="_blank">
                         <x-jet-button >
-                            Contactame
+                            <i class="fa-brands fa-whatsapp  fa-2x mr-2"></i> Contáctame
                         </x-jet-button>
                         </a>
                     </div>

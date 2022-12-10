@@ -28,4 +28,16 @@ header.abajo{
 .text-center-special{
     text-align: -webkit-center;
 }
- 
+
+.top_verde{
+    color: #8CDAB0;
+}
+.top_naranja{
+    color: #FF6100;
+}
+.bg_top_verde{
+    background-color: #8CDAB0;
+}
+.bg_top_naranja{
+    background-color: #FF6100;
+}
