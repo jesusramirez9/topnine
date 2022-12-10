@@ -9,7 +9,7 @@
             @livewire('navigation-responsive')
         </div>
 
-        <div class="container pt-8"> 
+        <div class="container pt-8 md:hidden"> 
             <div class="rounded-lg w-full">
                 <div class="glider-contain ">
                     <div class="sliderm">

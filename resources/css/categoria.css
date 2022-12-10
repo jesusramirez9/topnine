@@ -71,17 +71,13 @@
     position: relative;
     display: block;
     padding: 5px 0px;
-    font-size: 24px;
-    font-weight: 300;
     background: #ffffff;
     text-decoration: none;
-    font-weight: 600;
   
 }
 .accordion-titulo.open {
     background: #ffffff;
     
-    font-weight: 600;
 }
 .accordion-titulo:hover {
     background: #ffffff;
@@ -101,8 +97,7 @@
     position: absolute;
     top: -6px;
     right: 20px;
-    font-size: 38px;
-    font-weight:bold;
+    font-weight:300;
 }
 
 .accordion-content {
@@ -168,9 +163,6 @@
     .accordion-content {
         padding: 10px 0;
     }
-    .accordion-titulo{
-        font-size: 16px;
-    }
     .accordion-titulo span.toggle-icon{
         top: -16px;
     }
@@ -235,9 +227,6 @@
     }
     .accordion-content {
         padding: 10px 0;
-    }
-    .accordion-titulo{
-        font-size: 16px;
     }
     .accordion-titulo span.toggle-icon{
         top: -16px;
