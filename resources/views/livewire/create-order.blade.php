@@ -50,7 +50,7 @@
                 <label class="bg-white rounded-lg shadow px-6 py-4 flex items-center mb-4 cursor-pointer">
                     <input x-model="envio_type" type="radio" value="1" name="envio_type" class="text-gray-600">
                     <span class="ml-2 colorbroywm font-bold">
-                        Recojo en tienda (Calle Falsa 123)
+                        Recojo en tienda (Calle cantuarias 140 - semisotano - Puesto 48)
                     </span>
 
                     <span class=" colorbroywm font-bold ml-auto">
@@ -197,7 +197,7 @@
                 <div class=" font-bold">
                     <p class="flex justify-between items-center">
                         Subtotal
-                        <span class="colorplomor font-semibold">S/ {{ Cart::subtotal() }}</span>
+                        <span class="colorplomor font-semibold">S/ {{ filter_var(Cart::subtotal(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) }}</span>
                     </p>
                     <p class="flex justify-between items-center">
                         Envío
@@ -215,9 +215,9 @@
                     <p class="flex justify-between items-center font-semibold">
                         <span class="text-lg">Total</span>
                         @if ($envio_type == 1)
-                            S/ {{ Cart::subtotal() }}
+                            S/ {{ filter_var(Cart::subtotal(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) }}
                         @else
-                            S/ {{ Cart::subtotal() + $shipping_cost }}
+                            S/ {{ filter_var(Cart::subtotal(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION) + $shipping_cost }}
                         @endif
                     </p>
                 </div>

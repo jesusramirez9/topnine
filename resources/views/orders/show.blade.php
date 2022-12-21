@@ -98,7 +98,7 @@
                         <p class="text-lg  font-bold uppercase">Envío</p>
                         @if ($order->envio_type == 1)
                             <p class="text-sm colorbroywm font-semibold">El producto será recogido en:</p>
-                            <p class="text-sm colorbroywm ">Calle falsa 123</p>
+                            <p class="text-sm colorbroywm ">Calle cantuarias 140 - semisotano - Puesto 48</p>
                         @else
                             <p class="text-sm colorbroywm font-semibold">El producto será enviado a:</p>
                          

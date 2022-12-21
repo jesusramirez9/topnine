@@ -101,10 +101,11 @@ class CreateOrder extends Component
         $order = new Order();
         $order->user_id = auth()->user()->id;
         $order->contact = $this->contact;
-        $order->phone = $this->phone;
+        $order->phone = $this->phone; 
         $order->envio_type = $this->envio_type;
         $order->shipping_cost = 0;
-        $order->total = $this->shipping_cost + Cart::subtotal();
+        $order->total = $this->shipping_cost + filter_var(Cart::subtotal(), FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+       
         $order->content = Cart::content();
 
         if($this->envio_type == 2){

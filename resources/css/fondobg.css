@@ -51,3 +51,17 @@ header.abajo {
 .fa-25x {
     font-size: 1.4em;
 }
+.border-orange{
+    border-color: #FF6100;
+}
+.gliderslide1{
+    min-width: 115px !important;
+}
+.glider-next1, .glider-prev1 {
+    top: 30% !important;
+    font-size: 12px !important;
+}
+.glider-next2, .glider-prev2 {
+    top: 30% !important;
+    font-size: 12px !important;
+}

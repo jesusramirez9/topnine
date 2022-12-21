@@ -10,6 +10,9 @@ use Livewire\Component;
 
 class CategoriesSubcategory extends Component
 {
+
+    
+
     public function render(Product $product, Subcategory $subcategory)
     {
         $categories = Category::all();

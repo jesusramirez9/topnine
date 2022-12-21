@@ -7,19 +7,19 @@
                 <img src="{{asset('img/logo/logo1.png')}}" class="block h-8 "alt="">
             </div>
             <div class=" mb-6 justify-center md:justify-start md:block">
-                <div>
+                <div class="flex justify-center md:justify-start">
                     <p class="font-bold">SÍGUENOS EN</p> <br>
                 </div>
-                <div class="flex ">
-                    <a href="#" class="md:mr-2">
+                <div class="flex justify-center md:justify-start mt-3 md:mt-0">
+                    <a href="https://www.facebook.com/profile.php?id=100088314324658" target="_blank" class="mr-2">
                         <i class="fa-brands fa-facebook-f "></i></a>
-                    <a href="#" class="md:mx-2">
+                    <a href="https://www.instagram.com/topnain/" target="_blank" class="mx-2">
                         <i class="fa-brands fa-instagram "></i>
                     </a>
-                    <a href="#" class="md:mx-2">
+                    <a href="https://www.youtube.com/@topnaintienda/featured" target="_blank" class="mx-2">
                         <i class="fa-brands fa-youtube "></i>
                     </a>
-                    <a href="#" class="md:ml-2">
+                    <a href="https://www.tiktok.com/@topnain.tienda" target="_blank" class="ml-2">
                         <i class="fa-brands fa-tiktok "></i>
                     </a>
                 </div>
@@ -42,7 +42,7 @@
             <div class="flex justify-center md:block">
                 <ul class="text-xs ulli ">
                     <li><i class="fas fa-map-marker-alt mr-2"></i>Calle cantuarias 140, semisotano, puesto 48.</li>
-                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 940 439 490 </li>
+                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 962 755 078 </li>
                     <li><i class="far fa-envelope color-icon-footer mr-2"></i>ventas@topnain.com</li>
                 </ul>
             </div>
@@ -62,7 +62,7 @@
             <p class="text-sm font-bold mb-3 text-center md:text-left">Reclamos</p>
             <div class="flex justify-center md:block">
                 <ul class="text-xs ulli ">
-                    <li>Libro de reclamaciones</li>
+                    <li><a href="{{route('reclamos')}}">Libro de reclamaciones</a></li>
                 </ul>
             </div>
         </div>
@@ -70,8 +70,8 @@
             <p class="text-sm font-bold mb-3 text-center md:text-left">VENTA CORPORATIVA</p>
             <div class="flex justify-center md:block">
                 <ul class="text-xs ulli ">
-                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 940 439 490 </li>
-                    <li><i class="far fa-envelope color-icon-footer mr-2"></i>ventas@topnain.pe</li>
+                    <li><i class="fas fa-mobile-alt color-icon-footer mr-2"></i> 962 755 078 </li>
+                    <li><i class="far fa-envelope color-icon-footer mr-2"></i>ventas@topnain.com</li>
                     <li><i class="fas fa-map-marker-alt mr-2"></i>Calle cantuarias 140, semisotano, puesto 48.</li>
 
                 </ul>

@@ -85,6 +85,10 @@ Route::get('terminos-y-condiciones', function(){
     return view('web.terminos');
 })->name('terminos');
 
+Route::get('libro-reclamaciones', function(){
+    return view('web.reclamos');
+})->name('reclamos');
+
 Route::get('contactanos',[ContactoController::class, 'index'])->name('contacto');
 
 Route::post('contactanos',[ContactoController::class, 'store'])->name('contacto.store');

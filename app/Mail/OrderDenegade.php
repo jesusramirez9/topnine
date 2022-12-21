@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderCanceled extends Mailable
+class OrderDenegade extends Mailable
 {
     use Queueable, SerializesModels;
     public $subject = "Cancelación de la compra";
@@ -32,8 +32,6 @@ class OrderCanceled extends Mailable
     public function build()
     {
         $items = json_decode($this->order->content);
-        $envio = json_decode($this->order->envio);
-
-        return $this->markdown('emails.orders.canceled', compact('items','envio'));
+        return $this->markdown('emails.orders.denegade', compact('items'));
     }
 }

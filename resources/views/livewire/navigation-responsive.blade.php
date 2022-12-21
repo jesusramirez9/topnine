@@ -1,6 +1,6 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
-    <div class="flex pt-8 text-xs">
+    <div class="flex pt-8 text-xs md:pt-0">
         <a href="{{ route('home') }}"
             class="mx-6  font-normal  hover:underline  md:hidden  {{ request()->is('/') ? 'active underline text-gray-800 font-semibold   ' : '' }}">
             Inicio

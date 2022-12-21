@@ -25,11 +25,6 @@
                         <article class="flex-1">
                             <h1 class="font-bold">{{$item->name}}</h1>
                             <div class="flex">
-                                <p>Cant: {{$item->qty}} <span>@if ($item->qty==1)
-                                    persona
-                                @else
-                                    personas
-                                @endif</span> </p>
                                 @isset($item->options['color'])
                                     <p class="mx-2">- Color:  {{ __($item->options['color']) }}</p>
                                 @endisset

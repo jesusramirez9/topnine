@@ -13,8 +13,18 @@ Tu numero de pedido es: <b> compra-000{{ $order->id }}</b> <br> <br>
 Producto: <b>{{ $item->name }}</b> <br>
 @endforeach 
 <br>
-Se enviara al siguiente punto:
+@if ($envio == null || $envio  == "")
+<p>Tendrás que recogerlo en la siguiente dirección:</p>
+<p>Calle las cantuarias - sotano - tienda 48</p> 
+<p>Horarios de atención:</p>
+<p>L-V de 9:00 a 19:00 <br>
+   Sábados de 8:00 a 14:00</p>
+@else
+
+<p>Se enviara al siguiente punto:</p>
 <p>{{ $envio->department }} - {{ $envio->city }} - {{ $envio->district }}</p>
+@endif
+
 @endcomponent
 @component('mail::table')
        
@@ -28,8 +38,8 @@ Se enviara al siguiente punto:
 @endcomponent
 
 En caso tengas algún inconveniente con tu compra puedes <br> escribirnos a: 
-info@trepstom.com o enviarnos un mensaje a nuestro <br> wsp: +51 987 654 321 <br>
+info@trepstom.com o enviarnos un mensaje a nuestro <br> wsp: +51 962 755 078 <br>
 Gracias, <br>
 
-{{ config('app.name') }}
+Topnain
 @endcomponent

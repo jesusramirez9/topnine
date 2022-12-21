@@ -103,9 +103,9 @@
                         <div class="flex flex-col items-center mt-2 md:mt-0 py-4 bg-white">
                             <x-cart></x-cart>
                             <p class="text-sm lg:text-lg text-gray-700 mt-4">No tienes productos por comprar</p>
-                            <x-button-enlace href="http://127.0.0.1:8000/categories/tours"
-                                class="mt-4 bg-blue-700 px-16">
-                                Nuestros productos
+                            <x-button-enlace href="{{ route('home') }}"
+                                class="mt-4 bg_top_naranja px-16">
+                                Ir a inicio
                             </x-button-enlace>
                         </div>
 
@@ -131,7 +131,7 @@
                             </div>
                             <hr class="bg-gray-100 my-3">
                             <div>
-                                <x-button-enlace href="{{ route('orders.create') }}" class="bg-orange-500 w-full">
+                                <x-button-enlace href="{{ route('orders.create') }}" class="bg_top_naranja w-full">
                                     Ir a comprar
                                 </x-button-enlace>
                             </div>

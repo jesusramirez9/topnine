@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Mail\OrderCanceled;
+use App\Mail\OrderDenegade;
 use App\Mail\OrderReserved;
 use App\Mail\OrderThanks;
 use App\Mail\ProcesandoMailable;
@@ -32,11 +32,13 @@ class StatusOrder extends Component
             Mail::to( $this->order->user()->first()->email)->send($correo);
         }
         
-        if($this->order->status == 5)
-        {
-            $correo = new OrderCanceled($this->order);
-            Mail::to( $this->order->user()->first()->email)->send($correo);
-        }
+        // if($this->order->status == 5)
+        // {
+            
+        //     $correo = new OrderDenegade($this->order);
+            
+        //     Mail::to( $this->order->user()->first()->email)->send($correo);
+        // }
        
     }
 
@@ -45,7 +47,7 @@ class StatusOrder extends Component
 
         $items = json_decode($this->order->content); 
         $envio = json_decode($this->order->envio); 
-
+        
 
         return view('livewire.status-order', compact('items', 'envio'));
     }

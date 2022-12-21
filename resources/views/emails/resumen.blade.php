@@ -22,7 +22,7 @@
             <div
                 style='color:#fff;text-align:center;background:#044767;padding-top:15px;padding-bottom:15px;display:flex;justify-content: space-between;align-items:center; padding: 1rem 3rem;'>
                 <div>
-                    <h2 style='font-family:sans-serif'>Alecka Travel Tours - Pendiente</h2>
+                    <h2 style='font-family:sans-serif'>Topnain - Pendiente</h2>
                 </div>
                 <div>
                     <h5 style='font-family:sans-serif; font-weight: 800;'>Tour</h5>
@@ -56,7 +56,7 @@
 
                     <div style="display:flex;justify-content: space-between;align-items:center; padding: 0rem 3rem;">
                         <div>
-                            <h5 style="font-weight: 400;">Precio por persona:</h5>
+                            <h5 style="font-weight: 400;">Precio por producto:</h5>
                         </div>
                         <div>
                             <h5 style="font-weight: 400;">S/{{ $item->price }} Nuevos soles</h5>
@@ -64,10 +64,10 @@
                     </div>
                     <div style="display:flex;justify-content: space-between;align-items:center; padding: 0rem 3rem;">
                         <div>
-                            <h5 style="font-weight: 400;">Cantidad de personas:</h5>
+                            <h5 style="font-weight: 400;">Cantidad de producto:</h5>
                         </div>
                         <div>
-                            <h5 style="font-weight: 400;">{{ $item->qty }} persona(s)</h5>
+                            <h5 style="font-weight: 400;">{{ $item->qty }} </h5>
                         </div>
                     </div>
                     <hr style='background-color: #044767; padding-top:0.1rem;'>

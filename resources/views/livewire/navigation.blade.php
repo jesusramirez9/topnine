@@ -13,7 +13,7 @@
     <div class="bg-white text-gray-700 py-2 md:py-5 hidden md:block bg_top_verde">
         <div class=" flex items-center container  justify-between">
             <a href="/" class="">
-                <img src="{{ asset('img/logo/logo1.png') }}" class="block h-28 md:h-16 w-auto"alt="">
+                <img src="{{ asset('img/logo/logo1.png') }}" class="block h-28 md:h-16 lg:h-10 xl:h-16 w-auto"alt="">
                 {{-- <x-jet-application-mark class="block h-10 md:h-16 w-auto" /> --}}
             </a>
 
@@ -27,8 +27,8 @@
                             <div class="mr-4">
                                 <p><i class="far fa-envelope mr-1 xl:mr-4"></i>ventas@topnain.com</p>
                             </div>
-                            <div class="mr-4 hidden md:block border-r-2 border-l-2 border-x-white">
-                                <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>940 439 490</p>
+                            <div class="mr-4 hidden md:block border-r-2 border-l-2  border-orange">
+                                <p class="px-4"><i class="fab fa-whatsapp mr-1 xl:mr-4"></i>962 755 078</p>
                             </div>
                             <div class="mr-4 hidden md:block">
                                 <p><i class="fas fa-map-marker-alt  mr-1 xl:mr-4"></i>Calle cantuarias 140, T-48</p>
@@ -179,15 +179,15 @@
                 </a>
             </div>
             <div class="flex">
-                <a href="#" class="md:mx-3 hidden md:block">
+                <a href="https://www.facebook.com/profile.php?id=100088314324658" target="_blank" class="md:mx-3 hidden md:block">
                     <i class="fa-brands fa-facebook-f fa-25x"></i></a>
-                <a href="#" class="md:mx-3 hidden md:block">
+                <a href="https://www.instagram.com/topnain/" target="_blank" class="md:mx-3 hidden md:block">
                     <i class="fa-brands fa-instagram fa-25x"></i>
                 </a>
-                <a href="#" class="md:mx-3 hidden md:block">
+                <a href="https://www.youtube.com/@topnaintienda/featured" target="_blank" class="md:mx-3 hidden md:block">
                     <i class="fa-brands fa-youtube fa-25x"></i>
                 </a>
-                <a href="#" class="md:mx-3 hidden md:block">
+                <a href="https://www.tiktok.com/@topnain.tienda" target="_blank" class="md:mx-3 hidden md:block">
                     <i class="fa-brands fa-tiktok fa-25x"></i>
                 </a>
             </div>
@@ -204,13 +204,15 @@
 
             {{-- menu mobil --}}
 
-            <div class="md:container h-96 md:mt-2 ">
+            <div class="md:container h-96 md:mt-2 md:m-auto ">
                 <div x-on:click.away="close()">
                     <div class="hidden md:block">
                         <div class="grid grid-cols-4 h-96 relative ">
 
                             <ul class="bg-white pt-6">
+                                @if ($categories->count() > 0)
                                 @foreach ($categories as $category)
+                                @if ($category->products->count() > 0)    
                                     <li
                                         class=" navigation-link text-trueGray-700 hover:font-bold hover:bg-gray-200 hover:text-black">
                                         <a href="{{ route('categories.show', $category) }}"
@@ -232,7 +234,9 @@
                                         </div>
 
                                     </li>
+                                @endif
                                 @endforeach
+                                @endif
                             </ul>
 
                             <div class="col-span-3 bg-gray-100 ">

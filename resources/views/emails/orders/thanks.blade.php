@@ -5,12 +5,12 @@
     <b> Entrega completada </b> 
 </div>
 
-Muchas Gracias {{ $order->user()->first()->name }}!. <br>
-Hemos completado el tour satisfactoriamente. <br>
+Muchas Gracias {{ $order->user()->first()->name }}! <br>
+Hemos completado el proceso de compra satisfactoriamente. <br>
 
-En caso tengas algún sugerencia con respecto a nuestros servicios puedes <br> escribirnos a: 
-sugerencias@topnain.com o enviarnos un mensaje a nuestro <br> wsp: +51 987 654 321 <br>
+En caso tengas algún tipo de sugerencia con respecto a nuestros servicios puedes <br> escribirnos a: 
+sugerencias@topnain.com o enviarnos un mensaje a nuestro <br> wsp: +51  962 755 078 <br>
 Gracias, <br>
 
-{{ config('app.name') }}
+Topnain
 @endcomponent

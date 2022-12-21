@@ -111,7 +111,7 @@
                     <x-cart></x-cart>
                     <p class="text-sm lg:text-lg text-gray-700 mt-4">No tienes productos</p>
                     <x-button-enlace href="/"
-                        class="mt-4 bg-blue-700 px-16">
+                        class="mt-4 bg_top_naranja px-16">
                         Nuestros productos
                     </x-button-enlace>
                 </div>

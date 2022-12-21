@@ -61,15 +61,15 @@
                         <div>
                             <i class="fas fa-map-marker-alt font-24 text-yellow-500"></i>
                             <h1 class="font-bold text-sm lg:text-base top_naranja">Dirección</h1>
-                            <p class="text-xs lg:text-base">Calle cantuarias 140 - Miraflores</p>
-                            <p class="text-xs lg:text-base">Semisotano, puesto 48</p>
+                            <p class="text-xs lg:text-base">Calle Cantuarias 140, T-48 </p>
+                            <p class="text-xs lg:text-base">Miraflores.</p>
                         </div>
                     </div>
                     <div class="border-gray-500 border-b-2 border-opacity-10 py-4">
                         <div>
                             <i class="fas fa-mobile-alt font-24"></i>
                             <h1 class="font-bold text-sm lg:text-base top_naranja">Celular</h1>
-                            <p class="text-xs lg:text-base">940 439 490</p>
+                            <p class="text-xs lg:text-base">962 755 078</p>
                         </div>
                     </div>
                     <div class=" border-r-2 border-gray-500 border-opacity-10 py-4">

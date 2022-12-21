@@ -89,7 +89,7 @@
 
 .accordion-titulo span.toggle-icon {
     position: absolute;
-    top: -6px;
+    top: 9px;
     right: 20px;
     font-weight: 300;
 }
@@ -168,7 +168,7 @@
     }
 
     .accordion-titulo span.toggle-icon {
-        top: -16px;
+        top: 9px;
     }
 }
 
@@ -247,7 +247,7 @@
     }
 
     .accordion-titulo span.toggle-icon {
-        top: -16px;
+        top: 9px;
     }
 
 }

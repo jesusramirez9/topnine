@@ -44,7 +44,7 @@ class AddCartItem extends Component
 
         $this->quantity = qty_available($this->product->id);
         $this->open_edit = true;
-        $this->alert('success', 'Servicio agregado');
+        $this->alert('success', 'Producto agregado');
         $this->reset('qty');
         $this->emitTo('modal-cart','render');
         $this->emitTo('dropdown-cart','render');

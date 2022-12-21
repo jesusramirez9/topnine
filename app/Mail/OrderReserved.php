@@ -33,7 +33,6 @@ class OrderReserved extends Mailable
     {
         $items = json_decode($this->order->content);
         $envio = json_decode($this->order->envio);
-        
         return $this->markdown('emails.orders.reserved', compact('items', 'envio'));
     }
 }

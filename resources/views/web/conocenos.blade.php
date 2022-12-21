@@ -4,39 +4,24 @@
         <div>
             @livewire('navigation-responsive')
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 py-6 xl:py-20 mx-6 md:mx-0 ">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12 py-6 xl:pt-20 mx-6 md:mx-0 ">
             <div class="text-justify">
                 <h1 class="text-2xl font-bold ">¿Quiénes somos?</h1>
                 <p class="mb-8 mt-2">
-                    Somos <span class="font-bold ">DISTRIBUIDORA SUMON</span>, una empresa con más de 40 años de
-                    trayectoria, por lo que somos referente en la venta de licores y una de las mejores opciones de
-                    compra en el mercado.
+                    Somos <span class="font-bold tracking-wider">TOPNAIN</span>, Somos una empresa concebida con el propósito de dar la facilidad a la pequeña y mediana empresa de poder empezar y crecer en su negocio contando con una gran variedad de productos  con precios al por mayor por la compra de pocas unidades. 
                 </p>
-                <p class="mb-8 mt-2 space-">Nuestro respaldo durante todos nuestros años han sido nuestros más de 6000
-                    productos a disposición de nuestros clientes y la propuesta de valor que les ofrecemos: <span
-                        class="font-bold "> productos originales, de valor, calidad y confiabilidad que los acompañan
-                        en cada momento.</span></p>
-                <p class="mb-8 mt-2">Sabemos que cada uno de nuestros clientes tienen necesidades diferentes; por
-                    ello, contamos con personal capacitado para asesorar y satisfacer todos los requerimientos de
-                    nuestros clientes mayoristas, restaurantes, bares, hoteles, centros de entretenimiento, grifos,
-                    markets, licorerías, canasteros, caterings, empresas realizadoras de bodas y eventos.</p>
-                <p class="mb-8 mt-2">Durante estos años en el mercado, hemos marcado la diferencia adaptándonos a
-                    las nuevas exigencias y tendencias en el mundo de la coctelería. Es por ello, que Sumón no solo es
-                    distribuidor sino <span class="font-bold "> IMPORTADOR</span> de reconocidas marcas a nivel
-                    internacional, las cuales ponemos a su disposición en nuestro amplio portafolio.</p>
+                <p class="mb-8 mt-2 space-">Desde nuestra plataforma virtual podrás abastecer tu negocio o adquirir ese artículo que necesitas o siempre quisiste al mejor precio, teniendo acceso a todo nuestro catálogo de productos, cotizar y realizar compras de manera sencilla, didáctica y segura, con la confiabilidad que nos caracteriza sin salir de casa.</p>
+                <p class="mb-8 mt-2">Así también ofrecemos servicios competitivos y variados que complementan a nuestra tienda.</p>
+                
 
                 <h1 class="text-2xl font-bold ">Nuestra Visión</h1>
-                <p class="mb-8 mt-2">Ser la mejor elección de compra de vinos y licores nacionales e
-                    internacionales, permitiendo a nuestros clientes satisfacer sus expectativas de calidad, servicio y
-                    precios competitivos.</p>
+                <p class="mb-8 mt-2">Consolidar la marca como una tienda por departamento de productos importados, expandiendo nuestra red de locales en diversas regiones del país, siendo referentes en sistema de abastecimiento para nuevos negocios.</p>
                 <h1 class="text-2xl font-bold ">Nuestra Misión</h1>
-                <p>Ser una empresa de reconocido liderazgo en la comercialización, abastecimiento y distribución de
-                    vinos y licores nacionales e internacionales. Distinguiéndonos por la calidad y confiabilidad de
-                    nuestros productos.
+                <p>Brindar la oportunidad a nuevos emprendedores de obtener productos importados a un menor precio para iniciar su negocio adquiriendo productos al por mayor.
                 </p>
             </div>
             <div>
-                <img src="{{ asset('img/nosotros/nos32.jpg') }}" class="w-full h-full object-cover object-center" alt="">
+                <img src="{{ asset('img/nosotros/nos32.jpg') }}" class="w-full h-full  object-cover object-center" alt="">
             </div>
         </div>
     </div>
