@@ -78,8 +78,8 @@
                                         <div>
                                             <div class="glider-contain ">
                                                 <div class="bgpromo2">
-                                                    @foreach ($subcategories as $subcategory)
-                                                        @foreach ($subcategory->products as $product)
+                                                    {{-- @foreach ($subcategories as $subcategory) --}}
+                                                        @foreach ($productsSection1 as $product)
                                                             <div class="mx-2  overflow-hidden  gliderslide1  ">
                                                                 <figure class="">
                 
@@ -112,7 +112,7 @@
                                                                 </a>
                                                             </div>
                                                         @endforeach
-                                                    @endforeach
+                                                    {{-- @endforeach --}}
                                                 </div>
                                                 <button aria-label="Previous" class="hidden md:block glider-prev1 slidehomeprev absolute">
                                                     <span class="text-4xl">«</span>
@@ -125,8 +125,8 @@
                                         <div>
                                             <div class="glider-contain ">
                                                 <div class="bgpromo3">
-                                                    @foreach ($subcategories as $subcategory)
-                                                        @foreach ($subcategory->products as $product)
+                                                    {{-- @foreach ($subcategories as $subcategory) --}}
+                                                        @foreach ($productsSection2 as $product)
                                                             <div class="mx-2  overflow-hidden  gliderslide1 ">
                                                                 <figure class="">
                 
@@ -159,7 +159,7 @@
                                                                 </a>
                                                             </div>
                                                         @endforeach
-                                                    @endforeach
+                                                    {{-- @endforeach --}}
                                                 </div>
                                                 <button aria-label="Previous" class="hidden md:block glider-prev2 slidehomeprev absolute">
                                                     <span class="text-4xl">«</span>
@@ -193,10 +193,10 @@
                             <p class="px-4  text-black font-extrabold">Super <span class="text-red-400 ">Ofertas</span>
                             </p>
                             <p class="px-4 pb-1 text-sm text-gra">Productos top a precios increibles</p>
-                            <div class="glider-contain ">
+                            <div class="glider-contain">
                                 <div class="bgpromo">
-                                    @foreach ($subcategories as $subcategory)
-                                        @foreach ($subcategory->products as $product)
+                                    {{-- @foreach ($subcategories as $subcategory) --}}
+                                        @foreach ($offerProducts as $product)
                                             <div class="mx-4 border-2 overflow-hidden border-white  bg-white">
                                                 <figure class="py-2 px-2 ">
 
@@ -231,7 +231,7 @@
                                                 </a>
                                             </div>
                                         @endforeach
-                                    @endforeach
+                                    {{-- @endforeach --}}
                                 </div>
                                 <button aria-label="Previous" class="hidden md:block glider-prev slidehomeprev absolute">
                                     <span class="text-4xl">«</span>
@@ -277,8 +277,6 @@
                     next: '.glider-next'
                 },
                 responsive: [
-
-
                     {
                         // screens greater than >= 1024px
                         breakpoint: 1024,

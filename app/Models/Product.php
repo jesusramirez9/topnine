@@ -13,6 +13,9 @@ class Product extends Model
     const BORRADOR = 1;
     const PUBLICADO = 2;
 
+    const NORMAL = 1;
+    const OFERTA = 2;
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     //accesores

@@ -180,6 +180,13 @@
                 </div>
             </div>
 
+            <div class="">
+                <label class="flex items-center">
+                    <input wire:model="inOffer" type="checkbox" name="inOffer" value="2" class="mr-2">
+                    Producto en oferta
+                </label>
+            </div>
+
             @if ($this->subcategory)
                 @if (!$this->subcategory->color && !$this->subcategory->size)
                     <div>

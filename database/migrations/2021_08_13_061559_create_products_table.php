@@ -37,6 +37,9 @@ class CreateProductsTable extends Migration
             //1 borrador, 2 publicado
             $table->enum('status',[Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
 
+            //1 normal, 2 oferta
+            $table->enum('inOffer',[Product::NORMAL, Product::OFERTA])->default(Product::NORMAL);
+
             $table->timestamps();
         });
     }

@@ -16,7 +16,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 class EditProduct extends Component
 {
     use LivewireAlert;
-    public $product, $categories, $subcategories, $brands, $slug;
+    public $product, $categories, $subcategories, $brands, $slug, $inOffer = false;
     
     public $category_id;
 
@@ -31,6 +31,7 @@ class EditProduct extends Component
         'product.brand_id' => 'required',
         'product.price' => 'required',
         'product.offer' => 'required',
+        'inOffer' => '',
     ];
 
     protected $listeners = ['refreshProduct', 'delete'];
@@ -38,6 +39,8 @@ class EditProduct extends Component
     public function mount(Product $product)
     {
         $this->product = $product;
+
+        $this->inOffer = $product->inOffer == 2 ? true : false;
 
         $this->slug = $this->product->slug;
 
@@ -96,6 +99,7 @@ class EditProduct extends Component
         $this->validate($rules);
 
         $this->product->slug = $this->slug;
+        $this->product->inOffer = $this->inOffer ? 2 : 1;
 
         $this->product->save();
 
@@ -112,7 +116,6 @@ class EditProduct extends Component
 
     public function delete()
     {
-
         $images = $this->product->images;
 
         foreach ($images as $image) {
@@ -123,13 +126,10 @@ class EditProduct extends Component
         $this->product->delete();
 
         return redirect()->route('admin.index');
-
-
     }
+
     public function render()
     {
-      
-
         return view('livewire.admin.edit-product')->layout('layouts.admin');
     }
 }
