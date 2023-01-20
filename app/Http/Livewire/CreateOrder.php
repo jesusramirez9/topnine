@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\NewPedido;
 use App\Models\City;
 use App\Models\Department;
 use App\Models\District;
 use App\Models\Order;
 use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 
@@ -137,6 +139,8 @@ class CreateOrder extends Component
         }
 
         Cart::destroy();
+
+
         return redirect()->route('orders.payment', $order);
       
     }

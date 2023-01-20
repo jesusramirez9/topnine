@@ -30,6 +30,7 @@ class EditProduct extends Component
         'product.specification' => 'required',
         'product.brand_id' => 'required',
         'product.price' => 'required',
+        'product.quantity' => '',
         'product.offer' => 'required',
         'inOffer' => '',
     ];

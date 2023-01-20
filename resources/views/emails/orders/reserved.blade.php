@@ -20,7 +20,7 @@ Producto: <b>{{ $item->name }}</b> <br>
 <p>L-V de 9:00 a 19:00 <br>
    Sábados de 8:00 a 14:00</p>
 @else
-
+<p>Tu producto se encuentra listo y</p>
 <p>Se enviara al siguiente punto:</p>
 <p>{{ $envio->department }} - {{ $envio->city }} - {{ $envio->district }}</p>
 @endif

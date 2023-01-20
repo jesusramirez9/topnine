@@ -31,13 +31,13 @@ class WelcomeController extends Controller
        $products = Product::paginate(6);
        
        $subcategories = Subcategory::all();
-       $banners = Slider::where('status', 1)->orderBy('order', 'asc')->get();
-       
+       $banners = Slider::where([['type', '1'], ['status', '1']])->orderBy('order', 'asc')->get();
+       $offerProducts = Product::where([['inOffer', '2'], ['status', '2']])->inRandomOrder()->limit(10)->get();
     $imgslider = [
       
       'slider6.jpg'
    ];
-    return view('welcome', compact('categories', 'products','imgslider','subcategories','banners'));
+    return view('welcome', compact('categories', 'products','imgslider','subcategories','banners','offerProducts'));
 
 
    }

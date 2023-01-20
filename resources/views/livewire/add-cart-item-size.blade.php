@@ -1,6 +1,6 @@
 <div x-data>
     <div class="text-xl text-gray-700">
-        <p class="sizecol mb-4">Elige tu talla:  </p>
+        <p class="sizecol mb-4">Elige una medida:  </p>
         <div class="divsize">
             @foreach ($sizes as $size)
                 <div class="btn-group" role="group">
@@ -14,7 +14,7 @@
     </div>
 
     <div class="text-xl text-gray-700 mt-4">
-        <p class="sizecol mt-8 mb-4">Elige tu color:</p>
+        <p class="sizecol mt-8 mb-4">Elige un color:</p>
         <div class="divsize">
             {{-- @foreach ($colors as $color)
 

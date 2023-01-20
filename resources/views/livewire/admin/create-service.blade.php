@@ -37,7 +37,7 @@
             </div>
             <div class="mt-4">
                 <x-jet-label value="Número telefónico(ejm:987654321)" />
-                <x-jet-input wire:model="nrowsp" type="number" class="w-full" />
+                <x-jet-input wire:model="nrowsp" type="text" class="w-full" />
             </div>
             <div class="mt-4 mb-4">
                 <input type="file" wire:model="image" id="{{$identificador}}" accept="image/*" class="customFile shadow-sm rounded-md w-full">

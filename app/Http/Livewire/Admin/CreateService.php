@@ -22,7 +22,7 @@ class CreateService extends Component
     protected $rules = [
         'title' => 'required',
         'description' => 'required',
-        'nrowsp' => 'required|number',
+        'nrowsp' => 'required',
         'image' => 'required|image|max:2048',
         'status' => 'required',
     ];

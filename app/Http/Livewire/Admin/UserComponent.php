@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\Order;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -10,6 +11,11 @@ class UserComponent extends Component
 {
     use WithPagination;
     public $search;
+    public $order;
+
+    public function mount(Order $order){
+        $this->order = $order;
+    }
 
     public function updatingSearch(){
         $this->resetPage();
@@ -35,6 +41,9 @@ class UserComponent extends Component
         })
         ->paginate();
 
-        return view('livewire.admin.user-component', compact('users'))->layout('layouts.admin');
+        $orders = Order::all();
+
+
+        return view('livewire.admin.user-component', compact('users','orders'))->layout('layouts.admin');
     }
 }

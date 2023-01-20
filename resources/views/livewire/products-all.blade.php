@@ -14,10 +14,10 @@
                                 <figure>
 
                                     @if ($product->images->count())
-                                        <img class="h-44 xl:h-80 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+                                        <img class=" w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                             src="{{ Storage::url($product->images->first()->url) }}" alt="">
                                     @else
-                                        <img class="h-44 xl:h-80 w-full object-cover object-center"
+                                        <img class=" w-full object-cover object-center"
                                             src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
                                             alt="">
                                     @endif
@@ -119,7 +119,7 @@
                         // screens greater than >= 1024px
                         breakpoint: 1250,
                         settings: {
-                            slidesToShow: 5,
+                            slidesToShow: 6,
                             slidesToScroll: 1,
                             itemWidth: 150,
                             duration: 1.5,

@@ -57,7 +57,7 @@
                                     <a class="pr-2 hover:text-blue-600 cursor-pointer"
                                         wire:click="edit({{ $department }})">Editar</a>
                                     <a class="pl-2 hover:text-red-600 cursor-pointer"
-                                        wire:click="$emit('deleteDeparment', {{ $department->id }})">Eliminar</a>
+                                        wire:click="$emit('delete', {{ $department->id }})">Eliminar</a>
 
                                 </div>
                             </td>

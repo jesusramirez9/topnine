@@ -27,7 +27,8 @@
                     <p class="mb-4 uppercase md:mx-0"><span class="text-gray-500 font-semibold">
                             {{ $product->subcategory->name }}</span> </p>
 
-                    <h1 class=" font-bold text-xl lg:text-3xl md:mx-0"> {{ $product->name }}</h1>
+                    <h1 class=" font-bold text-xl lg:text-2xl md:mx-0"> {{ $product->name }}</h1>
+                    <h1 class="font-semibold uppercase  md:mx-0"> {{ $product->brand->name }}</h1>
                     <div class="flex mt-4 md:mx-0">
 
                         <a class="underline hover:text-orange-600" href="#resña">{{ count($product->reviews) }}
@@ -65,7 +66,7 @@
                         <ul class="flex justify-start items-center  ">
                             <template x-for="(tab, index) in tabs" :key="index">
                                 <li class="cursor-pointer shadow-md py-2 px-4 text-gray-500 border-b-8"
-                                    :class="activeTab===index ? 'text-green-500 border-green-500 rounded-t-lg bg-white' : ''" @click="activeTab = index"
+                                    :class="activeTab===index ? 'text-orange-500 border-orange-500 rounded-t-lg bg-white' : ''" @click="activeTab = index"
                                     x-text="tab"></li>
                             </template>
                         </ul>
@@ -103,8 +104,8 @@
 
             <div class="text-left ">
                 <div class="text-left pt-8 ">
-                    <p class="text-lg md:text-2xl ">Más modelos encontrados en mi EMPRESA | <span
-                            class="text-black font-semibold text-xl lg:text-2xl">{{ $product->subcategory->name }}</span>
+                    <p class="text-lg md:text-xl ">Más modelos encontrados en <span
+                            class="text-black font-semibold text-xl ">TOPNAIN</span>
                     </p>
                 </div>
                 <div>

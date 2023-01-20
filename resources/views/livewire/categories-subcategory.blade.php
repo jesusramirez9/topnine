@@ -181,7 +181,7 @@
                                     @foreach ($banners as $banner)
                                         <div class="overflow-hidden rounded-lg">
                                             <figure class="">
-                                                <img class="lg:h-20 xl:h-36 w-full object-cover object-center rounded-lg"
+                                                <img class="lg:h-44 xl:h-52 w-full object-cover object-center rounded-lg"
                                                     src="{{ Storage::url($banner->image) }}">
                                             </figure>
                                         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewPedido;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
@@ -69,6 +70,10 @@ class OrderController extends Controller
  
         $correo = new OrderShipped($order);
         Mail::to( auth()->user()->email)->send($correo);
+
+        $correo2 = new NewPedido($order);
+        Mail::to( auth()->user()->email)->send($correo2);
+
         return redirect()->route('orders.show', $order);
     }
 }

@@ -3,6 +3,20 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Usuarios
         </h2>
+        {{-- @foreach ($users as $user)
+          @foreach ($orders as $order)
+            @if ($user->id = $order->user_id)
+                 {{$order->phone}}  
+            @else
+                no phone
+            @endif
+           
+           @endforeach
+        @endforeach --}}
+        
+       
+
+        
     </x-slot>
     <div class="container py-12">
         <x-table-responsive>
@@ -29,10 +43,10 @@
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Email
                         </th>
-                        <th scope="col"
+                        {{-- <th scope="col"
                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Celular
-                        </th>
+                        </th> --}}
                         
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -48,7 +62,7 @@
                         <tr wire:key="{{$user->email}}">
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <div class=" text-gray-900">
-                                    {{ $user->id }}
+                                    {{ $loop->index + 1 }}
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
@@ -64,11 +78,19 @@
 
 
                             </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
+                            {{-- <td class="px-6 py-4 whitespace-nowrap">
                                 <div class="text-sm text-gray-900">
-                                    987 654 321
+                                    @foreach ($orders as $order)
+                                     @if ($user->id = $order->user_id)
+                                        {{$order->phone}}
+                                        @continue 
+                                    @else
+                                       no phone
+                                  @endif    
+                                    @endforeach
+                                    
                                 </div>
-                            </td>
+                            </td> --}}
                             
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                 <div class="text-sm text-gray-900">

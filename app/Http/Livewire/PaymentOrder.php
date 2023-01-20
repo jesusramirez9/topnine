@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Mail\NewPedido;
 use App\Mail\OrderShipped;
 use App\Models\Order;
 use GuzzleHttp\Psr7\Request;
@@ -46,6 +47,11 @@ class PaymentOrder extends Component
 
         $correo = new OrderShipped($this->order);
         Mail::to( auth()->user()->email)->send($correo);
+
+        
+        $correo2 = new NewPedido($this->order);
+        Mail::to( auth()->user()->email)->send($correo2);
+    //    Mail::to('jesus.ramirez9@unmsm.edu.pe')->send($correo);
 
         return redirect()->route('orders.show', $this->order);
     }

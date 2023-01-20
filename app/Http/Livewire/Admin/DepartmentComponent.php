@@ -4,7 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Department;
 use Livewire\Component;
-
+use App\Http\Livewire\Admin\debug;
 class DepartmentComponent extends Component
 {
     protected $listeners = ['delete'];
@@ -59,7 +59,7 @@ class DepartmentComponent extends Component
         $this->getDepartments();
     } 
     public function delete(Department $department){
-
+        
         $department->delete();
         $this->getDepartments();
 

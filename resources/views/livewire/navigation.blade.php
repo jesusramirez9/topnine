@@ -156,14 +156,14 @@
                 <span class="text-sm hidden md:block">Categorías</span>
             </a>
             <div class="flex">
-                <a href="/"
+              {{--   <a href="/"
                     class="mx-6  font-normal hover:underline  hidden lg:block  {{ request()->is('/') ? 'active  ' : '' }}">
                     Inicio
-                </a>
+                </a> --}}
 
                 <a href="{{ route('conocenos') }}"
                     class="mx-6  font-normal  hover:underline  hidden lg:block  {{ request()->is('conocenos') ? 'active     ' : '' }}">
-                    Conócenos
+                    ¿Quiénes somos?
                 </a>
                 {{-- <a href="http://127.0.0.1:8000/categories/tours"
                 class="mx-6  font-normal hover:underline   hidden md:block  {{ request()->is('categories/*') ? 'active  ' : '' }}">
@@ -175,7 +175,7 @@
                 </a>
                 <a href="{{ route('contacto') }}"
                     class="mx-6  font-normal  hover:underline  hidden md:block  {{ request()->is('contactanos') ? 'active ' : '' }}">
-                    Contáctanos
+                    Contacto
                 </a>
             </div>
             <div class="flex">

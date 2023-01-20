@@ -137,11 +137,11 @@
                                             @endif
                                         </div>
                                         @if ($product->images->count())
-                                            <img class="h-32  xl:h-80 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+                                            <img class=" w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                                 src="{{ Storage::url($product->images->first()->url) }}"
                                                 alt="">
                                         @else
-                                            <img class="h-32 xl:h-80 w-full object-cover object-center"
+                                            <img class=" w-full object-cover object-center"
                                                 src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
                                                 alt="">
                                         @endif

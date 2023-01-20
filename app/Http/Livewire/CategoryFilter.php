@@ -23,35 +23,47 @@ class CategoryFilter extends Component
     public function render()
     {
         $tipoconsulta = 1;
-        $colors_product = Color::all();
+        $colors_product = Color::orderBy('name', 'asc')->get();
         $talla_product = DB::table('sizes')->select('name')->groupBy('name')->get();
         $precio_product = [
             [
                 'id' => 1,
-                'label' => 'S/0 - S/100',
+                'label' => 'S/0 - S/20',
                 'min' => 0,
-                'max' => 100,
+                'max' => 20,
             ],
             [
                 'id' => 2,
+                'label' => 'S/20 - S/50',
+                'min' => 20,
+                'max' => 50,
+            ],
+            [
+                'id' => 3,
+                'label' => 'S/50 - S/100',
+                'min' => 50,
+                'max' => 100,
+            ],
+            [
+                'id' => 4,
                 'label' => 'S/100 - S/500',
                 'min' => 100,
                 'max' => 500,
             ],
             [
-                'id' => 3,
+                'id' => 5,
                 'label' => 'S/500 - S/1000',
                 'min' => 500,
                 'max' => 1000,
             ],
             [
-                'id' => 4,
+                'id' => 6,
                 'label' => 'S/1000 - S/3000',
                 'min' => 1000,
                 'max' => 3000,
             ],
             [
-                'id' => 5,
+                'id' => 7,
                 'label' => 'S/3000 a más',
                 'min' => 3000,
                 'max' => 999999,
@@ -120,7 +132,7 @@ class CategoryFilter extends Component
         }
 
         $products = $productsQuery->where('status', 2)->paginate(12);
-        $categories = Category::all();
+        $categories = Category::orderBy('name', 'asc')->get();
         return view('livewire.category-filter', compact('categories','products', 'colors_product', 'talla_product', 'precio_product'));
     }
 
