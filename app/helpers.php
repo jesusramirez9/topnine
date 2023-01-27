@@ -1,15 +1,15 @@
 <?php
 
 use App\Models\Product;
+use App\Models\ColorProduct;
+use App\Models\ColorSize;
 use App\Models\Size;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Log;
 
 function quantity($product_id, $color_id = null, $size_id = null){
     $product = Product::find($product_id);
     if($size_id){
         $size = Size::find($size_id);
-        Log::debug('idColor: '.$color_id);
         $quantity = $size->colors->find($color_id)->pivot->quantity;
     }elseif($color_id){
         $quantity = $product->colors->find($color_id)->pivot->quantity;
@@ -42,17 +42,14 @@ function discount($item){
     $qty_available = qty_available($item->id, $item->options->color_id, $item->options->size_id);
 
     if ($item->options->size_id) {
-        $size = Size::find($item->options->size_id);
-        $size->colors()->detach($item->options->color_id);
-        $size->colors()->attach([
-            $item->options->color_id => ['quantity' => $qty_available]
-        ]);
+        $colorSize = ColorSize::where([['size_id', $item->options->size_id], ['color_id', $item->options->color_id]])->first();
+        $colorSize->quantity = $qty_available;
+        $colorSize->save();
 
     }elseif($item->options->color_id){
-        $product->colors()->detach($item->options->color_id);
-        $product->colors()->attach([
-            $item->options->color_id => ['quantity' => $qty_available]
-        ]);
+        $colorProduct = ColorProduct::where([['product_id', $item->id], ['color_id', $item->options->color_id]])->first();
+        $colorProduct->quantity = $qty_available;
+        $colorProduct->save();
 
     }else{
         $product->quantity = $qty_available;
@@ -65,17 +62,14 @@ function increase($item){
     $quantity = quantity($item->id, $item->options->color_id, $item->options->size_id) + $item->qty;
 
     if ($item->options->size_id) {
-        $size = Size::find($item->options->size_id);
-        $size->colors()->detach($item->options->color_id);
-        $size->colors()->attach([
-            $item->options->color_id => ['quantity' => $quantity]
-        ]);
+        $colorSize = ColorSize::where([['size_id', $item->options->size_id], ['color_id', $item->options->color_id]])->first();
+        $colorSize->quantity = $quantity;
+        $colorSize->save();
 
     }elseif($item->options->color_id){
-        $product->colors()->detach($item->options->color_id);
-        $product->colors()->attach([
-            $item->options->color_id => ['quantity' => $quantity]
-        ]);
+        $colorProduct = ColorProduct::where([['product_id', $item->id], ['color_id', $item->options->color_id]])->first();
+        $colorProduct->quantity = $quantity;
+        $colorProduct->save();
 
     }else{
         $product->quantity = $quantity;
