@@ -175,7 +175,7 @@
                                     @endisset
 
                                     @isset($item->options['size'])
-                                        <p>- Talla: {{ $item->options['size'] }}</p>
+                                        <p>- Medida: {{ $item->options['size'] }}</p>
                                     @endisset
 
                                 </div>

@@ -38,6 +38,9 @@ class PaymentOrder extends Component
         $this->order->status = 2;
        $this->order->save();
 
+       $correo2 = new NewPedido($this->order);
+       Mail::to( auth()->user()->email)->send($correo2);
+
         return redirect()->route('orders.show', $this->order);
     }
     // cambie estso

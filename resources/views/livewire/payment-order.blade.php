@@ -112,7 +112,7 @@
                                                     @endisset
 
                                                     @isset($item->options->size)
-                                                        - Talla: {{ $item->options->size }}
+                                                        - Medida: {{ $item->options->size }}
                                                     @endisset
                                                 </div>
                                             </article>

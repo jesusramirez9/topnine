@@ -2,7 +2,7 @@
     <div class="bg-white shadow-lg rounded-lg p-6 mt-12">
         <div>
             <x-jet-label>
-                Talla
+                Medida
             </x-jet-label>
             <x-jet-input wire:model="name" type="text" placeholder="Ingrese una talla" class="w-full">
 
@@ -43,10 +43,10 @@
 
     <x-jet-dialog-modal wire:model="open">
         <x-slot name="title">
-            Editar Talla
+            Editar Medida
         </x-slot>
         <x-slot name="content">
-            <x-jet-label>Talla</x-jet-label>
+            <x-jet-label>Medida</x-jet-label>
             <x-jet-input wire:model="name_edit" type="text" class="w-full"></x-jet-input>
             <x-jet-input-error for="name_edit" />
         </x-slot>

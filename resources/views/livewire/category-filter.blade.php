@@ -282,7 +282,7 @@
                         @endif
                         @if ($category->subcategories->max('size') > 0)
                             <div class="accordion-container">
-                                <a class="accordion-titulo open">Tallas<span class="toggle-icon"></span></a>
+                                <a class="accordion-titulo open">Medidas<span class="toggle-icon"></span></a>
                                 <div class="accordion-content block">
                                     <ul class="divide-y divide-gray-200">
                                         @foreach ($talla_product as $itemtalla)

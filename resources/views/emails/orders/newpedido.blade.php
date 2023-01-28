@@ -11,7 +11,7 @@ Producto: <b>{{ $item->name }}</b> <br>
 Color: {{ __($item->options->color) }}<br>
 @endisset
 @isset($item->options->size)
- - Talla: {{ $item->options->size }}<br>
+ - Medida: {{ $item->options->size }}<br>
 @endisset
 @endforeach
 @endcomponent

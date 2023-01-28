@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Mail\OrderDenegade;
 use App\Mail\OrderReserved;
 use App\Mail\OrderThanks;
+use App\Mail\AnuladoMailable;
 use App\Mail\ProcesandoMailable;
 use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
@@ -30,15 +31,19 @@ class StatusOrder extends Component
         if ($this->order->status == 4) {
             $correo = new OrderThanks($this->order);
             Mail::to( $this->order->user()->first()->email)->send($correo);
-        }
-        
-        // if($this->order->status == 5)
-        // {
-            
+         }
+        // else{
         //     $correo = new OrderDenegade($this->order);
             
-        //     Mail::to( $this->order->user()->first()->email)->send($correo);
+        //  Mail::to( $this->order->user()->first()->email)->send($correo);
         // }
+        
+        if($this->order->status == 5)
+        {
+            
+            $correo = new AnuladoMailable($this->order);
+            Mail::to( $this->order->user()->first()->email)->send($correo);
+        }
        
     }
 
