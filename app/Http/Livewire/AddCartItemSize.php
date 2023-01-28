@@ -7,7 +7,6 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 use Livewire\Component;
 use Illuminate\Support\Facades\Storage;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-use Illuminate\Support\Facades\Log;
 
 class AddCartItemSize extends Component
 {
@@ -27,7 +26,6 @@ class AddCartItemSize extends Component
     }
 
     public function updatedSizeId($value){
-        Log::debug('IdTalla: '.$value);
         $size = Size::find($value);
         $this->options['size'] = $size->name;
         $this->options['size_id'] = $size->id;
