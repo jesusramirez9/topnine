@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 class OrderShipped extends Mailable
 {
     use Queueable, SerializesModels;
-    public $subject = "Order de compra";
+    public $subject = "Orden de compra";
     public $order;
     /**
      * Create a new message instance.

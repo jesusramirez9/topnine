@@ -27,6 +27,9 @@ class CreateOrder extends Component
     public $address, $contact, $phone, $shipping_cost = 0;
 
     public $references;
+    // pago realizado = 1
+    // pendiente de pago <> 1
+    public $verificar_pago = 1;
 
     public $departments, $cities = [], $districts=[];
 
@@ -127,7 +130,8 @@ class CreateOrder extends Component
                 'city' => City::find($this->city_id)['name'],
                 'district' => District::find($this->district_id)['name'],
                 'address' => $this->address,
-                'references' => $this->references
+                'references' => $this->references,
+                'verificar_pago' => $this->verificar_pago,
             ]);
 
         }

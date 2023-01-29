@@ -48,7 +48,7 @@
                 <div class="py-2 px-3">
                     <p class="text-lg text-gray-700 mt-2 mb-3"><span class="font-bold">Total: </span> S/ {{ Cart::subtotal() }}  Nuevos soles</p>
                   
-                    <x-button-enlace href="{{route('shopping-cart')}}" color="orange" class="w-full">Ir a la compra</x-button-enlace>
+                    <x-button-enlace href="{{route('shopping-cart')}}" color="orange" class="w-full">Ir al carrito</x-button-enlace>
                     <a class="text-sm cursor-pointer hover:underline mt-3 inline-block text-red-600 hover:text-red-800" wire:click="destroy">
                         <i class="fas fa-trash"></i>
                         Borrar la compra

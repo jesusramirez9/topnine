@@ -4,7 +4,7 @@
             <x-jet-label>
                 Medida
             </x-jet-label>
-            <x-jet-input wire:model="name" type="text" placeholder="Ingrese una talla" class="w-full">
+            <x-jet-input wire:model="name" type="text" placeholder="Ingrese una medida" class="w-full">
 
             </x-jet-input>
             <x-jet-input-error for="name" />

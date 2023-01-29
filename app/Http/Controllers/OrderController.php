@@ -34,12 +34,16 @@ class OrderController extends Controller
 
     public function show(Order $order)
     {
+       // dd($order);
 
         $this->authorize('author', $order);
 
         $items = json_decode($order->content);
         $envio = json_decode($order->envio);
 
+       
+
+      
 
         return view('orders.show', compact('order', 'items', 'envio'));
     }

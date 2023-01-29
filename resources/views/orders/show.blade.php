@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="bg-gray-100">
         <div class="max-w-5xl  mx-auto px-4 sm:px-6 lg:px-8  md:pt-12 pb-12 py-12">
-
+           
             <div class="bg-white rounded-lg shadow-lg px-6 md:px-12 py-8 mb-6 flex items-center">
     
                 <div class="relative">

@@ -53,7 +53,7 @@
                                                         @endif
                                                         @if ($item->options->size)
                                                             <span class="mx-1"> - </span>
-                                                            <span>Talla: {{ $item->options->size }}</span>
+                                                            <span>Medida: {{ $item->options->size }}</span>
                                                         @endif
                                                     </div>
                                                 </div>

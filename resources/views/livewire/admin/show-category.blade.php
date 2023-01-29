@@ -142,7 +142,7 @@
                 </div>
                 <div>
                     <div class="flex items-center">
-                        <p>¿Esta subcategoría necesita especificar color?</p>
+                        <p>¿Esta subcategoría necesita especificar un color?</p>
                         <div class="ml-auto">
                             <label>
                                 <input type="radio" name="color" value="1" id="" wire:model.defer="editForm.color">
@@ -158,7 +158,7 @@
                 </div>
                 <div>
                     <div class="flex items-center">
-                        <p>¿Esta subcategoría necesita especificar talla?</p>
+                        <p>¿Esta subcategoría necesita especificar una medida?</p>
                         <div class="ml-auto">
                             <label>
                                 <input type="radio" name="size" value="1" id="" wire:model.defer="editForm.size">

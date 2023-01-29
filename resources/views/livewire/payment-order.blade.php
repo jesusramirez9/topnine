@@ -11,7 +11,7 @@
         $client = new Lyra\Client();
         
         $store = [
-            'amount' => $order->total * 100,
+            'amount' => round($order->total * 100, 2),
             'currency' => 'PEN',
             'orderId' => uniqid($order->id . '-'),
             'customer' => [

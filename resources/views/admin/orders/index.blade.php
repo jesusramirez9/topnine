@@ -46,7 +46,7 @@
 
         @if ($orders->count())
         <section class="bg-white  rounded-lg px-12 shadow-lg py-8 mt-12 text-gray-700">
-            <h1 class="text-2xl mb-4">Reservas recientes</h1>
+            <h1 class="text-2xl mb-4">Compras recientes</h1>
 
             <ul>
                 @foreach ($orders as $order)
