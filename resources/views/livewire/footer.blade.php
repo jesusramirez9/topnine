@@ -1,6 +1,6 @@
 <footer class="border-2 border-gray-400 border-opacity-20 border-t-2 mt-14 pt-6 bg_griss_top text-white">
     <a href="https://wa.me/51962755078" target="_blank" class="wsp-icon">
-	    <img src="{{asset('img/iconos/wsp.png')}}" alt="">
+	    <img src="{{asset('img/wsptop.png')}}" class="w-full md:h-16 img_wsp" alt="">
     </a>
     <div class="max-w-8xl mx-auto px-2  grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-6 md:gap-16">
         <div>

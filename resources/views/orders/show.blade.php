@@ -24,7 +24,7 @@
                         <i class="fas fa-truck text-white"></i>
                     </div>
                     <div class="absolute -left-1 mt-0.5">
-                        <p class="text-sm md:text-base">Enviando</p>
+                        <p class="text-sm md:text-base">Procesando</p>
                     </div>
                 </div>
     
@@ -101,7 +101,7 @@
                             <p class="text-sm colorbroywm ">Calle cantuarias 140 - semisotano - Puesto 48</p>
                         @else
                             <p class="text-sm colorbroywm font-semibold">El producto será enviado a:</p>
-                         
+                            <p class="text-sm">{{ $envio->address }}</p>
                             <p class="colorbroywm ">{{ $envio->department }} - {{ $envio->city }} -
                                 {{ $envio->district }}</p>
                              <p class="text-sm colorbroywm font-semibold">Referencia del lugar:</p>

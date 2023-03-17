@@ -10,6 +10,8 @@
                 <div class="prelacionado">
                     @foreach ($subcategories as $subcategory)
                         @foreach ($subcategory->products as $product)
+                        
+                            @if ( $product->status ==2)
                             <div class="mx-4 border-2 overflow-hidden border-white rounded-xl bg-white">
                                 <figure class="relative">
                                     <div class="absolute z-30 mt-4 ml-4">
@@ -56,7 +58,7 @@
                                         @endif
                                         <div class="flex justify-center items-center py-4">
                                             <button
-                                                class="text-white w-full font-medium text-xs lg:text-base bg_top_naranja hover:bg-orange-500 px-2 lg:px-5 py-2 rounded-sm"><i
+                                                class="text-white w-full font-medium text-xs bg_top_naranja hover:bg-orange-500 px-2 lg:px-5 py-2 rounded-sm"><i
                                                     class="fa-solid text-white fa-magnifying-glass mr-2"></i>Ver
                                                 producto</button>
                                         </div>
@@ -65,6 +67,11 @@
                                     </div>
                                 </a>
                             </div>
+                            @else
+                                
+                            @endif
+                            
+
                         @endforeach
                     @endforeach
                 </div>

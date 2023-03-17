@@ -15,7 +15,7 @@ class OrderController extends Controller
         if (request('status')) {
             $orders->where('status',request('status') );
         }
-
+      
         $orders = $orders->get();
 
         $pendiente = Order::where('status',1)->count();
@@ -31,6 +31,6 @@ class OrderController extends Controller
     public function show(Order $order){
         
         
-        return view('admin.orders.show', compact('order','pendientePago'));
+        return view('admin.orders.show', compact('order'));
     }
 }

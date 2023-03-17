@@ -20,7 +20,7 @@
                     <i class="fas fa-truck text-white"></i>
                 </div>
                 <div class="absolute -left-1 mt-0.5">
-                    <p >Enviado</p>
+                    <p >Procesando</p>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                     </x-jet-label>
                     <x-jet-label>
                         <input wire:model="status" type="radio" name="status" value="3" class="mr-2" />
-                        PROCESADO
+                        PROCESANDO
                     </x-jet-label>
                     <x-jet-label>
                         <input wire:model="status" type="radio" name="status" value="4" class="mr-2" />
@@ -87,12 +87,14 @@
                         <p class="text-sm">Calle cantuarias 140 - semisotano - Puesto 48</p>
                     @else
                         <p class="text-sm  text-gray-700 font-semibold">El producto será enviado a:</p>
-                      
+                        <p class="text-sm">{{ $envio->address }}</p>
                         <p>{{ $envio->department }} - {{ $envio->city }} -
                             {{ $envio->district }}</p>
+                            
                         <p class="text-sm  text-gray-700 font-semibold">Referencia:</p>
 
                         <p class="text-sm">{{ $envio->references }}</p>
+                     monto:    {{$order->shipping_cost}} soles
                     @endif
                 </div>
 
@@ -113,6 +115,7 @@
                         <th></th>
                         <th>Precio</th>
                         <th>Canti</th>
+                        
                         <th>total</th>
                     </tr>
                 </thead>

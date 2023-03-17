@@ -66,7 +66,7 @@
                                 <p class="text-sm colorbroywm font-bold">Calle cantuarias 140 - semisotano - Puesto 48</p>
                             @else
                                 <p class="text-sm colorbroywm font-bold">Será enviado a:</p>
-
+                                <p class="text-sm">{{ $envio->address }}</p>
                                 <p class="colorbroywm font-normal">{{ $envio->department }} - {{ $envio->city }} -
                                     {{ $envio->district }}</p>
                                 <p class="text-sm colorbroywm font-bold">Referencia:</p>

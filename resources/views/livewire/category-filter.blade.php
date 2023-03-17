@@ -152,7 +152,7 @@
                                             {{ $product->subcategory->name }}</p> --}}
 
                                         <h1 class="text-xs text-left font-medium scrollflow -slide-bottom -opacity truncate">
-                                            {{ $product->name }}
+                                            {{ $product->name }}assssssssssssssssssssssssssssssss
                                         </h1>
                                         <p class="font-bold text-left  scrollflow -slide-bottom -opacity">
                                             PEN s/ {{ $product->price }}</p>

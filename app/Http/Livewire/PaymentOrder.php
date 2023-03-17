@@ -54,8 +54,7 @@ class PaymentOrder extends Component
         $correo = new OrderShipped($this->order);
         Mail::to( auth()->user()->email)->send($correo);
 
-        $pendientePago = 2;
-
+       
     //    $correo2 = new NewPedido($this->order);
     //    Mail::to('jesus.ramirez9@unmsm.edu.pe')->send($correo2);
     //    Mail::to('jesus.ramirez9@unmsm.edu.pe')->send($correo);

@@ -171,7 +171,15 @@
         top: 9px;
     }
 }
+@media (min-width: 320px) {
+    .img_wsp {
+        height: 2.5rem !important;
+    }
+    .bner_as{
+        height: 8.3rem !important;
+    }
 
+}
 @media (min-width: 375px) {
     .bgfondocategory {
         height: 38rem !important;

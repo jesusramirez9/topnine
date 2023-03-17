@@ -8,7 +8,7 @@
         <div>
             @livewire('navigation-responsive')
         </div>
-
+        {{--
         <div class="container pt-8 md:hidden"> 
             <div class="rounded-lg w-full">
                 <div class="glider-contain ">
@@ -16,15 +16,15 @@
                         @foreach ($banners as $banner)
                         <div class="overflow-hidden rounded-lg">
                             <figure class="">
-                                <img class="lg:h-20 xl:h-36 w-full object-cover object-center rounded-lg"
+                                <img class="bner_as w-full object-cover object-center rounded-lg"
                                     src="{{Storage::url($banner->image)}}">
                             </figure>
                         </div>
                         @endforeach
                     </div>
                 </div>
-            </div>
-
+            </div> --}}
+        <!--
             <div class="bg-white mt-2 rounded-lg py-4  w-full">
                 <p class="px-4  text-black font-extrabold">Super <span class="text-red-400 ">Ofertas</span>
                 </p>
@@ -33,18 +33,18 @@
                     <div class="bgpromo8">
                         {{-- @foreach ($subcategories as $subcategory) --}}
                             @foreach ($offerProducts as $product)
-                                <div class="mx-4 border-2 overflow-hidden border-white  bg-white">
+<div class="mx-4 border-2 overflow-hidden border-white  bg-white">
                                     <figure class="py-2 px-2 ">
 
                                         @if ($product->images->count())
-                                            <img class="h-36 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+<img class="h-36 w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                                 src="{{ Storage::url($product->images->first()->url) }}"
                                                 alt="">
-                                        @else
-                                            <img class="h-36 w-full object-cover object-center"
+@else
+<img class="h-36 w-full object-cover object-center"
                                                 src="https://images.pexels.com/photos/5082560/pexels-photo-5082560.jpeg?cs=srgb&dl=pexels-cottonbro-5082560.jpg&fm=jpg"
                                                 alt="">
-                                        @endif
+@endif
 
                                     </figure>
                                     <a href="{{ route('products.show', $product) }}">
@@ -54,11 +54,11 @@
                                             </h1> --}}
                                             <div class="items-center">
                                                 @if ($product->offer != 0)
-                                                    <p class="text-xs text-gray-400">Precio normal: <span
+<p class="text-xs text-gray-400">Precio normal: <span
                                                             class=" text-gray-400 line-through">s/{{ $product->offer }}
                                                         </span></p>
-                                                @else
-                                                @endif
+@else
+@endif
                                                 <p
                                                     class="font-bold text-sm scrollflow -slide-bottom -opacity">
                                                     S/ {{ $product->price }}</p>
@@ -66,7 +66,7 @@
                                         </div>
                                     </a>
                                 </div>
-                            @endforeach
+@endforeach
                         {{-- @endforeach --}}
                     </div>
                     <button aria-label="Previous" class="hidden md:block glider-prev8 slidehomeprev absolute">
@@ -79,14 +79,19 @@
             </div>
         </div>
 
-
+-->
+        {{--
         <div class="container pb-8 d-none md:block">
             @livewire('categories-subcategory')
         </div>
-
+        --}}
         <div class="container py-8 ">
             @foreach ($categories as $category)
-                @if ($category->products->count() > 0)
+                @foreach ($category->products as $product)
+                    
+                
+                 @endforeach
+                @if ($category->products->count() > 0 && $product->status ==2)
                     <section class="mb-6">
                         <div class="flex items-center mb-2">
                             <h1 class="text-lg uppercase font-semibold text-gray-700">
@@ -100,17 +105,21 @@
                         @livewire('category-products', ['category' => $category])
                     </section>
                 @else
+               
                 @endif
+                
             @endforeach
         </div>
     </div>
-     <div>
+    <div>
+        {{--
     @livewire('show-flayer')
-</div>
+    --}}
+    </div>
 
     @push('script')
         <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-        
+
         <script>
             $(document).ready(function() {
                 $('.sliderjss').slick({
@@ -121,23 +130,20 @@
                 });
             });
         </script>
-        <script>
-            
-        </script>
+        <script></script>
         <script>
             livewire.on('glider', function(id) {
 
                 new Glider(document.querySelector('.glider-' + id), {
                     slidesToScroll: 1,
                     slidesToShow: 1,
-             //       dots: '.glider-' + id + '~ .dots',
+                    //       dots: '.glider-' + id + '~ .dots',
                     dots: false,
                     arrows: {
                         prev: '.glider-' + id + '~ .glider-prev',
                         next: '.glider-' + id + '~ .glider-next'
                     },
-                    responsive: [
-                        {
+                    responsive: [{
                             breakpoint: 375,
                             settings: {
                                 slidesToScroll: 3,
@@ -189,8 +195,7 @@
                     prev: '.glider-prev8',
                     next: '.glider-next8'
                 },
-                responsive: [
-                    {
+                responsive: [{
                         // screens greater than >= 1024px
                         breakpoint: 1024,
                         settings: {

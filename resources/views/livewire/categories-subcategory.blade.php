@@ -61,11 +61,13 @@
                 <div class="grid grid-cols-12 gap-4 mt-4">
                     <div class="col-span-4">
                         <div class=" rounded-lg px-4 py-6 bg-cover bg-center h-full"
-                            style="background-image: url({{ asset('home/fondo.webp') }})">
+                            style="background-image: url({{ asset('img/fondotop.jpg') }})">
                             <div class="py-6 text-xs xl:text-lg text-white font-medium">
 
-                                <p>¡Bienvenidos a Topnine!</p>
-                                <p>Promociones y ofertas</p>
+                              {{--  <p>¡Bienvenidos a Topnine!</p>
+                                <p>Promociones y ofertas</p>--}}
+                                <br>
+                                <br>
                             </div>
                             <div class="rounded-xl">
                                 <div class="promocion rounded-xl">
@@ -105,7 +107,7 @@
                                                                             @else
                                                                             @endif
                                                                             <p
-                                                                                class="font-bold text-sm scrollflow -slide-bottom -opacity">
+                                                                                class="font-bold text-sm scrollflow -slide-bottom -opacity text-white">
                                                                             PEN S/ {{ $product->price }}</p>
                                                                         </div>
                                                                     </div>
