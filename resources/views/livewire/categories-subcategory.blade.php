@@ -60,7 +60,7 @@
                 </div>
                 <div class="grid grid-cols-12 gap-4 mt-4">
                     <div class="col-span-4">
-                        <div class=" rounded-lg px-4 py-6 bg-cover bg-center h-full"
+                        <div class=" rounded-lg px-4 py-2 lg:py-6 bg-cover bg-center h-full"
                             style="background-image: url({{ asset('img/fondotop.jpg') }})">
                             <div class="py-6 text-xs xl:text-lg text-white font-medium">
 
@@ -86,7 +86,7 @@
                                                                 <figure class="">
                 
                                                                     @if ($product->images->count())
-                                                                        <img class="h-36 w-full object-cover object-center scrollflow -slide-bottom -opacity"
+                                                                        <img class="h-24 lg:h-36 w-full object-cover object-center scrollflow -slide-bottom -opacity"
                                                                             src="{{ Storage::url($product->images->first()->url) }}"
                                                                             alt="">
                                                                     @else

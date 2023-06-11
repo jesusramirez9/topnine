@@ -200,7 +200,7 @@
         </div>
 
         <nav id="navigation-menu" :class="{ 'block': open, 'hidden': !open }" x-show="open"
-            class="bg-trueGray-700  z-10 bg-opacity-70 w-full absolute hidden">
+            class="bg-trueGray-700  z-40 bg-opacity-70 w-full absolute hidden">
 
             {{-- menu mobil --}}
 
